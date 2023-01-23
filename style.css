@@ -70,6 +70,7 @@ nav ul li a:hover::after{
 .header-text{
     margin-top: 20%;
     font-size: 30px;
+    margin-right: 20%;
 }
 
 .header-text h1{
@@ -78,7 +79,6 @@ nav ul li a:hover::after{
     margin-top: 20px;
     margin-bottom: 20%;
 }
-
 
 .header-text h1 span{
     color: #ff004f;
@@ -396,10 +396,9 @@ nav .fa{
     }
 
     .header-text{
-    margin-top: 20%;
-    font-size: 30px;
-    margin-right: 20%;
-}
+        margin-top: 100%;
+        font-size: 16px;
+    }
 
     .header-text h1{
         font-size: 30px;   
