@@ -393,17 +393,17 @@ nav .fa{
     }
 
     .header-text{
-        margin-top: 100%;
-        font-size: 16px;
-    }
+    margin-top: 20%;
+    font-size: 30px;
+    margin-right: 20%;
+}
 
     .header-text h1{
-        font-size: 30px;   
-        background: rgba(0,0,0,50%);
-        border-radius: 14px;
-        padding-left: 10px;
-        margin-right: 30px;
-    }
+    font-size: 60px;
+    padding: 0 5%;
+    margin-top: 20px;
+    margin-bottom: 20%;
+}
 
     nav .fa{
         display: block;
