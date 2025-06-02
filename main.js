@@ -631,3 +631,153 @@ if (document.readyState === 'loading') {
 } else {
     initGuidedDecisionTool();
 }
+// ==============================
+// Certificate Modal Functionality  
+// ==============================
+
+const initCertificateModal = () => {
+    // Create modal HTML
+    const modalHTML = `
+        <div id="certificate-modal" class="cert-modal">
+            <div class="cert-modal-overlay"></div>
+            <div class="cert-modal-content">
+                <button class="cert-modal-close" aria-label="Close certificate viewer">
+                    <i class="fas fa-times"></i>
+                </button>
+                <div class="cert-modal-body">
+                    <img id="cert-modal-image" src="" alt="" class="cert-modal-img">
+                    <div class="cert-modal-info">
+                        <h3 id="cert-modal-title"></h3>
+                        <p id="cert-modal-date"></p>
+                        <a id="cert-modal-verify" href="#" target="_blank" class="btn btn-outline">
+                            <i class="fas fa-external-link-alt"></i>
+                            Verify Certificate
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    `;
+
+    // Add modal to page
+    document.body.insertAdjacentHTML('beforeend', modalHTML);
+
+    // Certificate data mapping
+    const certificateData = {
+        'ux-design.png': {
+            title: 'Google UX Design Professional Certificate',
+            date: 'Completed June 22, 2024',
+            verifyUrl: 'https://coursera.org/verify/professional-cert/GE4YJJJCZEKL'
+        },
+        'foundations-of-user-experience.png': {
+            title: 'Foundations of User Experience (UX) Design',
+            date: 'Completed May 11, 2024',
+            verifyUrl: 'https://coursera.org/verify/D4PAFS35M69P'
+        },
+        'start-ux-design-process-empathize-define-and-ideate.png': {
+            title: 'Start the UX Design Process: Empathize, Define, and Ideate',
+            date: 'Completed May 30, 2024',
+            verifyUrl: 'https://coursera.org/verify/GAP3MGNSB495'
+        },
+        'build-wireframes-low-fidelity-prototypes.png': {
+            title: 'Build Wireframes and Low-Fidelity Prototypes',
+            date: 'Completed June 12, 2024',
+            verifyUrl: 'https://coursera.org/verify/VGZDTT4ND9XM'
+        },
+        'conduct-uxresearch-test-early-concepts.png': {
+            title: 'Conduct UX Research and Test Early Concepts',
+            date: 'Completed June 15, 2024',
+            verifyUrl: 'https://coursera.org/verify/X3PQ6X7DC222'
+        },
+        'create-high-fidelity-designs.png': {
+            title: 'Create High-Fidelity Designs and Prototypes in Figma',
+            date: 'Completed June 17, 2024',
+            verifyUrl: 'https://coursera.org/verify/8528459LUP3R'
+        },
+        'build-dynamic-user-interfaces.png': {
+            title: 'Build Dynamic User Interfaces (UI) for Websites',
+            date: 'Completed June 20, 2024',
+            verifyUrl: 'https://coursera.org/verify/QVCMUNYPSCXS'
+        },
+        'design-a-user-experience-for-social-good.png': {
+            title: 'Design a User Experience for Social Good & Prepare for Jobs',
+            date: 'Completed June 22, 2024',
+            verifyUrl: 'https://coursera.org/verify/QCCH43MGRSV9'
+        }
+    };
+
+    // Get modal elements
+    const modal = document.getElementById('certificate-modal');
+    const modalImage = document.getElementById('cert-modal-image');
+    const modalTitle = document.getElementById('cert-modal-title');
+    const modalDate = document.getElementById('cert-modal-date');
+    const modalVerify = document.getElementById('cert-modal-verify');
+    const modalClose = document.querySelector('.cert-modal-close');
+    const modalOverlay = document.querySelector('.cert-modal-overlay');
+
+    // Function to open modal
+    const openModal = (imageSrc, imageAlt) => {
+        const filename = imageSrc.split('/').pop();
+        const certData = certificateData[filename];
+
+        if (certData) {
+            modalImage.src = imageSrc;
+            modalImage.alt = imageAlt;
+            modalTitle.textContent = certData.title;
+            modalDate.textContent = certData.date;
+            modalVerify.href = certData.verifyUrl;
+        }
+
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+        modalClose.focus();
+    };
+
+    // Function to close modal
+    const closeModal = () => {
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+    };
+
+    // Add click listeners to all certificate images
+    const addCertificateListeners = () => {
+        // Main certificate image
+        const mainCertImage = document.querySelector('.certificate-image');
+        if (mainCertImage) {
+            mainCertImage.addEventListener('click', () => {
+                const img = mainCertImage.querySelector('.cert-img');
+                openModal(img.src, img.alt);
+            });
+        }
+
+        // Individual certificate thumbnails
+        const certItems = document.querySelectorAll('.cert-image-container');
+        certItems.forEach(container => {
+            container.addEventListener('click', () => {
+                const img = container.querySelector('.cert-thumbnail');
+                openModal(img.src, img.alt);
+            });
+        });
+    };
+
+    // Close modal event listeners
+    modalClose.addEventListener('click', closeModal);
+    modalOverlay.addEventListener('click', closeModal);
+
+    // Keyboard navigation
+    document.addEventListener('keydown', (e) => {
+        if (modal.classList.contains('active') && e.key === 'Escape') {
+            closeModal();
+        }
+    });
+
+    // Initialize listeners
+    addCertificateListeners();
+};
+
+// Initialize when DOM is loaded
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initCertificateModal);
+} else {
+    initCertificateModal();
+}
