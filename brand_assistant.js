@@ -69,6 +69,8 @@ const brandArchetypes = {
 function init() {
     updateProgress();
     setupEventListeners();
+    initMobileNav(); // Add this line
+    
     // Hide the results container initially
     const resultsContainer = document.getElementById('resultsContainer');
     if (resultsContainer) {
@@ -1512,4 +1514,40 @@ function init() {
     if (resultsContainer) {
         resultsContainer.classList.remove('active');
     }
+}
+// Mobile Navigation Toggle
+function initMobileNav() {
+    const navToggle = document.querySelector('.nav-toggle');
+    const navClose = document.querySelector('.nav-close');
+    const nav = document.querySelector('nav');
+    const overlay = document.querySelector('.overlay');
+    
+    if (navToggle) {
+        navToggle.addEventListener('click', () => {
+            nav.classList.add('active');
+            overlay.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        });
+    }
+    
+    if (navClose) {
+        navClose.addEventListener('click', closeNav);
+    }
+    
+    if (overlay) {
+        overlay.addEventListener('click', closeNav);
+    }
+    
+    function closeNav() {
+        nav.classList.remove('active');
+        overlay.classList.remove('active');
+        document.body.style.overflow = '';
+    }
+    
+    // Close nav on escape key
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && nav.classList.contains('active')) {
+            closeNav();
+        }
+    });
 }

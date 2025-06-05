@@ -4371,7 +4371,7 @@ footer {
 }
 
 /* ============================================================================
-   RESPONSIVE DESIGN
+   RESPONSIVE DESIGN - MOBILE ADJUSTED ORDER
    ============================================================================ */
 
 @media (max-width: 768px) {
@@ -4380,13 +4380,14 @@ footer {
         gap: 2rem;
     }
 
+    /* MOBILE: Content stays in natural order (first), visual comes second */
     .card-content {
         text-align: center;
-        order: 2;
+        order: 1; /* Content first */
     }
 
     .card-visual {
-        order: 1;
+        order: 2; /* Visual second - UNDER the content */
     }
 
     .brand-discovery-card {
@@ -4416,6 +4417,30 @@ footer {
     .mockup-browser {
         max-width: 350px;
         margin: 0 auto;
+    }
+
+    /* Add some visual separation between content and mockup */
+    .card-visual {
+        margin-top: 1rem;
+        padding-top: 1.5rem;
+        border-top: 1px solid rgba(109, 0, 26, 0.1);
+        position: relative;
+    }
+
+    /* Optional: Add a subtle label above the mockup */
+    .card-visual::before {
+        content: "👀 See it in action:";
+        position: absolute;
+        top: 0.5rem;
+        left: 50%;
+        transform: translateX(-50%);
+        font-size: 0.9rem;
+        color: var(--secondary);
+        font-weight: 500;
+        background: var(--light);
+        padding: 0.3rem 1rem;
+        border-radius: 15px;
+        border: 1px solid rgba(109, 0, 26, 0.1);
     }
 }
 
@@ -4461,6 +4486,18 @@ footer {
 
     .mock-title {
         font-size: 1.1rem;
+    }
+
+    /* Adjust the preview label for smaller screens */
+    .card-visual::before {
+        font-size: 0.8rem;
+        padding: 0.2rem 0.8rem;
+    }
+
+    /* Add more spacing between content and visual on small screens */
+    .card-visual {
+        margin-top: 1.5rem;
+        padding-top: 2rem;
     }
 }
 
