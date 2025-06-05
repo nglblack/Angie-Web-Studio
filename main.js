@@ -781,3 +781,229 @@ if (document.readyState === 'loading') {
 } else {
     initCertificateModal();
 }
+// ============================================================================
+// BRAND DISCOVERY SECTION - INTERACTIVE FEATURES (Optional)
+// ============================================================================
+
+// Initialize brand discovery interactions when DOM is loaded
+document.addEventListener('DOMContentLoaded', function() {
+    initBrandDiscoveryInteractions();
+});
+
+function initBrandDiscoveryInteractions() {
+    // Add click interaction to mock options in the browser preview
+    const mockOptions = document.querySelectorAll('.mock-option');
+    let selectedOption = null;
+    
+    mockOptions.forEach(option => {
+        option.addEventListener('click', function() {
+            // Remove selection from other options
+            mockOptions.forEach(opt => opt.classList.remove('selected'));
+            
+            // Add selection to clicked option
+            this.classList.add('selected');
+            selectedOption = this;
+            
+            // Update progress bar
+            updateMockProgress();
+            
+            // Add visual feedback
+            this.style.transform = 'translateY(-2px) scale(1.05)';
+            setTimeout(() => {
+                this.style.transform = '';
+            }, 200);
+        });
+        
+        // Add hover effects
+        option.addEventListener('mouseenter', function() {
+            if (!this.classList.contains('selected')) {
+                this.style.transform = 'translateY(-2px)';
+            }
+        });
+        
+        option.addEventListener('mouseleave', function() {
+            if (!this.classList.contains('selected')) {
+                this.style.transform = '';
+            }
+        });
+    });
+    
+    // Add click tracking for the CTA button
+    const ctaButton = document.querySelector('.brand-cta-btn');
+    if (ctaButton) {
+        ctaButton.addEventListener('click', function(e) {
+            // Add ripple effect
+            createRippleEffect(this, e);
+            
+            // Optional: Track the click for analytics
+            // gtag('event', 'click', {
+            //     event_category: 'Brand Discovery',
+            //     event_label: 'Start Brand Discovery CTA'
+            // });
+        });
+    }
+    
+    // Add card hover interactions
+    const discoveryCard = document.querySelector('.brand-discovery-card');
+    if (discoveryCard) {
+        discoveryCard.addEventListener('mouseenter', function() {
+            // Pause the progress animation on hover for better UX
+            const progressFill = document.querySelector('.mock-progress-fill');
+            if (progressFill) {
+                progressFill.style.animationPlayState = 'paused';
+            }
+        });
+        
+        discoveryCard.addEventListener('mouseleave', function() {
+            // Resume the progress animation
+            const progressFill = document.querySelector('.mock-progress-fill');
+            if (progressFill) {
+                progressFill.style.animationPlayState = 'running';
+            }
+        });
+    }
+    
+    // Add intersection observer for scroll animations
+    addScrollAnimations();
+}
+
+// Update the mock progress bar when an option is selected
+function updateMockProgress() {
+    const progressFill = document.querySelector('.mock-progress-fill');
+    const statusText = document.querySelector('.mock-status');
+    
+    if (progressFill && statusText) {
+        // Animate progress to next stage
+        progressFill.style.animation = 'none';
+        progressFill.style.width = '80%';
+        
+        // Update status text
+        statusText.textContent = 'Module 2 of 5 starting...';
+        statusText.style.color = 'var(--primary)';
+        
+        // Reset after a moment
+        setTimeout(() => {
+            progressFill.style.animation = 'brandProgressPulse 2s ease-in-out infinite';
+            progressFill.style.width = '60%';
+            statusText.textContent = 'Module 1 of 5 complete...';
+            statusText.style.color = 'var(--secondary)';
+        }, 2000);
+    }
+}
+
+// Create ripple effect for button clicks
+function createRippleEffect(button, event) {
+    const ripple = document.createElement('span');
+    const rect = button.getBoundingClientRect();
+    const size = Math.max(rect.width, rect.height);
+    const x = event.clientX - rect.left - size / 2;
+    const y = event.clientY - rect.top - size / 2;
+    
+    ripple.style.cssText = `
+        position: absolute;
+        width: ${size}px;
+        height: ${size}px;
+        left: ${x}px;
+        top: ${y}px;
+        background: rgba(255, 255, 255, 0.3);
+        border-radius: 50%;
+        transform: scale(0);
+        animation: ripple 0.6s ease-out;
+        pointer-events: none;
+    `;
+    
+    // Add ripple animation keyframes if not already added
+    if (!document.getElementById('ripple-styles')) {
+        const style = document.createElement('style');
+        style.id = 'ripple-styles';
+        style.textContent = `
+            @keyframes ripple {
+                to {
+                    transform: scale(2);
+                    opacity: 0;
+                }
+            }
+        `;
+        document.head.appendChild(style);
+    }
+    
+    button.style.position = 'relative';
+    button.style.overflow = 'hidden';
+    button.appendChild(ripple);
+    
+    // Remove ripple after animation
+    setTimeout(() => {
+        ripple.remove();
+    }, 600);
+}
+
+// Add scroll-triggered animations
+function addScrollAnimations() {
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('animate-in');
+                
+                // Add staggered animation to benefit items
+                const benefitItems = entry.target.querySelectorAll('.benefit-item');
+                benefitItems.forEach((item, index) => {
+                    setTimeout(() => {
+                        item.style.opacity = '1';
+                        item.style.transform = 'translateX(0)';
+                    }, index * 100);
+                });
+            }
+        });
+    }, {
+        threshold: 0.2,
+        rootMargin: '0px 0px -50px 0px'
+    });
+    
+    const discoverySection = document.querySelector('.brand-discovery-section');
+    if (discoverySection) {
+        observer.observe(discoverySection);
+        
+        // Set initial state for benefit items
+        const benefitItems = discoverySection.querySelectorAll('.benefit-item');
+        benefitItems.forEach(item => {
+            item.style.opacity = '0';
+            item.style.transform = 'translateX(-20px)';
+            item.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+        });
+    }
+}
+
+// Add CSS class for selected mock options
+const additionalStyles = `
+    .mock-option.selected {
+        background: rgba(109, 0, 26, 0.15) !important;
+        border-color: var(--primary) !important;
+        color: var(--primary-dark) !important;
+        font-weight: 600 !important;
+        transform: translateY(-2px) scale(1.05) !important;
+        box-shadow: 0 4px 12px rgba(109, 0, 26, 0.2) !important;
+    }
+    
+    .brand-discovery-section.animate-in .brand-discovery-card {
+        animation: slideInUp 0.8s ease forwards;
+    }
+    
+    @keyframes slideInUp {
+        from {
+            opacity: 0;
+            transform: translateY(30px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+`;
+
+// Add the additional styles to the page
+if (!document.getElementById('brand-discovery-additional-styles')) {
+    const styleSheet = document.createElement('style');
+    styleSheet.id = 'brand-discovery-additional-styles';
+    styleSheet.textContent = additionalStyles;
+    document.head.appendChild(styleSheet);
+}
