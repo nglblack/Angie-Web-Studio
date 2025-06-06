@@ -4516,7 +4516,44 @@ footer {
     margin: 1.5rem 0;
   }
 }
+/* Add these new CSS rules to your existing brand discovery styles */
+.content-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: center;
+    margin-bottom: 2rem;
+}
 
+.button-row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1rem;
+}
+
+.card-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    text-align: center;
+}
+
+/* Update mobile responsive for the new layout */
+@media (max-width: 768px) {
+    .content-row {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    .card-visual {
+        order: 1;
+    }
+    
+    .card-content {
+        order: 2;
+    }
+}
 /* ============================================================================
    END STYLESHEET
    ============================================================================ */
