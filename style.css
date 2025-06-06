@@ -4380,14 +4380,14 @@ footer {
         gap: 2rem;
     }
 
-    /* MOBILE: Content stays in natural order (first), visual comes second */
-    .card-content {
-        text-align: center;
-        order: 1; /* Content first */
+    /* MOBILE: Visual comes first, content second */
+    .card-visual {
+        order: 1; /* Visual first - ABOVE the content */
     }
 
-    .card-visual {
-        order: 2; /* Visual second - UNDER the content */
+    .card-content {
+        text-align: center;
+        order: 2; /* Content second */
     }
 
     .brand-discovery-card {
