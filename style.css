@@ -4500,6 +4500,22 @@ footer {
         padding-top: 2rem;
     }
 }
+/* Hide mockup inside card-content on desktop */
+.card-content .card-visual {
+  display: none;
+}
+
+/* Show mockup inside card-content on mobile, hide the original */
+@media (max-width: 768px) {
+  .card-grid > .card-visual {
+    display: none; /* Hide original mockup */
+  }
+  
+  .card-content .card-visual {
+    display: block; /* Show mockup inside content */
+    margin: 1.5rem 0;
+  }
+}
 
 /* ============================================================================
    END STYLESHEET
