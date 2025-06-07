@@ -921,11 +921,35 @@ nav ul li a.active {
     content: '';
     position: absolute;
     bottom: 0;
-    left: 50% !important;
-    transform: translateX(-50%) !important;
+    left: 0;
     width: 40px;
     height: 2px;
     background-color: var(--primary-light);
+}
+/* Mobile-only fix for card title underlines */
+@media (max-width: 768px) {
+    /* Center card content and titles on mobile */
+    .template-card .card-content,
+    .portfolio-card-content,
+    .card-content {
+        text-align: center !important;
+    }
+    
+    .template-card .card-title,
+    .portfolio-card-title,
+    .card-title {
+        text-align: center !important;
+        position: relative;
+    }
+    
+    /* Center the underlines only on mobile */
+    .template-card .card-title:after,
+    .portfolio-card-title:after,
+    .card-title:after,
+    .feature-title:after {
+        left: 50% !important;
+        transform: translateX(-50%) !important;
+    }
 }
 
 .template-card p {
@@ -3786,6 +3810,16 @@ footer {
         top: -9px !important;
         right: -9px !important;
         max-width: 26px !important;
+    }
+}
+    @media (max-width: 576px) {
+    .step-number {
+        width: 24px !important;
+        height: 24px !important;
+        font-size: 0.75rem !important;
+        top: -8px !important;
+        right: -8px !important;
+        max-width: 24px !important;
     }
 }
 
