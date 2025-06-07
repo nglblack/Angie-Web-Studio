@@ -3951,8 +3951,8 @@ footer {
             font-size: 1.3rem;
         }
     }
-    /* ============================================================================
-   CERTIFICATE MODAL STYLES
+/* ============================================================================
+   CERTIFICATE MODAL STYLES - MOBILE OPTIMIZED
    ============================================================================ */
 
 .cert-modal {
@@ -4025,6 +4025,12 @@ footer {
     transform: scale(1.1);
 }
 
+.cert-modal-close:focus {
+    outline: 2px solid var(--primary);
+    outline-offset: 2px;
+}
+
+/* DESKTOP: Side-by-side layout */
 .cert-modal-body {
     display: grid;
     grid-template-columns: 1fr 300px;
@@ -4077,26 +4083,107 @@ footer {
     transition: all 0.3s ease;
 }
 
-/* Mobile responsiveness */
-@media (max-width: 768px) {
+.cert-modal-info .btn:focus {
+    outline: 2px solid var(--primary);
+    outline-offset: 2px;
+}
+
+/* TABLET: Slightly smaller sidebar */
+@media (max-width: 992px) {
     .cert-modal-content {
         max-width: 95vw;
         max-height: 95vh;
     }
-
+    
     .cert-modal-body {
-        grid-template-columns: 1fr;
-        max-height: 95vh;
+        grid-template-columns: 1fr 280px;
     }
-
-    .cert-modal-img {
-        max-height: 60vh;
-    }
-
+    
     .cert-modal-info {
-        padding: 1.5rem;
+        padding: 1.8rem;
+    }
+    
+    .cert-modal-info h3 {
+        font-size: 1.2rem;
+    }
+}
+
+/* MOBILE: Stacked layout for better readability */
+@media (max-width: 768px) {
+    .cert-modal-content {
+        position: absolute;
+        top: 3vh;
+        left: 2.5vw;
+        right: 2.5vw;
+        transform: none;
+        max-width: none;
+        width: 95vw;
+        max-height: 94vh;
+        overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .cert-modal.active .cert-modal-content {
+        transform: none;
+    }
+
+    .cert-modal-close {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        z-index: 11;
+    }
+
+    /* SWITCH TO STACKED LAYOUT */
+    .cert-modal-body {
+        display: flex;
+        flex-direction: column;
+        max-height: none;
+        overflow: visible;
+        min-height: auto;
+    }
+
+    /* Make image prominent and readable - WIDER */
+    .cert-modal-img {
+        width: 100%;
+        height: auto;
+        min-height: 45vh;
+        max-height: 65vh;
+        object-fit: contain;
+        background: #f8f9fa;
+        border-bottom: 1px solid #dee2e6;
+        padding: 1rem;
+    }
+
+    /* Info section below image - FULL WIDTH */
+    .cert-modal-info {
+        padding: 2rem;
         border-left: none;
         border-top: 1px solid #dee2e6;
+        background: white;
+        text-align: center;
+        width: 100%;
+    }
+
+    .cert-modal-info h3 {
+        font-size: 1.4rem;
+        margin-bottom: 1rem;
+        line-height: 1.3;
+    }
+
+    .cert-modal-info p {
+        font-size: 1.1rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .cert-modal-info .btn {
+        align-self: center;
+        width: 100%;
+        justify-content: center;
+        font-size: 1rem;
+        padding: 1rem 1.5rem;
+        max-width: 300px;
+        margin: 0 auto;
     }
 }
 
