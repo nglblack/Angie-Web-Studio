@@ -403,3 +403,238 @@
         font-size: 0.85rem;
     }
 }
+/* ============================================================================
+   AI COPY HELPER - MOBILE SIMPLIFIED DESIGN (TABLETS AND BELOW)
+   ============================================================================ */
+
+/* Mobile Responsive - Simplified Design */
+@media (max-width: 768px) {
+    /* Remove card styling and make it span full width */
+    .ai-copy-section {
+        background: white;
+        padding: 2rem 0;
+        border: none;
+    }
+
+    .ai-copy-section::before,
+    .ai-copy-section::after {
+        display: none; /* Remove floating decorations */
+    }
+
+    .ai-copy-card {
+        background: transparent;
+        border-radius: 0;
+        box-shadow: none;
+        margin: 0 -15px; /* Span full width */
+        border: none;
+        overflow: visible;
+    }
+
+    .ai-copy-card:hover {
+        transform: none;
+        box-shadow: none;
+    }
+
+    /* Simplified header */
+    .ai-copy-header {
+        background: var(--primary);
+        padding: 2rem 1.5rem;
+        margin: 0;
+        border-radius: 0;
+    }
+
+    .ai-copy-header::before {
+        display: none;
+    }
+
+    .ai-copy-header h2 {
+        font-size: 2rem;
+    }
+
+    .ai-copy-header p {
+        font-size: 1rem;
+    }
+
+    /* Simplified form area */
+    .ai-copy-form {
+        padding: 2rem 1.5rem;
+        background: white;
+    }
+
+    /* Stack keywords vertically on mobile */
+    .ai-keywords-container {
+        grid-template-columns: 1fr;
+        gap: 0.8rem;
+        margin-bottom: 1.5rem;
+    }
+
+    /* Simplified input styling */
+    .ai-input-group input[type="text"], 
+    .ai-input-group textarea {
+        padding: 0.9rem;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        background: white;
+        font-size: 0.95rem;
+    }
+
+    .ai-input-group input[type="text"]:focus, 
+    .ai-input-group textarea:focus {
+        border-color: var(--primary);
+        box-shadow: 0 0 0 2px rgba(109, 0, 26, 0.1);
+    }
+
+    .ai-input-group label {
+        font-size: 1rem;
+        margin-bottom: 0.6rem;
+    }
+
+    /* Simplified button */
+    .ai-generate-btn {
+        padding: 1.1rem 1.8rem;
+        font-size: 1.1rem;
+        border-radius: 8px;
+        box-shadow: none;
+        background: var(--primary);
+        text-transform: none;
+        letter-spacing: normal;
+    }
+
+    .ai-generate-btn:hover {
+        background: var(--primary-light);
+        transform: none;
+        box-shadow: none;
+    }
+
+    /* Simplified thinking state */
+    .ai-thinking {
+        padding: 1.2rem;
+        margin: 1.5rem -1.5rem 0;
+        border-radius: 0;
+        background: var(--primary);
+        font-size: 0.95rem;
+        box-shadow: none;
+    }
+
+    /* Simplified results */
+    .ai-results {
+        padding: 1.5rem;
+        margin: 2rem -1.5rem 0;
+        background: var(--primary);
+        border-radius: 0;
+        box-shadow: none;
+    }
+
+    .ai-result-item {
+        padding: 1.2rem;
+        margin-bottom: 1.5rem;
+        background: rgba(255, 255, 255, 0.15);
+        border-radius: 8px;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    .ai-result-title {
+        font-size: 1.1rem;
+        margin-bottom: 0.6rem;
+        text-transform: none;
+        letter-spacing: normal;
+    }
+
+    .ai-result-content {
+        font-size: 1rem;
+        line-height: 1.5;
+    }
+
+    .ai-confidence-score {
+        padding: 0.8rem;
+        font-size: 0.85rem;
+        border-radius: 6px;
+        margin-top: 0.8rem;
+    }
+
+    .ai-helper-text {
+        font-size: 0.85rem;
+        margin-top: 0.6rem;
+    }
+}
+
+/* Extra small mobile - even more simplified */
+@media (max-width: 576px) {
+    .ai-copy-header {
+        padding: 1.5rem 1rem;
+    }
+
+    .ai-copy-header h2 {
+        font-size: 1.8rem;
+        margin-bottom: 0.8rem;
+    }
+
+    .ai-copy-header p {
+        font-size: 0.95rem;
+    }
+
+    .ai-copy-form {
+        padding: 1.5rem 1rem;
+    }
+
+    .ai-input-group {
+        margin-bottom: 1.5rem;
+    }
+
+    .ai-input-group label {
+        font-size: 0.95rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .ai-input-group input[type="text"], 
+    .ai-input-group textarea {
+        padding: 0.8rem;
+        font-size: 0.9rem;
+    }
+
+    .ai-generate-btn {
+        padding: 1rem 1.5rem;
+        font-size: 1rem;
+    }
+
+    .ai-thinking {
+        padding: 1rem;
+        margin: 1.2rem -1rem 0;
+        font-size: 0.9rem;
+    }
+
+    .ai-results {
+        padding: 1.2rem;
+        margin: 1.5rem -1rem 0;
+    }
+
+    .ai-result-item {
+        padding: 1rem;
+        margin-bottom: 1.2rem;
+    }
+
+    .ai-result-title {
+        font-size: 1rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .ai-result-content {
+        font-size: 0.95rem;
+        line-height: 1.4;
+    }
+
+    .ai-confidence-score {
+        padding: 0.7rem;
+        font-size: 0.8rem;
+    }
+
+    .ai-helper-text {
+        font-size: 0.8rem;
+    }
+}
+
+/* Keep desktop design unchanged above 768px */
+@media (min-width: 769px) {
+    /* All existing desktop styles remain the same */
+    /* This ensures desktop experience is not affected */
+}
