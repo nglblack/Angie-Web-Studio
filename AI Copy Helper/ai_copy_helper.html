@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Copy Helper - Angie Web Studio</title>
+    <link rel="canonical" href="https://angiewebstudio.com/ai-copy-helper.html">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Playfair+Display:wght@400;500;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="./img/logo.png" alt="Angie Web Studio">
+                </a>
+            </div>
+            <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+                <i class="fas fa-bars"></i>
+            </button>                    
+            <nav>
+                <button class="nav-close" aria-label="Close navigation">
+                    <i class="fas fa-times"></i>
+                </button>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="templates.html">Templates</a></li>
+                    <li><a href="howitworks.html">How It Works</a></li>
+                    <li><a href="pricing.html">Pricing</a></li>
+                    <li><a href="portfolio.html">Portfolio</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="overlay"></div>
+        </div>
+    </header>
+
+    <!-- Main Content Area -->
+    <main>
+        <div class="container">
+            <section class="hero">
+                <div class="hero-content">
+                    <h1 class="hero-title">🤖 AI Copy Helper</h1>
+                    <p class="hero-subtitle">Need help with your website copy? Let AI create professional taglines, about sections, and service descriptions based on your business vibe.</p>
+                    <div class="hero-buttons">
+                        <a href="#ai-tool" class="btn btn-lg">Try It Now</a>
+                        <a href="templates.html" class="btn btn-outline btn-lg">View Templates</a>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- AI Copy Helper Tool Section -->
+        <section class="section ai-copy-section" id="ai-tool">
+            <div class="container">
+                <div class="ai-copy-card">
+                    <div class="ai-copy-header">
+                        <h2>🎯 Generate Your Website Copy</h2>
+                        <p>Answer a few questions about your business and get professional copy that captures your brand's personality.</p>
+                    </div>
+                    
+                    <div class="ai-copy-form">
+                        <form id="copyForm">
+                            <div class="ai-input-group">
+                                <label for="keywords">Describe your business vibe with 2-5 keywords:</label>
+                                <div class="ai-keywords-container">
+                                    <input type="text" id="keyword1" placeholder="e.g., cozy" required>
+                                    <input type="text" id="keyword2" placeholder="e.g., wellness" required>
+                                    <input type="text" id="keyword3" placeholder="e.g., handmade">
+                                    <input type="text" id="keyword4" placeholder="e.g., natural">
+                                    <input type="text" id="keyword5" placeholder="e.g., friendly">
+                                </div>
+                                <div class="ai-helper-text">Examples: professional, creative, warm, luxurious, eco-friendly, fast, reliable</div>
+                            </div>
+
+                            <div class="ai-input-group">
+                                <label for="businessType">What type of business is this? (optional)</label>
+                                <input type="text" id="businessType" placeholder="e.g., yoga studio, bakery, design agency, photography, consulting">
+                                <div class="ai-helper-text">This helps the AI understand your industry and create more relevant copy</div>
+                            </div>
+
+                            <div class="ai-input-group">
+                                <label for="targetAudience">Who are your ideal customers? (optional)</label>
+                                <textarea id="targetAudience" placeholder="e.g., busy professionals who want to relax, new parents looking for support, small business owners who need help with marketing"></textarea>
+                                <div class="ai-helper-text">Describe who you serve and what they're looking for</div>
+                            </div>
+                            
+                            <button type="submit" class="ai-generate-btn" id="generateBtn">
+                                <span id="btnText">Generate My Website Copy</span>
+                                <div class="ai-loading" id="loading">
+                                    <div class="ai-spinner"></div>
+                                    <span>AI is thinking...</span>
+                                </div>
+                            </button>
+                        </form>
+
+                        <div id="aiThinking" class="ai-thinking">
+                            <div id="thinkingText"></div>
+                        </div>
+                        
+                        <div id="results" class="ai-results">
+                            <div class="ai-result-item">
+                                <div class="ai-result-title">Your Tagline</div>
+                                <div id="tagline" class="ai-result-content"></div>
+                            </div>
+                            
+                            <div class="ai-result-item">
+                                <div class="ai-result-title">About Me Section</div>
+                                <div id="about" class="ai-result-content"></div>
+                            </div>
+                            
+                            <div class="ai-result-item">
+                                <div class="ai-result-title">Service Description</div>
+                                <div id="service" class="ai-result-content"></div>
+                            </div>
+
+                            <div class="ai-confidence-score" id="confidenceScore"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- How to Use Section -->
+        <section class="section">
+            <div class="container text-center">
+                <h2>How to Use Your Generated Copy</h2>
+                <p class="mb-4">Once you have your AI-generated copy, here's how to make the most of it:</p>
+                
+                <div class="grid grid-3">
+                    <div class="feature-item">
+                        <div class="feature-icon"><i class="fas fa-edit"></i></div>
+                        <h3 class="feature-title">Customize & Refine</h3>
+                        <p>Use the AI copy as a starting point. Feel free to edit, combine, or adjust the tone to match your voice perfectly.</p>
+                    </div>
+                    
+                    <div class="feature-item">
+                        <div class="feature-icon"><i class="fas fa-copy"></i></div>
+                        <h3 class="feature-title">Copy & Paste</h3>
+                        <p>Take the sections you like and use them on your website, social media, business cards, or anywhere you need professional copy.</p>
+                    </div>
+                    
+                    <div class="feature-item">
+                        <div class="feature-icon"><i class="fas fa-rocket"></i></div>
+                        <h3 class="feature-title">Get Your Website</h3>
+                        <p>Ready to turn this copy into a real website? Browse our templates or get a custom site built with your new copy included.</p>
+                    </div>
+                </div>
+                
+                <div class="mt-4">
+                    <a href="templates.html" class="btn btn-lg">Browse Website Templates</a>
+                    <a href="contact.html" class="btn btn-outline btn-lg">Get a Custom Website</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer Section -->
+    <footer>
+        <div class="container footer-container">
+            <div class="footer-logo">
+                <img src="./img/logo.png" alt="Angie Web Studio">
+                <p>Creating beautiful, functional websites that help your business shine online.</p>
+                <div class="social-links">
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                    <a href="#" aria-label="Pinterest"><i class="fab fa-pinterest"></i></a>
+                    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+            <div class="footer-nav">
+                <h4>Navigation</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="templates.html">Templates</a></li>
+                    <li><a href="howitworks.html">How It Works</a></li>
+                    <li><a href="pricing.html">Pricing</a></li>
+                    <li><a href="portfolio.html">Portfolio</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-nav">
+                <h4>Get Started</h4>
+                <ul>
+                    <li><a href="contact.html">Book a Discovery Call</a></li>
+                    <li><a href="templates.html">Choose a Template</a></li>
+                    <li><a href="pricing.html">View Pricing</a></li>
+                </ul>
+            </div>
+            <div class="footer-nav">
+                <h4>Contact</h4>
+                <ul>
+                    <li>Email: hello@angiewebstudio.com</li>
+                    <li>Phone: (555) 123-4567</li>
+                    <li>Hours: Mon-Fri, 9am-5pm PST</li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; <script>document.write(new Date().getFullYear())</script> Angie Web Studio. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="main.js"></script>
+    <script>
+        // AI Content Generator Implementation
+        class RealAIContentGenerator {
+            constructor() {
+                this.thinkingMessages = [
+                    "Connecting to AI servers...",
+                    "Analyzing your brand keywords...",
+                    "Understanding your target audience...",
+                    "Crafting personalized messaging...",
+                    "Optimizing for engagement...",
+                    "Finalizing your copy..."
+                ];
+            }
+
+            createPrompt(keywords, businessType, targetAudience) {
+                const keywordsList = keywords.join(', ');
+                const businessContext = businessType ? ` for a ${businessType}` : '';
+                const audienceContext = targetAudience ? ` targeting ${targetAudience}` : '';
+                
+                return `You are a professional copywriting assistant. Create website copy${businessContext}${audienceContext} based on these brand keywords: ${keywordsList}.
+
+Please generate exactly 3 sections separated by "---":
+
+1. A catchy tagline (under 10 words)
+2. A 1-2 sentence "About Me" section written in first person (use a realistic name)
+3. A service description written in second person that tells what the business does
+
+Keep the tone warm, professional, and engaging. Avoid buzzwords or overly salesy language. Use the keywords naturally throughout the copy.
+
+Format your response exactly like this:
+TAGLINE: [your tagline here]
+---
+ABOUT: [your about section here]
+---
+SERVICE: [your service description here]`;
+            }
+
+            async generateCopy(keywords, businessType, targetAudience) {
+                try {
+                    const prompt = this.createPrompt(keywords, businessType, targetAudience);
+                    
+                    console.log('Sending prompt to API:', prompt);
+                    
+                    // Check if we're running locally
+                    const baseUrl = window.location.origin;
+                    const functionUrl = `${baseUrl}/.netlify/functions/openai-proxy`;
+                    
+                    console.log('Function URL:', functionUrl);
+                    
+                    const requestBody = { prompt };
+                    console.log('Request body:', requestBody);
+                    
+                    const response = await fetch(functionUrl, {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                        },
+                        body: JSON.stringify(requestBody)
+                    });
+
+                    console.log('API Response status:', response.status);
+                    console.log('API Response headers:', [...response.headers.entries()]);
+
+                    // Get response text first to see what we're getting
+                    const responseText = await response.text();
+                    console.log('Raw response text:', responseText);
+
+                    if (!response.ok) {
+                        console.error('HTTP Error Response:', responseText);
+                        throw new Error(`HTTP error! status: ${response.status}, response: ${responseText}`);
+                    }
+
+                    // Try to parse as JSON
+                    let data;
+                    try {
+                        data = JSON.parse(responseText);
+                        console.log('Parsed response data:', data);
+                    } catch (parseError) {
+                        console.error('Failed to parse response as JSON:', parseError);
+                        throw new Error(`Invalid JSON response: ${responseText}`);
+                    }
+                    
+                    // Check if we got the expected response structure
+                    if (!data || typeof data.result === 'undefined') {
+                        console.error('Unexpected API response structure:', data);
+                        throw new Error('Invalid response structure from API');
+                    }
+                    
+                    return this.parseAIResponse(data.result);
+                } catch (error) {
+                    console.error('AI generation failed:', error);
+                    throw new Error(`Failed to generate copy: ${error.message}`);
+                }
+            }
+
+            parseAIResponse(aiText) {
+                try {
+                    console.log('Raw AI Response:', aiText); // Debug log
+                    
+                    // Check if we got a valid response
+                    if (!aiText || aiText.trim() === '') {
+                        throw new Error('Empty response from AI');
+                    }
+                    
+                    // Split by --- and extract each section
+                    const sections = aiText.split('---').map(s => s.trim());
+                    
+                    let tagline = '';
+                    let about = '';
+                    let service = '';
+
+                    sections.forEach(section => {
+                        if (section.startsWith('TAGLINE:')) {
+                            tagline = section.replace('TAGLINE:', '').trim();
+                        } else if (section.startsWith('ABOUT:')) {
+                            about = section.replace('ABOUT:', '').trim();
+                        } else if (section.startsWith('SERVICE:')) {
+                            service = section.replace('SERVICE:', '').trim();
+                        }
+                    });
+
+                    // More robust fallback parsing
+                    if (!tagline || !about || !service) {
+                        console.log('Using fallback parsing...');
+                        
+                        // Try to extract from unstructured text
+                        const lines = aiText.split('\n').filter(line => line.trim());
+                        
+                        // Look for patterns in the response
+                        lines.forEach((line, index) => {
+                            const lowerLine = line.toLowerCase();
+                            if (!tagline && (lowerLine.includes('tagline') || index === 0)) {
+                                tagline = line.replace(/tagline:?/i, '').trim();
+                            } else if (!about && (lowerLine.includes('about') || lowerLine.includes('hi,') || lowerLine.includes('i\'m'))) {
+                                about = line.replace(/about:?/i, '').trim();
+                            } else if (!service && (lowerLine.includes('service') || lowerLine.includes('you\'ll') || lowerLine.includes('you will'))) {
+                                service = line.replace(/service:?/i, '').trim();
+                            }
+                        });
+                        
+                        // Final fallback - use any available lines
+                        if (!tagline && lines.length > 0) tagline = lines[0];
+                        if (!about && lines.length > 1) about = lines[1];
+                        if (!service && lines.length > 2) service = lines[2];
+                    }
+
+                    // Clean up the responses
+                    tagline = tagline ? tagline.replace(/["""]/g, '').trim() : 'Your success, our passion';
+                    about = about || 'Hi, I\'m here to help you achieve your goals with personalized service.';
+                    service = service || 'You\'ll receive expert guidance tailored to your needs.';
+
+                    console.log('Parsed results:', { tagline, about, service }); // Debug log
+
+                    return {
+                        tagline,
+                        about,
+                        service,
+                        confidence: 95
+                    };
+                } catch (error) {
+                    console.error('Failed to parse AI response:', error);
+                    console.error('Raw response was:', aiText);
+                    
+                    // Return fallback content instead of throwing
+                    return {
+                        tagline: 'Professional solutions for your business',
+                        about: 'Hi, I\'m here to help you achieve your goals with expert guidance and personalized service.',
+                        service: 'You\'ll receive tailored solutions that drive real results for your business.',
+                        confidence: 50
+                    };
+                }
+            }
+
+            async simulateAIThinking(callback) {
+                for (let i = 0; i < this.thinkingMessages.length; i++) {
+                    callback(this.thinkingMessages[i]);
+                    await new Promise(resolve => setTimeout(resolve, 600 + Math.random() * 400));
+                }
+            }
+        }
+
+        // Initialize the real AI generator
+        const aiGenerator = new RealAIContentGenerator();
+
+        document.getElementById('copyForm').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            // Get input values
+            const keywords = [];
+            for (let i = 1; i <= 5; i++) {
+                const keyword = document.getElementById(`keyword${i}`).value.trim();
+                if (keyword) keywords.push(keyword);
+            }
+            
+            const businessType = document.getElementById('businessType').value.trim();
+            const targetAudience = document.getElementById('targetAudience').value.trim();
+            
+            if (keywords.length < 2) {
+                alert('Please enter at least 2 keywords to generate your copy.');
+                return;
+            }
+            
+            // Show loading state
+            const btn = document.getElementById('generateBtn');
+            const btnText = document.getElementById('btnText');
+            const loading = document.getElementById('loading');
+            const aiThinking = document.getElementById('aiThinking');
+            const thinkingText = document.getElementById('thinkingText');
+            const results = document.getElementById('results');
+            
+            btn.disabled = true;
+            btnText.style.display = 'none';
+            loading.classList.add('active');
+            aiThinking.classList.add('active');
+            results.style.display = 'none';
+            
+            // Simulate AI thinking process
+            await aiGenerator.simulateAIThinking((message) => {
+                thinkingText.textContent = message;
+            });
+            
+            // Generate copy using real AI
+            let copy;
+            try {
+                copy = await aiGenerator.generateCopy(keywords, businessType, targetAudience);
+                
+                // Hide thinking, show results
+                aiThinking.classList.remove('active');
+                
+                // Display results with typing effect
+                await displayResultsWithTyping(copy);
+                
+            } catch (error) {
+                // Handle errors gracefully
+                aiThinking.classList.remove('active');
+                
+                // Show error message
+                copy = {
+                    tagline: "Something went wrong",
+                    about: "We're experiencing technical difficulties. Please try again in a moment.",
+                    service: "Our AI service is temporarily unavailable. Please refresh and try again.",
+                    confidence: 0
+                };
+                
+                await displayResultsWithTyping(copy);
+                
+                console.error('AI Generation Error:', error);
+            }
+            
+            // Reset button state regardless of success or failure
+            btn.disabled = false;
+            btnText.style.display = 'inline';
+            loading.classList.remove('active');
+            
+            // Scroll to results if they're visible
+            if (document.getElementById('results').style.display === 'block') {
+                document.getElementById('results').scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+        });
+
+        async function displayResultsWithTyping(copy) {
+            const results = document.getElementById('results');
+            const taglineEl = document.getElementById('tagline');
+            const aboutEl = document.getElementById('about');
+            const serviceEl = document.getElementById('service');
+            const confidenceEl = document.getElementById('confidenceScore');
+            
+            results.style.display = 'block';
+            
+            // Clear previous content
+            taglineEl.textContent = '';
+            aboutEl.textContent = '';
+            serviceEl.textContent = '';
+            
+            // Type out results
+            await typeText(taglineEl, `"${copy.tagline}"`);
+            await new Promise(resolve => setTimeout(resolve, 300));
+            await typeText(aboutEl, copy.about);
+            await new Promise(resolve => setTimeout(resolve, 300));
+            await typeText(serviceEl, copy.service);
+            
+            // Show confidence score
+            if (copy.confidence > 0) {
+                confidenceEl.innerHTML = `
+                    <strong>AI Confidence Score:</strong> ${copy.confidence}% match
+                    <br><small>Powered by OpenAI ChatGPT via secure Netlify function</small>
+                `;
+            } else {
+                confidenceEl.innerHTML = `
+                    <strong>Service Status:</strong> Temporarily unavailable
+                    <br><small>Please try again in a moment</small>
+                `;
+            }
+        }
+
+        async function typeText(element, text, speed = 30) {
+            for (let i = 0; i < text.length; i++) {
+                element.textContent += text.charAt(i);
+                await new Promise(resolve => setTimeout(resolve, speed));
+            }
+        }
+
+        // Add input enhancements
+        document.querySelectorAll('input[type="text"], textarea').forEach(input => {
+            input.addEventListener('input', function() {
+                if (this.value) {
+                    this.style.borderColor = 'var(--primary)';
+                } else {
+                    this.style.borderColor = '#e1e5e9';
+                }
+            });
+        });
+    </script>
+</body>
+</html>
