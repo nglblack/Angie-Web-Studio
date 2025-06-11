@@ -1,8 +1,8 @@
 [build]
-  publish = "."  # Root folder has your main index.html
   functions = "netlify/functions"
+  publish = "."
 
 [dev]
-  publish = "."
   functions = "netlify/functions"
+  publish = "."
   port = 8888
