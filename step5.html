@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Complete Your Website – Angie Web Studio</title>
+    <link rel="stylesheet" href="./css/step5.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Playfair+Display:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="./img/logo.png" alt="Angie Web Studio">
+                </a>
+            </div>
+            <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+                <i class="fas fa-bars"></i>
+            </button>
+            <nav>
+                <button class="nav-close" aria-label="Close navigation">
+                    <i class="fas fa-times"></i>
+                </button>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="templates.html">Templates</a></li>
+                    <li><a href="howitworks.html">How It Works</a></li>
+                    <li><a href="pricing.html">Pricing</a></li>
+                    <li><a href="portfolio.html">Portfolio</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="overlay"></div>
+        </div>
+    </header>
+
+    <!-- Main Content Area -->
+    <main>
+        <div class="container">
+            <section class="hero">
+                <div class="hero-content">
+                    <h1 class="hero-title">Let's Bring Your Website to Life</h1>
+                    <p class="hero-subtitle">Add your content, photos, and contact details to complete your site.</p>
+                </div>
+            </section>
+        </div>
+
+        <!-- Progress Indicator -->
+        <div class="funnel-progress">
+            <div class="container">
+                <div class="progress-steps">
+                    <div class="progress-step completed">
+                        <div class="step-number">1</div>
+                        <span>Contact Info</span>
+                    </div>
+                    <div class="progress-step completed">
+                        <div class="step-number">2</div>
+                        <span>Site Goals</span>
+                    </div>
+                    <div class="progress-step completed">
+                        <div class="step-number">3</div>
+                        <span>Audience</span>
+                    </div>
+                    <div class="progress-step completed">
+                        <div class="step-number">4</div>
+                        <span>Style</span>
+                    </div>
+                    <div class="progress-step active">
+                        <div class="step-number">5</div>
+                        <span>Content</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Form Section -->
+        <section class="section">
+            <div class="container">
+                <div class="card">
+                    <div class="card-content">
+                        <form id="final-form" action="summary.html" method="POST">
+                            
+                            <!-- Step 5: Website Copy Generation -->
+                            <div class="content-section" id="copy-section">
+                                <h2 class="section-title">
+                                    <i class="fas fa-edit"></i>
+                                    Your Website Content
+                                </h2>
+                                
+                                <!-- About Section -->
+                                <div class="content-group">
+                                    <h3 class="content-title">About Your Business</h3>
+                                    <p class="content-description">Tell visitors what you do and why they should choose you.</p>
+                                    
+                                    <div class="content-options">
+                                        <button type="button" class="help-write-btn" data-section="about">
+                                            <i class="fas fa-magic"></i> Help Me Write This
+                                        </button>
+                                        <span class="or-divider">or</span>
+                                        <button type="button" class="write-own-btn active" data-section="about">
+                                            <i class="fas fa-pen"></i> I'll Write My Own
+                                        </button>
+                                    </div>
+                                    
+                                    <div class="help-questions" id="about-help" style="display: none;">
+                                        <div class="question-group">
+                                            <label>How long have you been in business?</label>
+                                            <input type="text" name="about_years" placeholder="e.g., 5 years, Since 2015, Just starting">
+                                        </div>
+                                        <div class="question-group">
+                                            <label>What makes you different from competitors?</label>
+                                            <textarea name="about_difference" placeholder="e.g., Personal attention, 20+ years experience, eco-friendly approach"></textarea>
+                                        </div>
+                                        <div class="question-group">
+                                            <label>What do you want people to know about you?</label>
+                                            <textarea name="about_know" placeholder="e.g., Family-owned, certified, locally-based"></textarea>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="manual-input active" id="about-manual">
+                                        <label for="about-content" class="form-label">Write Your About Section</label>
+                                        <textarea id="about-content" name="about_content" class="content-textarea" placeholder="Tell your story. What do you do? Why should people choose you? What makes you unique?"></textarea>
+                                        <div class="ai-suggestions" id="about-suggestions" style="display: none;"></div>
+                                    </div>
+                                </div>
+
+                                <!-- Services Section -->
+                                <div class="content-group">
+                                    <h3 class="content-title">Your Services</h3>
+                                    <p class="content-description">List what you offer. Add pricing or time details if you want.</p>
+                                    
+                                    <div class="services-builder">
+                                        <div class="service-item">
+                                            <div class="service-inputs">
+                                                <input type="text" name="service_name[]" placeholder="Service name" class="service-name-input">
+                                                <textarea name="service_description[]" placeholder="Brief description (optional)" class="service-desc-input"></textarea>
+                                                <input type="text" name="service_price[]" placeholder="Price (optional)" class="service-price-input">
+                                            </div>
+                                            <button type="button" class="remove-service-btn" style="display: none;">
+                                                <i class="fas fa-trash"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <button type="button" class="add-service-btn">
+                                        <i class="fas fa-plus"></i> Add Another Service
+                                    </button>
+                                </div>
+
+                                <!-- Tagline Section -->
+                                <div class="content-group">
+                                    <h3 class="content-title">Your Headline</h3>
+                                    <p class="content-description">What should visitors see at the top of your page?</p>
+                                    
+                                    <div class="tagline-suggestions" id="tagline-suggestions">
+                                        <!-- AI-generated suggestions will appear here -->
+                                    </div>
+                                    
+                                    <div class="manual-tagline">
+                                        <label for="custom-tagline" class="form-label">Prefer to write your own headline?</label>
+                                        <input type="text" id="custom-tagline" name="custom_tagline" class="form-input" placeholder="Enter your custom headline">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Step 6: Upload Visuals -->
+                            <div class="content-section" id="visuals-section">
+                                <h2 class="section-title">
+                                    <i class="fas fa-images"></i>
+                                    Your Photos
+                                </h2>
+                                <p class="section-description">Photos help, but if you don't have any, I'll use beautiful placeholders.</p>
+                                
+                                <div class="photo-upload-grid">
+                                    <div class="photo-upload-item">
+                                        <label class="photo-label">Hero/Main Photo</label>
+                                        <div class="photo-upload-area" data-type="hero">
+                                            <i class="fas fa-camera"></i>
+                                            <p>Upload your main photo</p>
+                                            <input type="file" name="hero_photo" accept="image/*" hidden>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="photo-upload-item">
+                                        <label class="photo-label">About/Team Photo</label>
+                                        <div class="photo-upload-area" data-type="about">
+                                            <i class="fas fa-user"></i>
+                                            <p>Photo of you or your team</p>
+                                            <input type="file" name="about_photo" accept="image/*" hidden>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="photo-upload-item">
+                                        <label class="photo-label">Work Examples</label>
+                                        <div class="photo-upload-area multiple" data-type="gallery">
+                                            <i class="fas fa-images"></i>
+                                            <p>Upload work samples</p>
+                                            <input type="file" name="gallery_photos[]" accept="image/*" multiple hidden>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="upload-note">
+                                    <i class="fas fa-info-circle"></i>
+                                    <p>Don't worry if you don't have photos ready. I can help you source professional stock images or use beautiful placeholders until you get your own photos.</p>
+                                </div>
+                            </div>
+
+                            <!-- Step 7: Contact & Features -->
+                            <div class="content-section" id="contact-section">
+                                <h2 class="section-title">
+                                    <i class="fas fa-phone"></i>
+                                    How People Can Reach You
+                                </h2>
+                                
+                                <div class="contact-grid">
+                                    <div class="contact-group">
+                                        <label for="business-email" class="form-label">Business Email</label>
+                                        <input type="email" id="business-email" name="business_email" class="form-input" required>
+                                        <div class="gmail-toggle">
+                                            <input type="checkbox" id="use-gmail" name="use_gmail">
+                                            <label for="use-gmail">This is a Gmail address</label>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="contact-group">
+                                        <label for="business-phone" class="form-label">Phone Number</label>
+                                        <input type="tel" id="business-phone" name="business_phone" class="form-input">
+                                    </div>
+                                    
+                                    <div class="contact-group">
+                                        <label for="business-hours" class="form-label">Business Hours <span class="optional">(Optional)</span></label>
+                                        <textarea id="business-hours" name="business_hours" class="form-input" placeholder="Mon-Fri: 9am-5pm&#10;Sat: 10am-2pm&#10;Sun: Closed"></textarea>
+                                    </div>
+                                    
+                                    <div class="contact-group">
+                                        <label for="google-maps" class="form-label">Address for Google Maps <span class="optional">(Optional)</span></label>
+                                        <input type="text" id="google-maps" name="google_maps" class="form-input" placeholder="123 Main St, City, State">
+                                    </div>
+                                </div>
+                                
+                                <div class="form-type-selection">
+                                    <h3 class="content-title">What type of form do you need?</h3>
+                                    <div class="form-type-options">
+                                        <div class="form-type-option">
+                                            <input type="radio" id="contact-form" name="form_type" value="contact" checked>
+                                            <label for="contact-form" class="form-type-label">
+                                                <i class="fas fa-envelope"></i>
+                                                <span class="form-type-title">Contact Form</span>
+                                                <span class="form-type-desc">General inquiries and messages</span>
+                                            </label>
+                                        </div>
+                                        
+                                        <div class="form-type-option">
+                                            <input type="radio" id="booking-form" name="form_type" value="booking">
+                                            <label for="booking-form" class="form-type-label">
+                                                <i class="fas fa-calendar"></i>
+                                                <span class="form-type-title">Booking Form</span>
+                                                <span class="form-type-desc">Link to your appointment calendar</span>
+                                            </label>
+                                        </div>
+                                        
+                                        <div class="form-type-option">
+                                            <input type="radio" id="rsvp-form" name="form_type" value="rsvp">
+                                            <label for="rsvp-form" class="form-type-label">
+                                                <i class="fas fa-user-check"></i>
+                                                <span class="form-type-title">RSVP Form</span>
+                                                <span class="form-type-desc">Event responses and sign-ups</span>
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Step 8: Summary & Review -->
+                            <div class="content-section" id="summary-section">
+                                <h2 class="section-title">
+                                    <i class="fas fa-clipboard-check"></i>
+                                    Review Your Website Plan
+                                </h2>
+                                <p class="section-description">Here's what I'll build for you based on your input. Once you place your deposit, I'll get started and keep you updated as the site comes together.</p>
+                                
+                                <div class="summary-grid">
+                                    <div class="summary-card">
+                                        <h3><i class="fas fa-palette"></i> Design & Style</h3>
+                                        <div id="style-summary">
+                                            <!-- Populated by JavaScript -->
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="summary-card">
+                                        <h3><i class="fas fa-bullseye"></i> Site Goals</h3>
+                                        <div id="goals-summary">
+                                            <!-- Populated by JavaScript -->
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="summary-card">
+                                        <h3><i class="fas fa-users"></i> Target Audience</h3>
+                                        <div id="audience-summary">
+                                            <!-- Populated by JavaScript -->
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="summary-card">
+                                        <h3><i class="fas fa-file-alt"></i> Content Sections</h3>
+                                        <div id="content-summary">
+                                            <!-- Populated by JavaScript -->
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="summary-card">
+                                        <h3><i class="fas fa-phone"></i> Contact Setup</h3>
+                                        <div id="contact-summary">
+                                            <!-- Populated by JavaScript -->
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="edit-options">
+                                    <p><i class="fas fa-edit"></i> Need to make changes? <button type="button" class="edit-link" onclick="scrollToSection('copy-section')">Edit Content</button> or <button type="button" class="edit-link" onclick="scrollToSection('contact-section')">Edit Contact Info</button></p>
+                                </div>
+                            </div>
+
+                            <!-- Navigation & Submit -->
+                            <div class="form-navigation">
+                                <a href="step4.html" class="btn btn-outline">
+                                    <i class="fas fa-arrow-left"></i> Back to Style
+                                </a>
+                                <button type="submit" class="btn btn-lg" id="secure-build-btn">
+                                    <i class="fas fa-lock"></i> Secure Your Build - $150
+                                </button>
+                            </div>
+                            
+                            <div class="deposit-info">
+                                <h3>What happens next?</h3>
+                                <ul>
+                                    <li><i class="fas fa-code"></i> I'll hand-code your website with all your content and style preferences</li>
+                                    <li><i class="fas fa-server"></i> Host it on fast, reliable servers with your domain</li>
+                                    <li><i class="fas fa-rocket"></i> Your site will be live within 2–4 days after your deposit</li>
+                                    <li><i class="fas fa-tools"></i> Includes forms, mobile optimization, and basic SEO</li>
+                                </ul>
+                                <p class="guarantee">100% satisfaction guarantee. If you're not happy, I'll make it right or refund your deposit.</p>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer Section -->
+    <footer>
+        <div class="container footer-container">
+            <div class="footer-logo">
+                <img src="./img/logo.png" alt="Angie Web Studio">
+                <p>Creating beautiful, functional websites that help your business shine online.</p>
+                <div class="social-links">
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                    <a href="#" aria-label="Pinterest"><i class="fab fa-pinterest"></i></a>
+                    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+            <div class="footer-nav">
+                <h4>Navigation</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="templates.html">Templates</a></li>
+                    <li><a href="howitworks.html">How It Works</a></li>
+                    <li><a href="pricing.html">Pricing</a></li>
+                    <li><a href="portfolio.html">Portfolio</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-nav">
+                <h4>Get Started</h4>
+                <ul>
+                    <li><a href="contact.html">Book a Discovery Call</a></li>
+                    <li><a href="templates.html">Choose a Template</a></li>
+                    <li><a href="pricing.html">View Pricing</a></li>
+                </ul>
+            </div>
+            <div class="footer-nav">
+                <h4>Contact</h4>
+                <ul>
+                    <li>Email: hello@angiewebstudio.com</li>
+                    <li>Phone: (555) 123-4567</li>
+                    <li>Hours: Mon-Fri, 9am-5pm PST</li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; <script>document.write(new Date().getFullYear())</script> Angie Web Studio. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="universal_main.js"></script>
+    <script src="step5.js"></script>
+</body>
+</html>

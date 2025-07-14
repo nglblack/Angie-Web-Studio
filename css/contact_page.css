@@ -1,0 +1,406 @@
+/* Import base styles */
+@import url('./default.css');
+
+/* ============================================================================
+   CONTACT PAGE SPECIFIC STYLES
+   ============================================================================ */
+
+/* ============================================================================
+   HIDE UNWANTED ELEMENTS
+   ============================================================================ */
+/* Hide certificate verification popup and all unwanted elements */
+#certificate-modal,
+.cert-modal,
+.certificate-verification,
+.verify-certificate,
+[class*="verify"],
+[class*="certificate-verify"],
+.hot-days-ahead,
+.scroll-top,
+.scroll-top.active,
+button.scroll-top,
+.fa-arrow-up,
+.fas.fa-arrow-up {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+}
+/* Hide any scroll to top buttons */
+*[class*="scroll-top"],
+*[class*="scroll-to-top"],
+.back-to-top {
+    display: none !important;
+}
+/* Hide Font Awesome arrow up icons */
+.fa-arrow-up:before,
+.fas.fa-arrow-up:before {
+    display: none !important;
+}
+/* If it's an iframe or embedded widget */
+iframe[src*="verify"],
+iframe[src*="certificate"] {
+    display: none !important;
+}
+/* Hide grammarly integration */
+grammarly-desktop-integration,
+[data-grammarly-shadow-root] {
+    display: none !important;
+}
+
+/* ============================================================================
+   CONTACT FORM COMPONENTS
+   ============================================================================ */
+
+.card {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: var(--box-shadow);
+    overflow: hidden;
+    transition: var(--transition);
+}
+
+.card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.18);
+}
+
+.card-content {
+    padding: 1.8rem;
+}
+
+/* Form Styles */
+.form-group {
+    margin-bottom: 1.8rem;
+}
+
+.form-label {
+    display: block;
+    margin-bottom: 0.6rem;
+    font-weight: 600;
+    color: var(--dark);
+}
+
+.form-input,
+.form-textarea,
+.form-select {
+    width: 100%;
+    padding: 0.9rem;
+    border: 1px solid #e5e5e5;
+    border-radius: 6px;
+    font-family: inherit;
+    font-size: 1rem;
+    transition: var(--transition);
+    background-color: #f9f9f9;
+}
+
+.form-input:focus,
+.form-textarea:focus,
+.form-select:focus {
+    outline: none;
+    border-color: var(--primary-light);
+    box-shadow: 0 0 0 3px rgba(109, 0, 26, 0.15);
+    background-color: white;
+}
+
+.form-textarea {
+    min-height: 180px;
+    resize: vertical;
+}
+
+/* ============================================================================
+   FEATURE SECTIONS (Contact Page Layout)
+   ============================================================================ */
+
+.feature-item {
+    text-align: center;
+    background-color: white;
+    border-radius: 15px;
+    transition: var(--transition);
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.feature-item:hover {
+    transform: translateY(-15px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+.feature-content {
+    padding: 2.5rem 2rem 2rem;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.feature-icon {
+    font-size: 2.2rem;
+    color: var(--primary);
+    margin-bottom: 1.5rem;
+    position: relative;
+    z-index: 2;
+    background-color: rgba(109, 0, 26, 0.08);
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.5rem;
+    transition: var(--transition);
+}
+
+.feature-item:hover .feature-icon {
+    background-color: var(--primary);
+    color: white;
+    transform: translateY(-5px);
+}
+
+.feature-title {
+    font-size: 1.6rem;
+    margin-bottom: 1.2rem;
+    position: relative;
+    padding-bottom: 0.8rem;
+    color: var(--dark);
+}
+
+.feature-title:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 40px;
+    height: 2px;
+    background-color: var(--primary);
+}
+
+.feature-content p {
+    color: var(--secondary-dark);
+    font-size: 1.05rem;
+    line-height: 1.7;
+    flex-grow: 1;
+}
+
+/* Feature items without images */
+.feature-item.no-image {
+    padding: 2.5rem 1.5rem;
+}
+
+.feature-item.no-image .feature-icon {
+    font-size: 2.8rem;
+}
+
+.feature-item.no-image .feature-icon:after {
+    content: '';
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    background-color: rgba(109, 0, 26, 0.1);
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+}
+
+/* ============================================================================
+   TESTIMONIALS (Contact Page)
+   ============================================================================ */
+
+.testimonial {
+    background-color: white;
+    border-radius: 10px;
+    padding: 2.5rem;
+    box-shadow: var(--box-shadow);
+    margin-bottom: 2.5rem;
+    position: relative;
+    border-top: 4px solid var(--primary);
+}
+
+.testimonial:before {
+    content: '"';
+    font-family: 'Playfair Display', serif;
+    font-size: 5rem;
+    position: absolute;
+    top: 1.5rem;
+    right: 2rem;
+    color: rgba(109, 0, 26, 0.08);
+    line-height: 0;
+}
+
+.testimonial-content {
+    font-style: italic;
+    margin-bottom: 2rem;
+    position: relative;
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: var(--dark);
+    z-index: 2;
+}
+
+/* ============================================================================
+   CONTACT PAGE SPECIFIC LAYOUTS
+   ============================================================================ */
+
+/* Small utility class for contact page */
+.small {
+    font-size: 0.85rem;
+    color: var(--secondary);
+}
+
+/* Success message styling */
+#form-message {
+    background: rgba(40, 167, 69, 0.1);
+    border: 1px solid rgba(40, 167, 69, 0.3);
+    border-radius: 8px;
+    padding: 1rem;
+    text-align: center;
+    font-weight: 600;
+    color: #28a745;
+}
+
+/* ============================================================================
+   MOBILE RESPONSIVE
+   ============================================================================ */
+
+@media (max-width: 768px) {
+    .card-content {
+        padding: 1.5rem;
+    }
+    
+    .feature-content {
+        padding: 2rem 1.5rem;
+    }
+    
+    .feature-icon {
+        width: 70px;
+        height: 70px;
+        font-size: 2rem;
+    }
+    
+    .feature-title {
+        font-size: 1.4rem;
+        text-align: center;
+    }
+    
+    .feature-title:after {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    
+    .testimonial {
+        padding: 2rem;
+    }
+    
+    .testimonial:before {
+        font-size: 4rem;
+        top: 1rem;
+        right: 1.5rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .card-content {
+        padding: 1.2rem;
+    }
+    
+    .feature-content {
+        padding: 1.8rem 1.2rem;
+    }
+    
+    .feature-icon {
+        width: 60px;
+        height: 60px;
+        font-size: 1.8rem;
+    }
+    
+    .feature-title {
+        font-size: 1.2rem;
+    }
+    
+    .form-group {
+        margin-bottom: 1.5rem;
+    }
+    
+    .form-input,
+    .form-textarea {
+        padding: 0.8rem;
+    }
+    
+    .testimonial {
+        padding: 1.5rem;
+    }
+    
+    .testimonial:before {
+        font-size: 3.5rem;
+        top: 0.8rem;
+        right: 1rem;
+    }
+}
+/* Additional styles for template selection in contact form */
+        .selected-templates-section {
+            background: rgba(109, 0, 26, 0.02);
+            border: 2px solid rgba(109, 0, 26, 0.1);
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .selected-templates-section .form-label {
+            color: var(--primary);
+            font-weight: 600;
+            margin-bottom: 1rem;
+            font-size: 1rem;
+        }
+
+        .selected-templates-display {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.8rem;
+            margin-bottom: 1rem;
+        }
+
+        .selected-template-badge {
+            background: var(--primary);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            box-shadow: 0 2px 8px rgba(109, 0, 26, 0.2);
+        }
+
+        .form-helper-text {
+            font-size: 0.85rem;
+            color: var(--secondary);
+            margin: 0;
+            font-style: italic;
+        }
+
+        .template-interest-notice {
+            background: rgba(40, 167, 69, 0.1);
+            border: 1px solid rgba(40, 167, 69, 0.3);
+            border-radius: 8px;
+            padding: 1rem;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        .template-interest-notice i {
+            color: #28a745;
+            margin-right: 0.5rem;
+        }
+
+        .template-interest-notice p {
+            margin: 0;
+            color: #155724;
+            font-weight: 500;
+        }

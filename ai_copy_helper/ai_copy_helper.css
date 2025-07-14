@@ -1,0 +1,405 @@
+/* ============================================================================
+   AI COPY HELPER TOOL - ANGIE WEB STUDIO INTEGRATION
+   ============================================================================ */
+
+/* AI Copy Helper Section */
+.ai-copy-section {
+    background: var(--gradient-light);
+    position: relative;
+    overflow: hidden;
+    border: 1px solid rgba(109, 0, 26, 0.1);
+}
+
+.ai-copy-section::before {
+    content: '';
+    position: absolute;
+    top: -50px;
+    right: -50px;
+    width: 200px;
+    height: 200px;
+    background: rgba(109, 0, 26, 0.08);
+    border-radius: 50%;
+    animation: float 6s ease-in-out infinite;
+}
+
+.ai-copy-section::after {
+    content: '';
+    position: absolute;
+    bottom: -30px;
+    left: -30px;
+    width: 150px;
+    height: 150px;
+    background: rgba(109, 0, 26, 0.05);
+    border-radius: 50%;
+    animation: float 8s ease-in-out infinite reverse;
+}
+
+/* Main AI Copy Card */
+.ai-copy-card {
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    max-width: 900px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+    border: 2px solid rgba(109, 0, 26, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.ai-copy-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+/* AI Copy Header */
+.ai-copy-header {
+    background: var(--gradient-primary);
+    color: white;
+    padding: 3rem 2.5rem;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.ai-copy-header::before {
+    content: '';
+    position: absolute;
+    top: -20px;
+    right: -20px;
+    width: 100px;
+    height: 100px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+}
+
+.ai-copy-header h2 {
+    font-size: 2.5rem;
+    margin-bottom: 0.8rem;
+    font-weight: 700;
+    color: white;
+    position: relative;
+    z-index: 2;
+    font-family: 'Playfair Display', serif;
+}
+
+.ai-copy-header h2:after {
+    display: none;
+}
+
+.ai-copy-header p {
+    font-size: 1.1rem;
+    opacity: 0.9;
+    margin: 0;
+    position: relative;
+    z-index: 2;
+    color: white;
+}
+
+/* AI Copy Form */
+.ai-copy-form {
+    padding: 3rem 2.5rem;
+}
+
+.ai-input-group {
+    margin-bottom: 2rem;
+}
+
+.ai-input-group label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 0.8rem;
+    color: var(--dark);
+    font-size: 1.1rem;
+}
+
+.ai-keywords-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.ai-input-group input[type="text"], 
+.ai-input-group textarea {
+    width: 100%;
+    padding: 1rem;
+    border: 2px solid #e1e5e9;
+    border-radius: 10px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    background: #f8f9fa;
+    font-family: inherit;
+}
+
+.ai-input-group textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+.ai-input-group input[type="text"]:focus, 
+.ai-input-group textarea:focus {
+    outline: none;
+    border-color: var(--primary);
+    background: white;
+    box-shadow: 0 0 0 3px rgba(109, 0, 26, 0.1);
+}
+
+/* AI Generate Button */
+.ai-generate-btn {
+    width: 100%;
+    background: var(--gradient-primary);
+    color: white;
+    border: none;
+    padding: 1.2rem 2rem;
+    font-size: 1.2rem;
+    font-weight: 600;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(109, 0, 26, 0.3);
+}
+
+.ai-generate-btn:hover {
+    background: var(--primary-light);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(109, 0, 26, 0.4);
+}
+
+.ai-generate-btn:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+    transform: none;
+}
+
+/* Loading States */
+.ai-loading {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 10px 0;
+}
+
+.ai-loading.active {
+    display: flex;
+}
+
+.ai-spinner {
+    width: 20px;
+    height: 20px;
+    border: 2px solid rgba(255,255,255,0.3);
+    border-top: 2px solid white;
+    border-radius: 50%;
+    animation: aiSpin 1s linear infinite;
+}
+
+@keyframes aiSpin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* AI Thinking State */
+.ai-thinking {
+    background: var(--gradient-primary);
+    color: white;
+    padding: 1.5rem;
+    border-radius: 15px;
+    margin-top: 1.5rem;
+    display: none;
+    font-style: italic;
+    text-align: center;
+    box-shadow: 0 8px 20px rgba(109, 0, 26, 0.2);
+}
+
+.ai-thinking.active {
+    display: block;
+    animation: aiPulse 2s infinite;
+}
+
+@keyframes aiPulse {
+    0%, 100% { opacity: 0.8; }
+    50% { opacity: 1; }
+}
+
+/* AI Results */
+.ai-results {
+    margin-top: 2.5rem;
+    padding: 2rem;
+    background: var(--gradient-primary);
+    border-radius: 15px;
+    color: white;
+    display: none;
+    animation: aiSlideIn 0.5s ease-out;
+    box-shadow: 0 15px 30px rgba(109, 0, 26, 0.3);
+}
+
+@keyframes aiSlideIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.ai-result-item {
+    margin-bottom: 2rem;
+    padding: 1.5rem;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.ai-result-item:last-child {
+    margin-bottom: 0;
+}
+
+.ai-result-title {
+    font-weight: 700;
+    font-size: 1.2rem;
+    margin-bottom: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-family: 'Playfair Display', serif;
+}
+
+.ai-result-content {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    font-style: italic;
+}
+
+.ai-confidence-score {
+    background: rgba(255,255,255,0.2);
+    padding: 1rem;
+    border-radius: 8px;
+    margin-top: 1rem;
+    font-size: 0.9rem;
+    text-align: center;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.ai-helper-text {
+    font-size: 0.9rem;
+    color: var(--secondary);
+    margin-top: 0.8rem;
+    font-style: italic;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    .ai-copy-header {
+        padding: 2.5rem 2rem;
+    }
+
+    .ai-copy-header h2 {
+        font-size: 2rem;
+    }
+    
+    .ai-copy-form {
+        padding: 2rem 1.5rem;
+    }
+    
+    .ai-keywords-container {
+        grid-template-columns: 1fr;
+    }
+
+    .ai-generate-btn {
+        font-size: 1.1rem;
+        padding: 1.1rem 1.8rem;
+    }
+
+    .ai-results {
+        padding: 1.5rem;
+    }
+
+    .ai-result-item {
+        padding: 1.2rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .ai-result-title {
+        font-size: 1.1rem;
+    }
+
+    .ai-result-content {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .ai-copy-card {
+        margin: 0 -15px;
+        border-radius: 15px;
+    }
+
+    .ai-copy-form {
+        padding: 1.5rem 1rem;
+    }
+
+    .ai-copy-header {
+        padding: 2rem 1.5rem;
+    }
+
+    .ai-copy-header h2 {
+        font-size: 1.8rem;
+    }
+
+    .ai-copy-header p {
+        font-size: 1rem;
+    }
+
+    .ai-input-group label {
+        font-size: 1rem;
+    }
+
+    .ai-input-group input[type="text"], 
+    .ai-input-group textarea {
+        padding: 0.9rem;
+        font-size: 0.95rem;
+    }
+
+    .ai-generate-btn {
+        font-size: 1rem;
+        padding: 1rem 1.5rem;
+    }
+
+    .ai-thinking {
+        padding: 1.2rem;
+        font-size: 0.95rem;
+    }
+
+    .ai-results {
+        padding: 1.2rem;
+        margin-top: 2rem;
+    }
+
+    .ai-result-item {
+        padding: 1rem;
+        margin-bottom: 1.2rem;
+    }
+
+    .ai-result-title {
+        font-size: 1rem;
+        margin-bottom: 0.6rem;
+    }
+
+    .ai-result-content {
+        font-size: 0.95rem;
+        line-height: 1.5;
+    }
+
+    .ai-confidence-score {
+        padding: 0.8rem;
+        font-size: 0.85rem;
+    }
+}

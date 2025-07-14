@@ -1,0 +1,1185 @@
+/* ============================================================================
+   STEP 3 COMPLETE CSS - AUDIENCE DISCOVERY
+   Integrates default.css + funnel styles + step3-specific components
+   ============================================================================ */
+
+@import url('./default.css');
+
+/* ============================================================================
+   HIDE UNWANTED ELEMENTS
+   ============================================================================ */
+
+#certificate-modal,
+.cert-modal,
+.certificate-verification,
+.verify-certificate,
+[class*="verify"],
+[class*="certificate-verify"],
+.hot-days-ahead,
+.scroll-top,
+.scroll-top.active,
+button.scroll-top,
+.fa-arrow-up,
+.fas.fa-arrow-up {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+}
+
+*[class*="scroll-top"],
+*[class*="scroll-to-top"],
+.back-to-top {
+    display: none !important;
+}
+
+grammarly-desktop-integration,
+[data-grammarly-shadow-root] {
+    display: none !important;
+}
+/* Global box-sizing fix */
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+/* ============================================================================
+   PAGE LAYOUT ADJUSTMENTS
+   ============================================================================ */
+
+body {
+    padding-top: 90px;
+}
+
+/* ============================================================================
+   HERO SECTION
+   ============================================================================ */
+
+.hero {
+    background: var(--white);
+    padding: 4rem 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero:before {
+    content: '';
+    position: absolute;
+    top: -30px;
+    right: -30px;
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    background: rgba(109, 0, 26, 0.06);
+    z-index: 1;
+}
+
+.hero:after {
+    content: '';
+    position: absolute;
+    bottom: -50px;
+    left: -40px;
+    width: 220px;
+    height: 220px;
+    border-radius: 50%;
+    background: rgba(112, 128, 144, 0.04);
+    z-index: 1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.hero-title {
+    font-size: 3.2rem;
+    color: var(--primary);
+    margin-bottom: 1.5rem;
+    font-weight: 700;
+    line-height: 1.2;
+    letter-spacing: -0.3px;
+}
+
+.hero-subtitle {
+    font-size: 1.4rem;
+    color: var(--secondary-dark);
+    margin-bottom: 0;
+    line-height: 1.6;
+    font-weight: 300;
+    max-width: 700px;
+    margin: 0 auto;
+    font-style: italic;
+}
+
+/* ============================================================================
+   PROGRESS INDICATOR
+   ============================================================================ */
+
+.funnel-progress {
+    background: var(--white);
+    border-bottom: 1px solid rgba(109, 0, 26, 0.1);
+    border-top: 1px solid rgba(109, 0, 26, 0.1);
+    padding: 2rem 0;
+    position: relative;
+    z-index: 10;
+}
+
+.progress-steps {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 600px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.progress-steps::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: #e8e8e8;
+    z-index: 1;
+    transform: translateY(-50%);
+}
+
+.progress-step {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    background: var(--white);
+    padding: 0.5rem;
+    position: relative;
+    z-index: 2;
+    transition: var(--transition);
+}
+
+.step-number {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: #e8e8e8;
+    color: var(--secondary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: var(--transition);
+}
+
+.progress-step span {
+    font-size: 0.8rem;
+    color: var(--secondary);
+    font-weight: 500;
+    white-space: nowrap;
+}
+
+.progress-step.completed .step-number {
+    background: var(--primary);
+    color: var(--white);
+}
+
+.progress-step.active .step-number {
+    background: var(--primary-light);
+    color: var(--white);
+    box-shadow: 0 0 0 3px rgba(109, 0, 26, 0.2);
+}
+
+.progress-step.active span {
+    color: var(--primary);
+    font-weight: 600;
+}
+
+/* ============================================================================
+   MAIN CARD AND FORM SECTION
+   ============================================================================ */
+
+.section {
+    background: var(--light);
+    padding: 4rem 0;
+}
+
+.card {
+    background: var(--white);
+    border-radius: 15px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+    border: 1px solid rgba(109, 0, 26, 0.05);
+    transition: var(--transition);
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.12);
+}
+
+.card-content {
+    padding: 3rem 2.5rem;
+}
+
+/* ============================================================================
+   AUDIENCE QUESTIONS STYLING
+   ============================================================================ */
+
+.audience-question {
+    margin-bottom: 4rem;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s ease;
+}
+
+.audience-question:last-of-type {
+    margin-bottom: 3rem;
+}
+
+.question-title {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    font-size: 1.8rem;
+    color: var(--primary);
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+.question-title i {
+    font-size: 1.5rem;
+    color: var(--primary-light);
+}
+
+.question-subtitle {
+    font-size: 1.1rem;
+    color: var(--secondary-dark);
+    margin-bottom: 2rem;
+    line-height: 1.6;
+}
+
+/* ============================================================================
+   CHECKBOX GRID STYLING
+   ============================================================================ */
+
+.checkbox-grid {
+    display: grid;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.checkbox-option {
+    position: relative;
+    opacity: 0;
+    transform: translateX(-20px);
+    transition: all 0.6s ease;
+}
+
+.audience-checkbox {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.checkbox-label {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 1.8rem;
+    border: 2px solid #e8e8e8;
+    border-radius: 12px;
+    background: #fafafa;
+    cursor: pointer;
+    transition: var(--transition);
+    position: relative;
+    overflow: hidden;
+}
+
+.checkbox-label:hover {
+    border-color: var(--primary-light);
+    background: var(--white);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+.checkbox-label.selected {
+    border-color: var(--primary);
+    background: rgba(109, 0, 26, 0.02);
+    box-shadow: 0 8px 25px rgba(109, 0, 26, 0.15);
+}
+
+.checkbox-icon {
+    width: 65px;
+    height: 65px;
+    border-radius: 12px;
+    background: rgba(109, 0, 26, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    transition: var(--transition);
+}
+
+.checkbox-icon i {
+    font-size: 2rem;
+    color: var(--primary);
+}
+
+.checkbox-label.selected .checkbox-icon {
+    background: var(--primary);
+}
+
+.checkbox-label.selected .checkbox-icon i {
+    color: var(--white);
+}
+
+.checkbox-content {
+    flex: 1;
+}
+
+.checkbox-content h4 {
+    margin: 0 0 0.5rem 0;
+    font-size: 1.3rem;
+    color: var(--dark);
+    font-weight: 600;
+}
+
+.checkbox-content p {
+    margin: 0;
+    color: var(--secondary-dark);
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+.checkbox-check {
+    width: 32px;
+    height: 32px;
+    border: 2px solid #e8e8e8;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: var(--transition);
+    flex-shrink: 0;
+}
+
+.checkbox-check i {
+    font-size: 1.1rem;
+    color: transparent;
+    transition: var(--transition);
+}
+
+.checkbox-label.selected .checkbox-check {
+    background: var(--primary);
+    border-color: var(--primary);
+}
+
+.checkbox-label.selected .checkbox-check i {
+    color: var(--white);
+}
+
+/* ============================================================================
+   RADIO GRID STYLING
+   ============================================================================ */
+
+.radio-grid {
+    display: grid;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.radio-option {
+    position: relative;
+    opacity: 0;
+    transform: translateX(-20px);
+    transition: all 0.6s ease;
+}
+
+.audience-radio {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.radio-label {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 1.8rem;
+    border: 2px solid #e8e8e8;
+    border-radius: 12px;
+    background: #fafafa;
+    cursor: pointer;
+    transition: var(--transition);
+    position: relative;
+    overflow: hidden;
+}
+
+.radio-label:hover {
+    border-color: var(--primary-light);
+    background: var(--white);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+.radio-label.selected {
+    border-color: var(--primary);
+    background: rgba(109, 0, 26, 0.02);
+    box-shadow: 0 8px 25px rgba(109, 0, 26, 0.15);
+}
+
+.radio-icon {
+    width: 65px;
+    height: 65px;
+    border-radius: 12px;
+    background: rgba(109, 0, 26, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    transition: var(--transition);
+}
+
+.radio-icon i {
+    font-size: 2rem;
+    color: var(--primary);
+}
+
+.radio-label.selected .radio-icon {
+    background: var(--primary);
+}
+
+.radio-label.selected .radio-icon i {
+    color: var(--white);
+}
+
+.radio-content {
+    flex: 1;
+}
+
+.radio-content h4 {
+    margin: 0 0 0.5rem 0;
+    font-size: 1.3rem;
+    color: var(--dark);
+    font-weight: 600;
+}
+
+.radio-content p {
+    margin: 0;
+    color: var(--secondary-dark);
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+.radio-check {
+    width: 32px;
+    height: 32px;
+    border: 2px solid #e8e8e8;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: var(--transition);
+    flex-shrink: 0;
+}
+
+.radio-check i {
+    font-size: 1.1rem;
+    color: transparent;
+    transition: var(--transition);
+}
+
+.radio-label.selected .radio-check {
+    background: var(--primary);
+    border-color: var(--primary);
+}
+
+.radio-label.selected .radio-check i {
+    color: var(--white);
+}
+
+/* ============================================================================
+   CUSTOM TEXTAREA STYLING
+   ============================================================================ */
+
+.textarea-container {
+    margin-bottom: 2rem;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.custom-textarea {
+    width: 100%;
+    min-height: 120px;
+    padding: 1.2rem 1.5rem;
+    border: 2px solid #e8e8e8;
+    border-radius: 12px;
+    font-family: inherit;
+    font-size: 1rem;
+    transition: var(--transition);
+    background-color: #fafafa;
+    color: var(--dark);
+    resize: vertical;
+    line-height: 1.6;
+    box-sizing: border-box; /* This is key! */
+    max-width: 100%;
+}
+
+.custom-textarea:focus {
+    outline: none;
+    border-color: var(--primary-light);
+    box-shadow: 0 0 0 3px rgba(109, 0, 26, 0.1);
+    background-color: var(--white);
+}
+
+.custom-textarea::placeholder {
+    color: var(--secondary);
+    font-style: italic;
+}
+
+/* ============================================================================
+   AI CHATBOT INTERFACE
+   ============================================================================ */
+
+.ai-profile-display {
+    padding: 0;
+    background: #f8f9fa;
+    border-radius: 0 0 12px 12px;
+}
+
+.ai-content {
+    padding: 1.5rem;
+    max-height: 500px;
+    overflow-y: auto;
+    overflow-x: hidden; /* Prevent horizontal overflow */
+}
+
+/* AI Response Section */
+.ai-response-section {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    align-items: flex-start;
+}
+
+.ai-avatar {
+    width: 35px;
+    height: 35px;
+    background: var(--primary);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 1rem;
+    flex-shrink: 0;
+}
+
+.ai-message-container {
+    flex: 1;
+    max-width: calc(100% - 60px);
+    min-width: 0; /* Allow shrinking */
+}
+
+.ai-message {
+    background: white;
+    border-radius: 12px 12px 12px 4px;
+    padding: 1.5rem;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    border-left: 4px solid var(--primary);
+    position: relative;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    max-width: 100%;
+}
+
+.ai-text-content {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: var(--dark);
+}
+
+/* Typing Indicator */
+.typing-indicator {
+    display: flex;
+    gap: 4px;
+    padding: 1rem 0;
+}
+
+.typing-indicator span {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--primary);
+    opacity: 0.4;
+    animation: typing 1.4s infinite ease-in-out;
+}
+
+.typing-indicator span:nth-child(1) { animation-delay: 0s; }
+.typing-indicator span:nth-child(2) { animation-delay: 0.2s; }
+.typing-indicator span:nth-child(3) { animation-delay: 0.4s; }
+
+@keyframes typing {
+    0%, 60%, 100% { opacity: 0.4; }
+    30% { opacity: 1; }
+}
+
+/* User Input Section */
+.user-input-section {
+    background: white;
+    border-radius: 12px;
+    padding: 1.5rem;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.input-container {
+    display: flex;
+    gap: 1rem;
+    align-items: flex-end;
+    margin-bottom: 1rem;
+}
+
+.profile-editor {
+    flex: 1;
+    min-height: 80px;
+    padding: 1rem;
+    border: 2px solid #e8e8e8;
+    border-radius: 12px;
+    font-family: inherit;
+    font-size: 1rem;
+    line-height: 1.5;
+    color: var(--dark);
+    background: #fafafa;
+    transition: var(--transition);
+    resize: vertical;
+}
+
+.profile-editor:focus {
+    outline: none;
+    border-color: var(--primary-light);
+    box-shadow: 0 0 0 3px rgba(109, 0, 26, 0.1);
+    background: var(--white);
+}
+
+.generate-btn {
+    width: 50px;
+    height: 50px;
+    background: var(--primary);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: var(--transition);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.1rem;
+    flex-shrink: 0;
+}
+
+.generate-btn:hover {
+    background: #8B1538;
+    transform: scale(1.05);
+}
+
+.generate-btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none;
+}
+
+/* Quick Actions */
+.quick-actions {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+}
+
+.quick-btn {
+    padding: 0.5rem 1rem;
+    background: #f8f9fa;
+    border: 1px solid #e8e8e8;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    color: var(--secondary);
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.quick-btn:hover {
+    background: var(--primary);
+    color: white;
+    border-color: var(--primary);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .ai-response-section {
+        gap: 0.5rem;
+    }
+    
+    .ai-avatar {
+        width: 35px;
+        height: 35px;
+        font-size: 1rem;
+    }
+    
+    .input-container {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    
+    .generate-btn {
+        width: 100%;
+        height: 50px;
+        border-radius: 12px;
+    }
+    
+    .quick-actions {
+        justify-content: center;
+    }
+}
+.ai-response-section {
+    margin-bottom: 2rem;
+}
+
+.ai-message-container {
+    width: 100%;
+}
+
+/* ============================================================================
+   FORM NAVIGATION
+   ============================================================================ */
+
+.form-navigation {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 3rem;
+    gap: 1rem;
+}
+
+.btn.btn-outline {
+    background: transparent;
+    border: 2px solid var(--secondary);
+    color: var(--secondary);
+    padding: 1rem 2rem;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: var(--transition);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.btn.btn-outline:hover {
+    background: var(--secondary);
+    color: var(--white);
+}
+
+.btn.btn-lg {
+    padding: 1.2rem 2rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+    border-radius: 8px;
+    margin-top: 1rem;
+    transition: var(--transition);
+    border: none;
+    cursor: pointer;
+    background: var(--gradient-primary);
+    color: var(--white);
+    box-shadow: 0 4px 15px rgba(109, 0, 26, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.btn.btn-lg:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(109, 0, 26, 0.3);
+    background: linear-gradient(135deg, var(--primary-light), var(--primary));
+}
+
+.btn.btn-lg:active {
+    transform: translateY(0);
+}
+
+.btn.btn-lg:disabled {
+    background: #ccc;
+    color: #999;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+}
+
+.btn.btn-lg:disabled:hover {
+    background: #ccc;
+    color: #999;
+    transform: none;
+    box-shadow: none;
+}
+
+/* ============================================================================
+   FOOTER
+   ============================================================================ */
+
+footer {
+    background: var(--dark);
+    color: var(--white);
+    text-align: center;
+    padding: 2rem 0;
+    margin-top: 0;
+}
+
+footer p {
+    margin: 0;
+    color: #ccc;
+    font-size: 0.9rem;
+}
+
+/* ============================================================================
+   AI GENERATED CONTENT STYLING
+   ============================================================================ */
+
+/* AI Generated Content Styling */
+.ai-generated-content {
+    background: rgba(109, 0, 26, 0.05);
+    border: 1px solid rgba(109, 0, 26, 0.1);
+    border-radius: 12px;
+    padding: 1.5rem;
+    margin: 1.5rem 0;
+    animation: fadeInUp 0.6s ease;
+}
+
+.ai-result h4 {
+    color: var(--primary);
+    margin-bottom: 0.75rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 1.2rem;
+}
+
+.ai-result p {
+    margin-bottom: 0.5rem;
+    line-height: 1.6;
+    color: var(--dark);
+}
+
+.ai-result small {
+    color: #666;
+    font-style: italic;
+    font-size: 0.9rem;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ============================================================================
+   FORM ACTIONS STYLING
+   ============================================================================ */
+
+.form-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 3rem;
+    gap: 1rem;
+}
+
+.action-btn {
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 1rem;
+    text-decoration: none;
+}
+
+.back-btn {
+    background: transparent;
+    border: 2px solid var(--secondary) !important;
+    color: var(--secondary);
+}
+
+.back-btn:hover {
+    background: var(--secondary);
+    color: var(--white);
+}
+
+.next-btn {
+    background: var(--gradient-primary);
+    color: var(--white);
+    box-shadow: 0 4px 15px rgba(109, 0, 26, 0.2);
+}
+
+.next-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(109, 0, 26, 0.3);
+}
+
+.next-btn:disabled {
+    background: #d0d0d0;
+    color: #888;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+}
+
+@media (max-width: 768px) {
+    .form-actions {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    .action-btn {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+
+/* ============================================================================
+   RESPONSIVE DESIGN
+   ============================================================================ */
+
+@media (max-width: 768px) {
+    body {
+        padding-top: 80px;
+    }
+    
+    .funnel-progress {
+        padding: 1.5rem 0;
+    }
+    
+    .progress-steps {
+        gap: 0.5rem;
+    }
+    
+    .step-number {
+        width: 35px;
+        height: 35px;
+        font-size: 0.8rem;
+    }
+    
+    .progress-step span {
+        font-size: 0.7rem;
+    }
+    
+    .hero {
+        padding: 3rem 0;
+    }
+    
+    .hero-title {
+        font-size: 2.5rem;
+        line-height: 1.3;
+    }
+    
+    .hero-subtitle {
+        font-size: 1.2rem;
+    }
+    
+    .hero:before {
+        width: 120px;
+        height: 120px;
+        top: -20px;
+        right: -20px;
+    }
+    
+    .hero:after {
+        width: 150px;
+        height: 150px;
+        bottom: -30px;
+        left: -25px;
+    }
+    
+    .section {
+        padding: 3rem 0;
+    }
+    
+    .card-content {
+        padding: 2.5rem 2rem;
+    }
+    
+    .question-title {
+        font-size: 1.5rem;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+    }
+    
+    .checkbox-label,
+    .radio-label {
+        padding: 1.5rem;
+        gap: 1rem;
+    }
+    
+    .checkbox-icon,
+    .radio-icon {
+        width: 55px;
+        height: 55px;
+    }
+    
+    .checkbox-icon i,
+    .radio-icon i {
+        font-size: 1.6rem;
+    }
+    
+    .checkbox-content h4,
+    .radio-content h4 {
+        font-size: 1.1rem;
+    }
+    
+    .checkbox-content p,
+    .radio-content p {
+        font-size: 0.9rem;
+    }
+    
+    .form-navigation {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    .form-navigation .btn {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 576px) {
+    body {
+        padding-top: 75px;
+    }
+    
+    .funnel-progress {
+        padding: 1rem 0;
+    }
+    
+    .progress-steps {
+        padding: 0 1rem;
+    }
+    
+    .progress-step span {
+        display: none;
+    }
+    
+    .hero {
+        padding: 2.5rem 0;
+    }
+    
+    .hero-title {
+        font-size: 2.2rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1.1rem;
+    }
+    
+    .section {
+        padding: 2.5rem 0;
+    }
+    
+    .card-content {
+        padding: 2rem 1.5rem;
+    }
+    
+    .audience-question {
+        margin-bottom: 3rem;
+    }
+    
+    .checkbox-label,
+    .radio-label {
+        flex-direction: column;
+        text-align: center;
+        gap: 1rem;
+        padding: 1.5rem 1rem;
+    }
+    
+    .checkbox-check,
+    .radio-check {
+        position: absolute;
+        top: 1rem;
+        right: 1rem;
+    }
+    
+    .audience-preview {
+        padding: 2rem 1.5rem;
+    }
+    
+    .profile-content {
+        padding: 1.5rem;
+    }
+    
+    .profile-messaging {
+        padding: 1.2rem;
+    }
+}
+
+
+/* ============================================================================
+   ACCESSIBILITY ENHANCEMENTS
+   ============================================================================ */
+
+.checkbox-label:focus-within,
+.radio-label:focus-within {
+    outline: 2px solid var(--primary);
+    outline-offset: 2px;
+}
+
+.custom-textarea:focus {
+    outline: 2px solid var(--primary);
+    outline-offset: 2px;
+}
+
+@media (prefers-contrast: high) {
+    .checkbox-label,
+    .radio-label {
+        border-color: var(--dark);
+    }
+    
+    .custom-textarea {
+        border-color: var(--dark);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .card,
+    .checkbox-label,
+    .radio-label,
+    .custom-textarea,
+    .btn {
+        transition: none;
+    }
+    
+    .card:hover,
+    .checkbox-label:hover,
+    .radio-label:hover,
+    .btn:hover {
+        transform: none;
+    }
+    
+    .audience-question,
+    .checkbox-option,
+    .radio-option {
+        animation: none;
+        opacity: 1;
+        transform: none;
+    }
+}

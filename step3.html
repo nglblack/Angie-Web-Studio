@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Who's Your Ideal Customer? – Angie Web Studio</title>
+    <link rel="stylesheet" href="./css/step3.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Playfair+Display:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="./img/logo.png" alt="Angie Web Studio">
+                </a>
+            </div>
+            <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+                <i class="fas fa-bars"></i>
+            </button>
+            <nav>
+                <button class="nav-close" aria-label="Close navigation">
+                    <i class="fas fa-times"></i>
+                </button>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="templates.html">Templates</a></li>
+                    <li><a href="howitworks.html">How It Works</a></li>
+                    <li><a href="pricing.html">Pricing</a></li>
+                    <li><a href="portfolio.html">Portfolio</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="overlay"></div>
+        </div>
+    </header>
+
+    <!-- Main Content Area -->
+    <main>
+        <div class="container">
+            <section class="hero">
+                <div class="hero-content">
+                    <h1 class="hero-title">Who's Your Ideal Customer?</h1>
+                    <p class="hero-subtitle">Saying your service is for 'everyone' is like saying your favorite food is 'food.' Technically true—but no one's ordering it.</p>
+                </div>
+            </section>
+        </div>
+
+        <!-- Progress Indicator -->
+        <div class="funnel-progress">
+            <div class="container">
+                <div class="progress-steps">
+                    <div class="progress-step completed">
+                        <div class="step-number">1</div>
+                        <span>Contact Info</span>
+                    </div>
+                    <div class="progress-step completed">
+                        <div class="step-number">2</div>
+                        <span>Site Goals</span>
+                    </div>
+                    <div class="progress-step active">
+                        <div class="step-number">3</div>
+                        <span>Audience</span>
+                    </div>
+                    <div class="progress-step">
+                        <div class="step-number">4</div>
+                        <span>Style</span>
+                    </div>
+                    <div class="progress-step">
+                        <div class="step-number">5</div>
+                        <span>Content</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Audience Discovery Section -->
+        <section class="section">
+            <div class="container">
+                <div class="card">
+                    <div class="card-content">
+                        <form id="audience-form" action="step4.html" method="POST">
+                            
+                            <!-- Question 1: Who do you enjoy working with? -->
+                            <div class="audience-question">
+                                <h3 class="question-title">
+                                    <i class="fas fa-heart"></i>
+                                    Who do you actually enjoy working with?
+                                </h3>
+                                <p class="question-subtitle">Think about your favorite clients—what makes them great to work with?</p>
+                                
+                                <div class="checkbox-grid">
+                                    <div class="checkbox-option">
+                                        <input type="checkbox" id="quality" name="enjoy_working[]" value="quality" class="audience-checkbox">
+                                        <label for="quality" class="checkbox-label">
+                                            <div class="checkbox-icon">
+                                                <i class="fas fa-star"></i>
+                                            </div>
+                                            <div class="checkbox-content">
+                                                <h4>People who value quality</h4>
+                                                <p>They appreciate good work and don't just shop on price</p>
+                                            </div>
+                                            <div class="checkbox-check">
+                                                <i class="fas fa-check"></i>
+                                            </div>
+                                        </label>
+                                    </div>
+
+                                    <div class="checkbox-option">
+                                        <input type="checkbox" id="locals" name="enjoy_working[]" value="locals" class="audience-checkbox">
+                                        <label for="locals" class="checkbox-label">
+                                            <div class="checkbox-icon">
+                                                <i class="fas fa-map-marker-alt"></i>
+                                            </div>
+                                            <div class="checkbox-content">
+                                                <h4>Locals who need something simple</h4>
+                                                <p>Neighbors and community members who keep it straightforward</p>
+                                            </div>
+                                            <div class="checkbox-check">
+                                                <i class="fas fa-check"></i>
+                                            </div>
+                                        </label>
+                                    </div>
+
+                                    <div class="checkbox-option">
+                                        <input type="checkbox" id="trust" name="enjoy_working[]" value="trust" class="audience-checkbox">
+                                        <label for="trust" class="checkbox-label">
+                                            <div class="checkbox-icon">
+                                                <i class="fas fa-handshake"></i>
+                                            </div>
+                                            <div class="checkbox-content">
+                                                <h4>People who trust you to take the lead</h4>
+                                                <p>They hire you for your expertise and let you do your thing</p>
+                                            </div>
+                                            <div class="checkbox-check">
+                                                <i class="fas fa-check"></i>
+                                            </div>
+                                        </label>
+                                    </div>
+
+                                    <div class="checkbox-option">
+                                        <input type="checkbox" id="not_sure" name="enjoy_working[]" value="not_sure" class="audience-checkbox">
+                                        <label for="not_sure" class="checkbox-label">
+                                            <div class="checkbox-icon">
+                                                <i class="fas fa-question-circle"></i>
+                                            </div>
+                                            <div class="checkbox-content">
+                                                <h4>Not sure yet</h4>
+                                                <p>Still figuring out who my best clients are</p>
+                                            </div>
+                                            <div class="checkbox-check">
+                                                <i class="fas fa-check"></i>
+                                            </div>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Question 2: Who's most likely to book you? -->
+                            <div class="audience-question">
+                                <h3 class="question-title">
+                                    <i class="fas fa-calendar-check"></i>
+                                    Who's most likely to book you right away?
+                                </h3>
+                                <p class="question-subtitle">What situation brings people to you who are ready to move fast?</p>
+                                
+                                <div class="checkbox-grid">
+                                    <div class="checkbox-option">
+                                        <input type="checkbox" id="rush" name="book_quickly[]" value="rush" class="audience-checkbox">
+                                        <label for="rush" class="checkbox-label">
+                                            <div class="checkbox-icon">
+                                                <i class="fas fa-clock"></i>
+                                            </div>
+                                            <div class="checkbox-content">
+                                                <h4>In a rush</h4>
+                                                <p>They need it done yesterday and will pay for speed</p>
+                                            </div>
+                                            <div class="checkbox-check">
+                                                <i class="fas fa-check"></i>
+                                            </div>
+                                        </label>
+                                    </div>
+
+                                    <div class="checkbox-option">
+                                        <input type="checkbox" id="overwhelmed" name="book_quickly[]" value="overwhelmed" class="audience-checkbox">
+                                        <label for="overwhelmed" class="checkbox-label">
+                                            <div class="checkbox-icon">
+                                                <i class="fas fa-dizzy"></i>
+                                            </div>
+                                            <div class="checkbox-content">
+                                                <h4>Overwhelmed</h4>
+                                                <p>They've tried to figure it out themselves and need help</p>
+                                            </div>
+                                            <div class="checkbox-check">
+                                                <i class="fas fa-check"></i>
+                                            </div>
+                                        </label>
+                                    </div>
+
+                                    <div class="checkbox-option">
+                                        <input type="checkbox" id="ready_commit" name="book_quickly[]" value="ready_commit" class="audience-checkbox">
+                                        <label for="ready_commit" class="checkbox-label">
+                                            <div class="checkbox-icon">
+                                                <i class="fas fa-check-circle"></i>
+                                            </div>
+                                            <div class="checkbox-content">
+                                                <h4>Ready to commit</h4>
+                                                <p>They've done their research and know what they want</p>
+                                            </div>
+                                            <div class="checkbox-check">
+                                                <i class="fas fa-check"></i>
+                                            </div>
+                                        </label>
+                                    </div>
+
+                                    <div class="checkbox-option">
+                                        <input type="checkbox" id="comparing" name="book_quickly[]" value="comparing" class="audience-checkbox">
+                                        <label for="comparing" class="checkbox-label">
+                                            <div class="checkbox-icon">
+                                                <i class="fas fa-balance-scale"></i>
+                                            </div>
+                                            <div class="checkbox-content">
+                                                <h4>Comparing options</h4>
+                                                <p>They're shopping around but ready to decide soon</p>
+                                            </div>
+                                            <div class="checkbox-check">
+                                                <i class="fas fa-check"></i>
+                                            </div>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Question 3: Decision maker type -->
+                            <div class="audience-question">
+                                <h3 class="question-title">
+                                    <i class="fas fa-users"></i>
+                                    What kind of decision-maker are you trying to reach?
+                                </h3>
+                                <p class="question-subtitle">Understanding who makes the final call helps shape your messaging</p>
+                                
+                                <div class="radio-grid">
+                                    <div class="radio-option">
+                                        <input type="radio" id="individual" name="decision_maker" value="individual" class="audience-radio">
+                                        <label for="individual" class="radio-label">
+                                            <div class="radio-icon">
+                                                <i class="fas fa-user"></i>
+                                            </div>
+                                            <div class="radio-content">
+                                                <h4>Individual</h4>
+                                                <p>Solo entrepreneurs, freelancers, or people hiring for themselves</p>
+                                            </div>
+                                            <div class="radio-check">
+                                                <i class="fas fa-check"></i>
+                                            </div>
+                                        </label>
+                                    </div>
+
+                                    <div class="radio-option">
+                                        <input type="radio" id="parent_partner" name="decision_maker" value="parent_partner" class="audience-radio">
+                                        <label for="parent_partner" class="radio-label">
+                                            <div class="radio-icon">
+                                                <i class="fas fa-home"></i>
+                                            </div>
+                                            <div class="radio-content">
+                                                <h4>Parent/Partner</h4>
+                                                <p>Family decisions, couples planning events, household choices</p>
+                                            </div>
+                                            <div class="radio-check">
+                                                <i class="fas fa-check"></i>
+                                            </div>
+                                        </label>
+                                    </div>
+
+                                    <div class="radio-option">
+                                        <input type="radio" id="business_rep" name="decision_maker" value="business_rep" class="audience-radio">
+                                        <label for="business_rep" class="radio-label">
+                                            <div class="radio-icon">
+                                                <i class="fas fa-building"></i>
+                                            </div>
+                                            <div class="radio-content">
+                                                <h4>Business/Org Rep</h4>
+                                                <p>Managers, coordinators, or people hiring for organizations</p>
+                                            </div>
+                                            <div class="radio-check">
+                                                <i class="fas fa-check"></i>
+                                            </div>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Optional: Custom Description -->
+                            <div class="audience-question">
+                                <h3 class="question-title">
+                                    <i class="fas fa-edit"></i>
+                                    Describe your ideal customer in your own words (optional)
+                                </h3>
+                                <p class="question-subtitle">Feel free to add anything specific about who you love working with</p>
+                                
+                                <div class="textarea-container">
+                                    <textarea 
+                                        id="custom_description" 
+                                        name="custom_description" 
+                                        class="custom-textarea"
+                                        placeholder="Example: 'Busy parents who want quality work but don't have time to micromanage' or 'Local business owners who care about supporting community'"
+                                    ></textarea>
+                                </div>
+                            </div>
+
+                        <div id="audience-preview" class="audience-preview" style="display: none;">
+                            <div class="profile-card">
+                                <div class="profile-header">
+                                    <h4><i class="fas fa-user-target"></i> Your Ideal Customer</h4>
+                                </div>
+                                
+                                <!-- AI Loading State -->
+                                <div id="ai-loading" class="ai-loading-state" style="display: none;">
+                                    <div class="loading-content">
+                                        <i class="fas fa-sparkles fa-spin"></i>
+                                        <p>AI is analyzing your selections...</p>
+                                    </div>
+                                </div>
+                                
+                                <!-- AI Generated Profile -->
+                                <div id="ai-profile-display" class="ai-profile-display" style="display: none;">
+                                    <div class="ai-content">
+                                    
+                                        <!-- AI Response Display -->
+                                        <div class="ai-response-section">
+                                            <div class="ai-message-container">
+                                                <div class="ai-message" id="ai-generated-text">
+                                                    <div class="typing-indicator" id="typing-indicator" style="display: none;">
+                                                        <span></span>
+                                                        <span></span>
+                                                        <span></span>
+                                                    </div>
+                                                    <div class="ai-text-content" id="ai-text-content"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <!-- User Input Section -->
+                                        <div class="user-input-section">
+                                            <div class="input-container">
+                                                <textarea 
+                                                    id="ai-profile-editor" 
+                                                    class="profile-editor"
+                                                    placeholder="Add more details about your ideal customer, or ask me to revise the profile above..."
+                                                    rows="3"
+                                                ></textarea>
+                                                <button type="button" class="generate-btn" onclick="generateOrRevise()">
+                                                    <i class="fas fa-paper-plane"></i>
+                                                </button>
+                                            </div>
+                                            <div class="quick-actions">
+                                                <button type="button" class="quick-btn" onclick="quickRevise('more detailed')">
+                                                    Make it more detailed
+                                                </button>
+                                                <button type="button" class="quick-btn" onclick="quickRevise('shorter')">
+                                                    Make it shorter
+                                                </button>
+                                                <button type="button" class="quick-btn" onclick="quickRevise('more professional')">
+                                                    More professional
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                            <div class="form-actions">
+                                <button type="button" class="action-btn back-btn" onclick="goBack()">
+                                    <i class="fas fa-arrow-left"></i> Back
+                                </button>
+                                <button type="submit" class="action-btn next-btn" id="next-step-btn">
+                                    Next Step <i class="fas fa-arrow-right"></i>
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer Section -->
+    <footer>
+        <div class="container footer-container">
+            <div class="footer-logo">
+                <img src="./img/logo.png" alt="Angie Web Studio">
+                <p>Creating beautiful, functional websites that help your business shine online.</p>
+                <div class="social-links">
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                    <a href="#" aria-label="Pinterest"><i class="fab fa-pinterest"></i></a>
+                    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+            <div class="footer-nav">
+                <h4>Navigation</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="templates.html">Templates</a></li>
+                    <li><a href="howitworks.html">How It Works</a></li>
+                    <li><a href="pricing.html">Pricing</a></li>
+                    <li><a href="portfolio.html">Portfolio</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-nav">
+                <h4>Get Started</h4>
+                <ul>
+                    <li><a href="contact.html">Book a Discovery Call</a></li>
+                    <li><a href="templates.html">Choose a Template</a></li>
+                    <li><a href="pricing.html">View Pricing</a></li>
+                </ul>
+            </div>
+            <div class="footer-nav">
+                <h4>Contact</h4>
+                <ul>
+                    <li>Email: hello@angiewebstudio.com</li>
+                    <li>Phone: (555) 123-4567</li>
+                    <li>Hours: Mon-Fri, 9am-5pm PST</li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; <script>document.write(new Date().getFullYear())</script> Angie Web Studio. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="universal_main.js"></script>
+    <script src="./js/step3.js"></script>
+    <script src="./js/openai_integration.js"></script>
+</body>
+</html>

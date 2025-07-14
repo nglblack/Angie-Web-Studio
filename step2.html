@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>What Should Your Site Do? – Angie Web Studio</title>
+    <link rel="stylesheet" href="./css/step2_additions.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Playfair+Display:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="./img/logo.png" alt="Angie Web Studio">
+                </a>
+            </div>
+            <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+                <i class="fas fa-bars"></i>
+            </button>
+            <nav>
+                <button class="nav-close" aria-label="Close navigation">
+                    <i class="fas fa-times"></i>
+                </button>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="templates.html">Templates</a></li>
+                    <li><a href="howitworks.html">How It Works</a></li>
+                    <li><a href="pricing.html">Pricing</a></li>
+                    <li><a href="portfolio.html">Portfolio</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="overlay"></div>
+        </div>
+    </header>
+
+    <!-- Main Content Area -->
+    <main>
+        <div class="container">
+            <section class="hero">
+                <div class="hero-content">
+                    <h1 class="hero-title">What Do You Want Your Site to Do?</h1>
+                    <p class="hero-subtitle">Let's match you with a layout that fits your goals.</p>
+                </div>
+            </section>
+        </div>
+
+        <!-- Progress Indicator -->
+        <div class="funnel-progress">
+            <div class="container">
+                <div class="progress-steps">
+                    <div class="progress-step completed">
+                        <div class="step-number">1</div>
+                        <span>Contact Info</span>
+                    </div>
+                    <div class="progress-step active">
+                        <div class="step-number">2</div>
+                        <span>Site Goals</span>
+                    </div>
+                    <div class="progress-step">
+                        <div class="step-number">3</div>
+                        <span>Audience</span>
+                    </div>
+                    <div class="progress-step">
+                        <div class="step-number">4</div>
+                        <span>Style</span>
+                    </div>
+                    <div class="progress-step">
+                        <div class="step-number">5</div>
+                        <span>Content</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Goals Selection Section -->
+        <section class="section">
+            <div class="container">
+                <div class="card">
+                    <div class="card-content">
+                        <form id="goals-form" action="step3.html" method="POST">
+                            <div class="goals-selection">
+                                <div class="goal-option">
+                                    <input type="checkbox" id="contact" name="goals[]" value="contact" class="goal-checkbox">
+                                    <label for="contact" class="goal-label">
+                                        <div class="goal-icon">
+                                            <i class="fas fa-envelope"></i>
+                                        </div>
+                                        <div class="goal-content">
+                                            <h3>Let people contact me</h3>
+                                            <p>Simple contact forms, phone numbers, and easy ways to get in touch</p>
+                                        </div>
+                                        <div class="goal-check">
+                                            <i class="fas fa-check"></i>
+                                        </div>
+                                    </label>
+                                </div>
+
+                                <div class="goal-option">
+                                    <input type="checkbox" id="appointments" name="goals[]" value="appointments" class="goal-checkbox">
+                                    <label for="appointments" class="goal-label">
+                                        <div class="goal-icon">
+                                            <i class="fas fa-calendar-alt"></i>
+                                        </div>
+                                        <div class="goal-content">
+                                            <h3>Book appointments</h3>
+                                            <p>Online scheduling, calendar integration, and booking management</p>
+                                        </div>
+                                        <div class="goal-check">
+                                            <i class="fas fa-check"></i>
+                                        </div>
+                                    </label>
+                                </div>
+
+                                <div class="goal-option">
+                                    <input type="checkbox" id="events" name="goals[]" value="events" class="goal-checkbox">
+                                    <label for="events" class="goal-label">
+                                        <div class="goal-icon">
+                                            <i class="fas fa-ticket-alt"></i>
+                                        </div>
+                                        <div class="goal-content">
+                                            <h3>RSVP for an event</h3>
+                                            <p>Event details, RSVP forms, and guest management</p>
+                                        </div>
+                                        <div class="goal-check">
+                                            <i class="fas fa-check"></i>
+                                        </div>
+                                    </label>
+                                </div>
+
+                                <div class="goal-option">
+                                    <input type="checkbox" id="showcase" name="goals[]" value="showcase" class="goal-checkbox">
+                                    <label for="showcase" class="goal-label">
+                                        <div class="goal-icon">
+                                            <i class="fas fa-images"></i>
+                                        </div>
+                                        <div class="goal-content">
+                                            <h3>Showcase my work</h3>
+                                            <p>Portfolios, galleries, and professional work displays</p>
+                                        </div>
+                                        <div class="goal-check">
+                                            <i class="fas fa-check"></i>
+                                        </div>
+                                    </label>
+                                </div>
+
+                                <div class="goal-option">
+                                    <input type="checkbox" id="sell" name="goals[]" value="sell" class="goal-checkbox">
+                                    <label for="sell" class="goal-label">
+                                        <div class="goal-icon">
+                                            <i class="fas fa-shopping-cart"></i>
+                                        </div>
+                                        <div class="goal-content">
+                                            <h3>Sell something</h3>
+                                            <p>Product listings, payment processing, and order management</p>
+                                        </div>
+                                        <div class="goal-check">
+                                            <i class="fas fa-check"></i>
+                                        </div>
+                                    </label>
+                                </div>
+
+                                <div class="goal-option">
+                                    <input type="checkbox" id="other" name="goals[]" value="other" class="goal-checkbox">
+                                    <label for="other" class="goal-label">
+                                        <div class="goal-icon">
+                                            <i class="fas fa-ellipsis-h"></i>
+                                        </div>
+                                        <div class="goal-content">
+                                            <h3>Other</h3>
+                                            <p>Something specific? We'll figure it out together</p>
+                                        </div>
+                                        <div class="goal-check">
+                                            <i class="fas fa-check"></i>
+                                        </div>
+                                    </label>
+                                </div>
+                            </div>
+
+                            <!-- Template Preview Section (Hidden until selections made) -->
+                            <div id="template-preview" class="template-preview" style="display: none;">
+                                <h3>Perfect! Here are some templates that match your goals:</h3>
+                                <div id="recommended-templates" class="recommended-templates">
+                                    <!-- Templates will be dynamically inserted here -->
+                                </div>
+                            </div>
+
+                            <!-- Navigation Buttons -->
+                            <div class="form-navigation">
+                                <a href="start_page.html" class="btn btn-outline">
+                                    <i class="fas fa-arrow-left"></i> Back
+                                </a>
+                                <button type="submit" class="btn btn-lg" id="continue-btn" disabled>
+                                    Continue <i class="fas fa-arrow-right"></i>
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer Section -->
+    <footer>
+        <div class="container footer-container">
+            <div class="footer-logo">
+                <img src="./img/logo.png" alt="Angie Web Studio">
+                <p>Creating beautiful, functional websites that help your business shine online.</p>
+                <div class="social-links">
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                    <a href="#" aria-label="Pinterest"><i class="fab fa-pinterest"></i></a>
+                    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+            <div class="footer-nav">
+                <h4>Navigation</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="templates.html">Templates</a></li>
+                    <li><a href="howitworks.html">How It Works</a></li>
+                    <li><a href="pricing.html">Pricing</a></li>
+                    <li><a href="portfolio.html">Portfolio</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-nav">
+                <h4>Get Started</h4>
+                <ul>
+                    <li><a href="contact.html">Book a Discovery Call</a></li>
+                    <li><a href="templates.html">Choose a Template</a></li>
+                    <li><a href="pricing.html">View Pricing</a></li>
+                </ul>
+            </div>
+            <div class="footer-nav">
+                <h4>Contact</h4>
+                <ul>
+                    <li>Email: hello@angiewebstudio.com</li>
+                    <li>Phone: (555) 123-4567</li>
+                    <li>Hours: Mon-Fri, 9am-5pm PST</li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; <script>document.write(new Date().getFullYear())</script> Angie Web Studio. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="universal_main.js"></script>
+    <script src="step2.js"></script>
+</body>
+</html>

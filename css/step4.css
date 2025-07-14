@@ -1,0 +1,893 @@
+/* ============================================================================
+   STEP 4 COMPLETE CSS - VISUAL STYLE SELECTION
+   Imports default.css and adds step-specific styles
+   ============================================================================ */
+
+@import url('./default.css');
+
+/* ============================================================================
+   HIDE UNWANTED ELEMENTS
+   ============================================================================ */
+
+/* Hide certificate verification popup and all unwanted elements */
+#certificate-modal,
+.cert-modal,
+.certificate-verification,
+.verify-certificate,
+[class*="verify"],
+[class*="certificate-verify"],
+.hot-days-ahead,
+.scroll-top,
+.scroll-top.active,
+button.scroll-top,
+.fa-arrow-up,
+.fas.fa-arrow-up {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+}
+
+/* Hide any scroll to top buttons */
+*[class*="scroll-top"],
+*[class*="scroll-to-top"],
+.back-to-top {
+    display: none !important;
+}
+
+/* Hide grammarly integration */
+grammarly-desktop-integration,
+[data-grammarly-shadow-root] {
+    display: none !important;
+}
+
+/* ============================================================================
+   PAGE LAYOUT ADJUSTMENTS
+   ============================================================================ */
+
+/* Ensure body has proper padding for fixed header */
+body {
+    padding-top: 90px; /* Account for fixed header */
+}
+
+/* ============================================================================
+   HERO SECTION ENHANCEMENTS
+   ============================================================================ */
+
+.hero {
+    background: var(--white);
+    padding: 4rem 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero:before {
+    content: '';
+    position: absolute;
+    top: -30px;
+    right: -30px;
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    background: rgba(109, 0, 26, 0.06);
+    z-index: 1;
+}
+
+.hero:after {
+    content: '';
+    position: absolute;
+    bottom: -50px;
+    left: -40px;
+    width: 220px;
+    height: 220px;
+    border-radius: 50%;
+    background: rgba(109, 0, 26, 0.04);
+    z-index: 1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 10;
+    text-align: center;
+}
+
+.hero-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 3.5rem;
+    font-weight: 700;
+    color: var(--primary);
+    margin-bottom: 1rem;
+    line-height: 1.2;
+}
+
+.hero-subtitle {
+    font-size: 1.3rem;
+    color: var(--secondary);
+    margin-bottom: 0;
+    line-height: 1.6;
+    font-weight: 300;
+    max-width: 700px;
+    margin: 0 auto;
+    font-style: italic;
+}
+
+/* ============================================================================
+   PROGRESS INDICATOR
+   ============================================================================ */
+
+.funnel-progress {
+    background: var(--white);
+    border-bottom: 1px solid rgba(109, 0, 26, 0.1);
+    border-top: 1px solid rgba(109, 0, 26, 0.1);
+    padding: 2rem 0;
+    position: relative;
+    z-index: 10;
+}
+
+.progress-steps {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 600px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.progress-steps::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: #e8e8e8;
+    z-index: 1;
+    transform: translateY(-50%);
+}
+
+.progress-step {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    background: var(--white);
+    padding: 0.5rem;
+    position: relative;
+    z-index: 2;
+    transition: var(--transition);
+}
+
+.step-number {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: #e8e8e8;
+    color: var(--secondary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: var(--transition);
+}
+
+.progress-step span {
+    font-size: 0.8rem;
+    color: var(--secondary);
+    font-weight: 500;
+    white-space: nowrap;
+}
+
+.progress-step.completed .step-number {
+    background: var(--primary);
+    color: var(--white);
+}
+
+.progress-step.active .step-number {
+    background: var(--primary-light);
+    color: var(--white);
+    box-shadow: 0 0 0 3px rgba(109, 0, 26, 0.2);
+}
+
+.progress-step.active span {
+    color: var(--primary);
+    font-weight: 600;
+}
+
+/* ============================================================================
+   MAIN CARD AND FORM SECTION
+   ============================================================================ */
+
+.section {
+    background: var(--light);
+    padding: 4rem 0;
+}
+
+.card {
+    background: var(--white);
+    border-radius: 15px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+    border: 1px solid rgba(109, 0, 26, 0.05);
+    transition: var(--transition);
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.card-content {
+    padding: 3rem 2.5rem;
+}
+
+/* ============================================================================
+   STYLE SECTIONS
+   ============================================================================ */
+
+.style-section {
+    margin-bottom: 3rem;
+}
+
+.style-section:last-of-type {
+    margin-bottom: 2rem;
+}
+
+.section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+    color: var(--primary);
+    margin-bottom: 1.5rem;
+    font-weight: 600;
+}
+
+.optional-label {
+    font-size: 0.9rem;
+    color: var(--secondary);
+    font-weight: 400;
+    font-family: 'Lato', sans-serif;
+}
+
+/* ============================================================================
+   VIBE SELECTION GRID
+   ============================================================================ */
+
+.vibe-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.vibe-option {
+    position: relative;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.vibe-option:hover {
+    transform: translateY(-3px);
+}
+
+.vibe-preview {
+    background: var(--white);
+    border: 2px solid #e8e8e8;
+    border-radius: 12px;
+    padding: 1.5rem;
+    height: 140px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: var(--transition);
+    position: relative;
+    overflow: hidden;
+}
+
+.vibe-option:hover .vibe-preview {
+    border-color: var(--primary-light);
+    box-shadow: 0 8px 25px rgba(109, 0, 26, 0.15);
+}
+
+.preview-header {
+    font-weight: 600;
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+}
+
+.preview-text {
+    font-size: 0.9rem;
+    line-height: 1.4;
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+}
+
+.preview-button {
+    background: #333;
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-align: center;
+    width: fit-content;
+}
+
+/* ============================================================================
+   VIBE-SPECIFIC STYLES
+   ============================================================================ */
+
+/* Friendly Vibe */
+.friendly-preview {
+    background: linear-gradient(135deg, #FFF9E6, #FFFFFF);
+    color: #2D5016;
+}
+
+.friendly-preview .preview-header {
+    color: #2D5016;
+}
+
+.friendly-preview .preview-button {
+    background: #4CAF50;
+    color: white;
+}
+
+/* Luxe Vibe */
+.luxe-preview {
+    background: linear-gradient(135deg, #F8F6F0, #FFFFFF);
+    color: #2C1810;
+}
+
+.luxe-preview .preview-header {
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: #8B4513;
+}
+
+.luxe-preview .preview-button {
+    background: #8B4513;
+    color: #F8F6F0;
+    font-family: 'Playfair Display', serif;
+}
+
+/* Minimal Vibe */
+.minimal-preview {
+    background: #FAFAFA;
+    color: #333;
+    border: 1px solid #E0E0E0;
+}
+
+.minimal-preview .preview-header {
+    color: #222;
+    font-weight: 400;
+}
+
+.minimal-preview .preview-button {
+    background: #222;
+    color: white;
+    border-radius: 2px;
+}
+
+/* Bold Vibe */
+.bold-preview {
+    background: linear-gradient(135deg, #FF6B35, #F7931E);
+    color: white;
+}
+
+.bold-preview .preview-header {
+    font-weight: 800;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.bold-preview .preview-button {
+    background: white;
+    color: #FF6B35;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* Calming Vibe */
+.calming-preview {
+    background: linear-gradient(135deg, #E8F4F8, #F0F8FF);
+    color: #2C5F7F;
+}
+
+.calming-preview .preview-header {
+    color: #1B4A66;
+}
+
+.calming-preview .preview-button {
+    background: #5A9BC4;
+    color: white;
+}
+
+/* Trendy Vibe */
+.trendy-preview {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+}
+
+.trendy-preview .preview-header {
+    font-weight: 300;
+    font-size: 1rem;
+    text-transform: lowercase;
+}
+
+.trendy-preview .preview-text {
+    font-weight: 300;
+    font-style: italic;
+}
+
+.trendy-preview .preview-button {
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(10px);
+}
+
+/* ============================================================================
+   VIBE SELECTION CONTROLS
+   ============================================================================ */
+
+.vibe-input {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.vibe-selector {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    width: 30px;
+    height: 30px;
+    border: 2px solid #e8e8e8;
+    border-radius: 50%;
+    background: var(--white);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    pointer-events: none;
+    transition: var(--transition);
+    z-index: 5;
+}
+
+.vibe-selector i {
+    font-size: 0.8rem;
+    color: var(--white);
+    opacity: 0;
+    transition: var(--transition);
+}
+
+.vibe-input:checked + .vibe-selector {
+    background: var(--primary);
+    border-color: var(--primary);
+}
+
+.vibe-input:checked + .vibe-selector i {
+    opacity: 1;
+}
+
+.vibe-label {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.3rem;
+    color: var(--dark);
+    margin: 1rem 0 0.5rem 0;
+    font-weight: 600;
+}
+
+.vibe-description {
+    color: var(--secondary);
+    font-size: 0.9rem;
+    margin: 0;
+    line-height: 1.4;
+}
+
+.vibe-option:hover .vibe-label {
+    color: var(--primary);
+}
+
+/* Selected state for entire vibe option */
+.vibe-input:checked ~ .vibe-preview {
+    border-color: var(--primary);
+    box-shadow: 0 8px 25px rgba(109, 0, 26, 0.2);
+}
+
+.vibe-input:checked ~ .vibe-label {
+    color: var(--primary);
+}
+
+/* ============================================================================
+   FONT PREVIEW SECTION
+   ============================================================================ */
+
+.font-preview {
+    background: var(--white);
+    border: 1px solid #e8e8e8;
+    border-radius: 12px;
+    padding: 2rem;
+    text-align: center;
+}
+
+.font-sample {
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.sample-heading {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: var(--primary);
+    transition: var(--transition);
+}
+
+.sample-text {
+    font-size: 1rem;
+    color: var(--secondary);
+    line-height: 1.6;
+    margin: 0;
+    transition: var(--transition);
+}
+
+/* ============================================================================
+   COLOR PALETTE PREVIEW
+   ============================================================================ */
+
+.color-preview {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.color-swatch {
+    width: 120px;
+    height: 80px;
+    border-radius: 8px;
+    display: flex;
+    align-items: end;
+    justify-content: center;
+    padding: 1rem;
+    border: 1px solid #e8e8e8;
+    transition: var(--transition);
+}
+
+.color-swatch span {
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* ============================================================================
+   LOGO UPLOAD SECTION
+   ============================================================================ */
+
+.logo-upload {
+    text-align: center;
+}
+
+.upload-area {
+    border: 2px dashed #d0d0d0;
+    border-radius: 12px;
+    padding: 3rem 2rem;
+    background: #fafafa;
+    cursor: pointer;
+    transition: var(--transition);
+    margin-bottom: 1rem;
+}
+
+.upload-area:hover {
+    border-color: var(--primary-light);
+    background: #f5f5f5;
+}
+
+.upload-area i {
+    font-size: 2rem;
+    color: var(--secondary);
+    margin-bottom: 1rem;
+    display: block;
+}
+
+.upload-area p {
+    color: var(--secondary);
+    margin: 0;
+    font-size: 1rem;
+}
+
+.upload-note {
+    color: var(--secondary);
+    font-size: 0.9rem;
+    font-style: italic;
+    margin: 0;
+}
+
+/* ============================================================================
+   ADVANCED OPTIONS
+   ============================================================================ */
+
+.advanced-toggle {
+    background: none;
+    border: 1px solid #e8e8e8;
+    border-radius: 8px;
+    padding: 1rem 1.5rem;
+    color: var(--secondary);
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: var(--transition);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    width: 100%;
+    justify-content: center;
+}
+
+.advanced-toggle:hover {
+    border-color: var(--primary-light);
+    color: var(--primary);
+}
+
+.advanced-toggle i:last-child {
+    margin-left: auto;
+    transition: transform 0.3s ease;
+}
+
+.advanced-toggle.active i:last-child {
+    transform: rotate(180deg);
+}
+
+.advanced-options {
+    margin-top: 1.5rem;
+    padding: 2rem;
+    background: #f9f9f9;
+    border-radius: 12px;
+    border: 1px solid #e8e8e8;
+}
+
+.hex-codes h4 {
+    color: var(--dark);
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+}
+
+.hex-inputs {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+}
+
+.hex-input label {
+    display: block;
+    font-size: 0.9rem;
+    color: var(--secondary);
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+}
+
+.hex-input input {
+    width: 100%;
+    padding: 0.8rem;
+    border: 1px solid #d0d0d0;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    font-family: 'Courier New', monospace;
+    transition: var(--transition);
+}
+
+.hex-input input:focus {
+    border-color: var(--primary);
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(109, 0, 26, 0.1);
+}
+
+/* ============================================================================
+   FORM NAVIGATION
+   ============================================================================ */
+
+.form-navigation {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 3rem;
+    gap: 1rem;
+}
+
+.btn {
+    padding: 1rem 2rem;
+    border-radius: 8px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: var(--transition);
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 1rem;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-outline {
+    background: transparent;
+    border: 2px solid var(--primary);
+    color: var(--primary);
+}
+
+.btn-outline:hover {
+    background: var(--primary);
+    color: var(--white);
+}
+
+.btn-lg {
+    padding: 1.2rem 2rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+    border-radius: 8px;
+    background: var(--gradient-primary);
+    color: var(--white);
+    box-shadow: 0 4px 15px rgba(109, 0, 26, 0.2);
+}
+
+.btn-lg:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(109, 0, 26, 0.3);
+    background: linear-gradient(135deg, var(--primary-light), var(--primary));
+}
+
+.btn-lg:disabled {
+    background: #d0d0d0;
+    color: #888;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+}
+
+/* ============================================================================
+   MOBILE RESPONSIVE DESIGN
+   ============================================================================ */
+
+@media (max-width: 768px) {
+    body {
+        padding-top: 75px;
+    }
+    
+    .funnel-progress {
+        top: 75px;
+        padding: 1rem 0;
+    }
+    
+    .progress-steps {
+        padding: 0 1rem;
+    }
+    
+    .progress-step span {
+        display: none;
+    }
+    
+    .hero {
+        padding: 2.5rem 0;
+    }
+    
+    .hero-title {
+        font-size: 2.5rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1.1rem;
+    }
+    
+    .section {
+        padding: 2.5rem 0;
+    }
+    
+    .card-content {
+        padding: 2rem 1.5rem;
+    }
+    
+    .vibe-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    
+    .vibe-preview {
+        height: 120px;
+        padding: 1.2rem;
+    }
+    
+    .preview-header {
+        font-size: 1rem;
+    }
+    
+    .preview-text {
+        font-size: 0.85rem;
+    }
+    
+    .color-preview {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .color-swatch {
+        width: 100%;
+        max-width: 200px;
+    }
+    
+    .hex-inputs {
+        grid-template-columns: 1fr;
+    }
+    
+    .form-navigation {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    .form-navigation .btn {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-title {
+        font-size: 2rem;
+    }
+    
+    .upload-area {
+        padding: 2rem 1rem;
+    }
+    
+    .upload-area i {
+        font-size: 1.5rem;
+    }
+    
+    .advanced-options {
+        padding: 1.5rem;
+    }
+}
+
+/* ============================================================================
+   ACCESSIBILITY ENHANCEMENTS
+   ============================================================================ */
+
+.vibe-option:focus-within .vibe-preview {
+    outline: 2px solid var(--primary);
+    outline-offset: 2px;
+}
+
+.hex-input input:focus {
+    outline: 2px solid var(--primary);
+    outline-offset: 2px;
+}
+
+.upload-area:focus-within {
+    outline: 2px solid var(--primary);
+    outline-offset: 2px;
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+    .vibe-preview {
+        border-width: 3px;
+    }
+    
+    .vibe-selector {
+        border-width: 3px;
+    }
+}
+
+/* Reduce motion for users who prefer it */
+@media (prefers-reduced-motion: reduce) {
+    .vibe-option,
+    .vibe-preview,
+    .btn,
+    .color-swatch,
+    .upload-area {
+        transition: none;
+    }
+    
+    .vibe-option:hover {
+        transform: none;
+    }
+    
+    .btn-lg:hover {
+        transform: none;
+    }
+}

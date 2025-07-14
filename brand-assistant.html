@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brand Discovery Tool - Angie Web Studio</title>
+    <link rel="canonical" href="https://angiewebstudio.com/brand-assistant.html">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Playfair+Display:wght@400;500;700&family=Inter:wght@300;400;500;700&family=Roboto:wght@300;400;500;700&family=Open+Sans:wght@300;400;600;700&family=Montserrat:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700&family=Source+Sans+Pro:wght@300;400;600;700&family=Nunito:wght@300;400;600;700&family=Raleway:wght@300;400;500;600;700&family=Work+Sans:wght@300;400;500;600;700&family=Oswald:wght@300;400;500;600;700&family=Noto+Sans:wght@300;400;500;600;700&family=Merriweather:wght@300;400;700;900&family=PT+Serif:wght@400;700&family=Crimson+Text:wght@400;600;700&family=Cormorant+Garamond:wght@300;400;500;600;700&family=EB+Garamond:wght@400;500;600;700&family=Libre+Baskerville:wght@400;700&family=Lora:wght@400;500;600;700&family=Fira+Sans:wght@300;400;500;600;700&family=Ubuntu:wght@300;400;500;700&family=Oxygen:wght@300;400;700&family=Dosis:wght@300;400;500;600;700&family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Playfair+Display:wght@400;500;700&family=Inter:wght@300;400;500;700&family=Helvetica+Neue:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="brand_assistant.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<!-- Header Section -->
+<header>
+    <div class="container header-container">
+        <div class="logo">
+            <a href="index.html">
+                <img src="./img/logo.png" alt="Angie Web Studio">
+            </a>
+        </div>
+        <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+            <i class="fas fa-bars"></i>
+        </button>                    
+        <nav>
+            <button class="nav-close" aria-label="Close navigation">
+                <i class="fas fa-times"></i>
+            </button>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="templates.html">Templates</a></li>
+                <li><a href="howitworks.html">How It Works</a></li>
+                <li><a href="pricing.html">Pricing</a></li>
+                <li><a href="portfolio.html">Portfolio</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+        <div class="overlay"></div>
+    </div>
+</header>
+<div class="brand-hero">
+    <div class="container">
+        <div class="brand-hero-content">
+            <h1>🎨 Brand Discovery Assistant</h1>
+            <p>Let's uncover your brand's personality and create a roadmap for your perfect website. This takes about 5 minutes.</p>
+        </div>
+        <!-- Decorative circles -->
+        <div class="hero-circle hero-circle-1"></div>
+        <div class="hero-circle hero-circle-2"></div>
+        <div class="hero-circle hero-circle-3"></div>
+    </div>
+</div>
+
+    <div class="container">
+        <!-- Progress Bar -->
+        <div class="progress-container">
+            <div class="progress-bar">
+                <div class="progress-fill" id="progressFill"></div>
+            </div>
+            <div class="progress-text" id="progressText">Getting Started...</div>
+        </div>
+
+        <!-- Module 1: Brand Personality Profiler -->
+        <div class="module active" id="module1">
+            <div class="module-header">
+                <div class="module-number">1</div>
+                <div class="module-subtitle">Module One</div>
+                <h2>🎯 Brand Personality Profiler</h2>
+                <p>Let's discover your brand's core personality. Think of this as a Myers-Briggs test for your business - these answers will guide everything else we create together.</p>
+            </div>
+
+            <div class="question" id="q1">
+                <div class="question-number">Question 1 of 5</div>
+                <h3 class="question-title">Do you want your brand to feel more formal or casual?</h3>
+                <div class="options-grid">
+                    <div class="option-card" data-value="formal">
+                        <div class="option-icon">🧑‍⚖️</div>
+                        <div class="option-label">Formal</div>
+                        <div class="option-description">Professional, trustworthy, established</div>
+                    </div>
+                    <div class="option-card" data-value="casual">
+                        <div class="option-icon">☕</div>
+                        <div class="option-label">Casual</div>
+                        <div class="option-description">Relaxed, personal, conversational</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="question" id="q2">
+                <div class="question-number">Question 2 of 5</div>
+                <h3 class="question-title">Do you lean more warm or neutral?</h3>
+                <div class="options-grid">
+                    <div class="option-card" data-value="warm">
+                        <div class="option-icon">🧡</div>
+                        <div class="option-label">Warm</div>
+                        <div class="option-description">Cozy, personal, welcoming</div>
+                    </div>
+                    <div class="option-card" data-value="neutral">
+                        <div class="option-icon">🤍</div>
+                        <div class="option-label">Neutral</div>
+                        <div class="option-description">Clean, modern, timeless</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="question" id="q3">
+                <div class="question-number">Question 3 of 5</div>
+                <h3 class="question-title">Should it feel minimal or expressive?</h3>
+                <div class="options-grid">
+                    <div class="option-card" data-value="minimal">
+                        <div class="option-icon">🔲</div>
+                        <div class="option-label">Minimal</div>
+                        <div class="option-description">Simple, focused, uncluttered</div>
+                    </div>
+                    <div class="option-card" data-value="expressive">
+                        <div class="option-icon">🎨</div>
+                        <div class="option-label">Expressive</div>
+                        <div class="option-description">Artistic, unique, eye-catching</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="question" id="q4">
+                <div class="question-number">Question 4 of 5</div>
+                <h3 class="question-title">Do you serve a tight local niche or a broad audience?</h3>
+                <div class="options-grid">
+                    <div class="option-card" data-value="local">
+                        <div class="option-icon">📍</div>
+                        <div class="option-label">Local Niche</div>
+                        <div class="option-description">Tight-knit, neighborhood focused</div>
+                    </div>
+                    <div class="option-card" data-value="broad">
+                        <div class="option-icon">🌐</div>
+                        <div class="option-label">Broad Audience</div>
+                        <div class="option-description">National or online reach</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="question" id="q5">
+                <div class="question-number">Question 5 of 5</div>
+                <h3 class="question-title">What's more important: trust, energy, or beauty?</h3>
+                <div class="options-grid">
+                    <div class="option-card" data-value="trust">
+                        <div class="option-icon">🤝</div>
+                        <div class="option-label">Trust</div>
+                        <div class="option-description">Dependable, experienced, safe choice</div>
+                    </div>
+                    <div class="option-card" data-value="energy">
+                        <div class="option-icon">⚡</div>
+                        <div class="option-label">Energy</div>
+                        <div class="option-description">Dynamic, cutting-edge, exciting</div>
+                    </div>
+                    <div class="option-card" data-value="beauty">
+                        <div class="option-icon">🌸</div>
+                        <div class="option-label">Beauty</div>
+                        <div class="option-description">Aesthetic, premium, crafted</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Module 2: Voice & Tone Builder -->
+        <div class="module" id="module2">
+            <div class="module-header">
+                <div class="module-number">2</div>
+                <div class="module-subtitle">Module Two</div>
+                <h2>🗣️ Voice & Tone Builder</h2>
+                <p>Now let's find your brand's voice. How do you naturally talk about your work? This will shape all your website copy and messaging.</p>
+            </div>
+
+            <div class="question">
+                <div class="question-number">Your Introduction Style</div>
+                <h3 class="question-title">How would you introduce yourself at a networking event?</h3>
+                <p class="question-subtitle">Pick the style that feels most natural to you</p>
+                <div class="options-grid">
+                    <div class="option-card" data-value="natural">
+                        <div class="option-icon">🌿</div>
+                        <div class="option-label">Natural & Specific</div>
+                        <div class="option-description">"Hi! I'm Maria. I do lashes and brows in Ogden—my thing is low-maintenance, natural-looking beauty."</div>
+                    </div>
+                    <div class="option-card" data-value="confident">
+                        <div class="option-icon">💪</div>
+                        <div class="option-label">Confident & Outcome-Focused</div>
+                        <div class="option-description">"I help clients feel confident, starting with a great haircut."</div>
+                    </div>
+                    <div class="option-card" data-value="direct">
+                        <div class="option-icon">🔧</div>
+                        <div class="option-label">Direct & No-Nonsense</div>
+                        <div class="option-description">"I'm the guy you call when your car won't start, and you need it fixed fast—no runaround."</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="question">
+                <div class="question-number">Tone Calibration</div>
+                <h3 class="question-title">Fine-tune your communication style:</h3>
+                <p class="question-subtitle">Move the slider to find your sweet spot</p>
+                <div class="slider-container">
+                    <div class="slider-labels">
+                        <span class="slider-label">🤝 Plainspoken</span>
+                        <span class="slider-label">😊 Friendly</span>
+                        <span class="slider-label">🎯 Clever</span>
+                        <span class="slider-label">🧑‍⚖️ Serious</span>
+                    </div>
+                    <input type="range" min="1" max="4" value="2" class="slider" id="toneSlider">
+                </div>
+            </div>
+
+            <div class="question">
+                <div class="question-number">Greeting Style</div>
+                <h3 class="question-title">Which greeting sounds more like you?</h3>
+                <p class="question-subtitle">This will set the tone for your entire site</p>
+                <div class="options-grid">
+                    <div class="option-card" data-value="formal-greeting">
+                        <div class="option-icon">👋</div>
+                        <div class="option-label">Professional Welcome</div>
+                        <div class="option-description">"Welcome, let's get started"</div>
+                    </div>
+                    <div class="option-card" data-value="casual-greeting">
+                        <div class="option-icon">😊</div>
+                        <div class="option-label">Casual Greeting</div>
+                        <div class="option-description">"Hey, glad you're here!"</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="question">
+                <div class="question-number">Your Elevator Pitch</div>
+                <h3 class="question-title">Write your ideal elevator pitch (optional):</h3>
+                <p class="question-subtitle">Feel free to edit our examples above or write your own from scratch</p>
+                <textarea class="text-input" id="elevatorPitch" placeholder="In 1-2 sentences, how would you describe what you do and why people should choose you? This will become your website's hero message."></textarea>
+            </div>
+        </div>
+
+        <!-- Module 3: Visual Style Profiler -->
+        <div class="module" id="module3">
+            <div class="module-header">
+                <div class="module-number">3</div>
+                <div class="module-subtitle">Module Three</div>
+                <h2>📸 Visual Style Profiler</h2>
+                <p>Time to create your visual moodboard! These choices will determine your site's photography style, layout feel, and overall aesthetic direction.</p>
+            </div>
+
+            <div class="question">
+                <div class="question-number">Photography Direction</div>
+                <h3 class="question-title">What photography vibe matches your brand?</h3>
+                <p class="question-subtitle">This will guide the style of photos we use throughout your site</p>
+                <div class="options-grid">
+                    <div class="option-card" data-value="gritty">
+                        <div class="option-icon">📷</div>
+                        <div class="option-label">Real-life & Authentic</div>
+                        <div class="option-description">Candid, unpolished, genuine moments</div>
+                    </div>
+                    <div class="option-card" data-value="soft">
+                        <div class="option-icon">☀️</div>
+                        <div class="option-label">Soft Natural Light</div>
+                        <div class="option-description">Warm, inviting, naturally lit</div>
+                    </div>
+                    <div class="option-card" data-value="studio">
+                        <div class="option-icon">💡</div>
+                        <div class="option-label">Clean Studio Style</div>
+                        <div class="option-description">Professional, crisp, controlled</div>
+                    </div>
+                    <div class="option-card" data-value="vibrant">
+                        <div class="option-icon">🌈</div>
+                        <div class="option-label">Vibrant & Bold</div>
+                        <div class="option-description">High energy, saturated colors</div>
+                    </div>
+                    <div class="option-card" data-value="bw">
+                        <div class="option-icon">⚫</div>
+                        <div class="option-label">Black & White</div>
+                        <div class="option-description">Timeless, classic, focused</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="question">
+                <div class="question-number">Layout Energy</div>
+                <h3 class="question-title">What layout energy fits your brand?</h3>
+                <p class="question-subtitle">This determines how your content will be structured and paced</p>
+                <div class="options-grid">
+                    <div class="option-card" data-value="calm">
+                        <div class="option-icon">🧘</div>
+                        <div class="option-label">Calm & Wide-spaced</div>
+                        <div class="option-description">Lots of breathing room, peaceful</div>
+                    </div>
+                    <div class="option-card" data-value="punchy">
+                        <div class="option-icon">⚡</div>
+                        <div class="option-label">Fast & Punchy</div>
+                        <div class="option-description">Quick impact, action-oriented</div>
+                    </div>
+                    <div class="option-card" data-value="editorial">
+                        <div class="option-icon">📰</div>
+                        <div class="option-label">Editorial Style</div>
+                        <div class="option-description">Magazine-like, structured content</div>
+                    </div>
+                    <div class="option-card" data-value="gallery">
+                        <div class="option-icon">🖼️</div>
+                        <div class="option-label">Gallery-like</div>
+                        <div class="option-description">Visual showcase, portfolio focus</div>
+                    </div>
+                    <div class="option-card" data-value="utility">
+                        <div class="option-icon">🔧</div>
+                        <div class="option-label">Utility-focused</div>
+                        <div class="option-description">Function first, get things done</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="question">
+                <div class="question-number">Content Density</div>
+                <h3 class="question-title">How much text should your site have?</h3>
+                <p class="question-subtitle">Finding the right balance between information and visual impact</p>
+                <div class="options-grid">
+                    <div class="option-card" data-value="minimal-text">
+                        <div class="option-icon">✂️</div>
+                        <div class="option-label">Minimal Text</div>
+                        <div class="option-description">Just the essentials, visual-focused</div>
+                    </div>
+                    <div class="option-card" data-value="normal-text">
+                        <div class="option-icon">📄</div>
+                        <div class="option-label">Normal Amount</div>
+                        <div class="option-description">Balanced text and visuals</div>
+                    </div>
+                    <div class="option-card" data-value="info-heavy">
+                        <div class="option-icon">📚</div>
+                        <div class="option-label">Information-Rich</div>
+                        <div class="option-description">Detailed explanations, FAQ-heavy</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Module 4: Content Strategy & Messaging -->
+        <div class="module" id="module4">
+            <div class="module-header">
+                <div class="module-number">4</div>
+                <div class="module-subtitle">Module Four</div>
+                <h2>✅ Content Strategy & Messaging</h2>
+                <p>Let's nail down your core messaging and site structure. This is where we translate your brand personality into actionable website content.</p>
+            </div>
+
+            <div class="question">
+                <div class="question-number">Hero Message</div>
+                <h3 class="question-title">What must visitors know within 5 seconds of landing on your site?</h3>
+                <p class="question-subtitle">This becomes your homepage hero message - make it count!</p>
+                <textarea class="text-input" id="fiveSecondMessage" placeholder="Example: 'I fix cars fast and honest' or 'Wedding photography that captures real moments' or 'Personal training that actually works'"></textarea>
+            </div>
+
+            <div class="question">
+                <div class="question-number">Social Proof</div>
+                <h3 class="question-title">What do people say when they recommend you?</h3>
+                <p class="question-subtitle">These real client voices will become powerful testimonials on your site</p>
+                <textarea class="text-input" id="recommendations" placeholder="Think about your best compliments or referrals. What do clients actually say about you? 'She's the only person I trust with my hair' or 'He explains everything so I understand my car problems'"></textarea>
+            </div>
+
+            <div class="question">
+                <div class="question-number">Contact Strategy</div>
+                <h3 class="question-title">How do you want people to contact you?</h3>
+                <p class="question-subtitle">This determines your primary call-to-action and contact setup</p>
+                <div class="options-grid">
+                    <div class="option-card" data-value="bookings">
+                        <div class="option-icon">📅</div>
+                        <div class="option-label">Online Bookings</div>
+                        <div class="option-description">Schedule appointments directly</div>
+                    </div>
+                    <div class="option-card" data-value="calls">
+                        <div class="option-icon">📞</div>
+                        <div class="option-label">Phone Calls</div>
+                        <div class="option-description">Prefer to talk first</div>
+                    </div>
+                    <div class="option-card" data-value="messages">
+                        <div class="option-icon">💬</div>
+                        <div class="option-label">Messages/DMs</div>
+                        <div class="option-description">Text, email, or social media</div>
+                    </div>
+                    <div class="option-card" data-value="forms">
+                        <div class="option-icon">📝</div>
+                        <div class="option-label">Contact Forms</div>
+                        <div class="option-description">Structured inquiry forms</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="question">
+                <div class="question-number">Business Details</div>
+                <h3 class="question-title">Do you need to show business hours prominently?</h3>
+                <p class="question-subtitle">Some businesses need this front and center, others don't</p>
+                <div class="options-grid">
+                    <div class="option-card" data-value="hours-yes">
+                        <div class="option-icon">🕐</div>
+                        <div class="option-label">Yes, Very Important</div>
+                        <div class="option-description">Clients need to know when to reach me</div>
+                    </div>
+                    <div class="option-card" data-value="hours-no">
+                        <div class="option-icon">🌙</div>
+                        <div class="option-label">Not Really</div>
+                        <div class="option-description">I'm flexible or work by appointment</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Module 5: Brand Summary Output -->
+        <div class="module" id="module5">
+            <div class="module-header">
+                <div class="module-number">5</div>
+                <div class="module-subtitle">Your Complete Brand Profile</div>
+                <h2>🎉 Brand Summary & Website Roadmap</h2>
+                <p>Here's your complete brand profile and actionable roadmap for your perfect website. Everything you need to move forward with confidence!</p>
+            </div>
+
+            <div class="results-container">
+    <!-- Brand Header -->
+    <div class="brand-header">
+        <div class="archetype-badge" id="brandArchetype">Your Brand Archetype</div>
+        <p id="brandPersonality">Your unique brand personality description will appear here...</p>
+    </div>
+
+    <!-- Main Results Grid -->
+    <div class="results-grid">
+        <!-- Homepage Layout Preview -->
+        <div class="layout-preview">
+            <h3>🏠 Your Homepage Layout</h3>
+            <div class="mini-layout" id="miniLayout">
+                <div class="layout-header">Your Business Name</div>
+                <div class="layout-nav"></div>
+                <div class="layout-hero" id="layoutHeroText">Hero: "Your key message"</div>
+                <div class="layout-content">
+                    <div class="layout-main"></div>
+                    <div class="layout-sidebar"></div>
+                </div>
+                <div class="layout-footer"></div>
+            </div>
+            <p class="layout-description">
+                <strong>Structure:</strong> <span id="layoutRecommendation">Your layout recommendation will appear here</span>
+            </p>
+        </div>
+
+        <!-- Visual Style Preview -->
+        <div class="visual-preview">
+            <h3>🎨 Your Visual Style</h3>
+            
+            <!-- Color Palette -->
+            <h4 class="preview-subtitle">Colors</h4>
+            <div class="color-grid" id="colorGrid">
+                <!-- Color swatches will be generated here -->
+            </div>
+
+            <!-- Typography -->
+            <h4 class="preview-subtitle">Typography</h4>
+            <div class="typography-mini" id="typographyMini">
+                <!-- Typography preview will be generated here -->
+            </div>
+
+            <!-- Photography Style -->
+            <h4 class="preview-subtitle">Photography</h4>
+            <div class="photo-grid" id="photoGrid">
+                <!-- Photo style preview will be generated here -->
+            </div>
+            <p class="photo-description" id="photoRecommendation">Photography style description will appear here</p>
+            <div id="designApproach"></div>
+        </div>
+    </div>
+
+            <!-- Content Strategy -->
+            <div class="content-strategy-compact">
+                <div class="strategy-card">
+                    <h3 class="section-title">📝 Your Messaging Strategy</h3>
+                    <div id="contentStrategy">
+                        <!-- Content strategy will be generated here -->
+                    </div>
+                </div>
+
+                <div class="strategy-card">
+                    <h3 class="section-title">✅ Project Checklist</h3>
+                    <div class="checklist-grid" id="finalChecklist">
+                        <!-- Checklist items will be generated here -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- Voice Characteristics -->
+            <div class="full-width-section">
+                <h3 class="section-title">🗣️ Your Brand Voice</h3>
+                <div class="voice-grid" id="voiceCharacteristics">
+                    <!-- Voice characteristics will be generated here -->
+                </div>
+            </div>
+
+            <!-- Download Section -->
+            <div class="full-width-section download-section">
+                <h3>Get Your Complete Brand Guide</h3>
+                <p>Download your brand summary or send it directly to Angie to start your website project.</p>
+                <div class="download-buttons">
+                    <button class="btn" id="downloadPDF">
+                        📄 Download PDF
+                    </button>
+                    <button class="btn" id="sendToAngie">
+                        ✉️ Send to Angie
+                    </button>
+                    <button class="btn btn-outline" id="copyText">
+                        📋 Copy as Text
+                    </button>
+                </div>
+            </div>
+        </div>
+        </div>
+
+        <!-- Navigation -->
+        <div class="module-transition hidden" id="moduleTransition">
+            <div class="transition-message" id="transitionMessage">Great! Moving to the next section...</div>
+            <div class="transition-subtitle" id="transitionSubtitle">Let's keep building your brand profile</div>
+        </div>
+
+        <div class="navigation">
+            <button class="btn btn-outline" id="prevBtn" style="display: none;">
+                <i class="fas fa-arrow-left"></i> Previous Module
+            </button>
+            <div class="module-indicator">
+                <span id="currentModuleText">Module 1 of 5</span>
+            </div>
+            <button class="btn" id="nextBtn">
+                Continue to Module 2 <i class="fas fa-arrow-right"></i>
+            </button>
+        </div>
+    </div>
+
+    <script src="brand_assistant.js"></script>
+</body>
+</html>
