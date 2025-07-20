@@ -7,7 +7,7 @@
 
 /* Website Importance Section */
 .website-importance-section {
-    background: white;
+    background: var(--light-accent) !important;
     position: relative;
     z-index: 2;
 }
@@ -48,7 +48,7 @@
 
 /* What's Included Section */
 .whats-included-section {
-    background: var(--light-accent);
+    background: var(--white) !important;
 }
 
 .included-list {

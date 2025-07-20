@@ -15,6 +15,9 @@
    --gradient-primary: linear-gradient(135deg, var(--primary), var(--primary-light));
    --gradient-light: linear-gradient(135deg, var(--light) 0%, var(--white) 50%, var(--light-accent) 100%);
 }
+*, *::before, *::after {
+    box-sizing: border-box;
+}
 
 body {
    font-family: 'Lato', sans-serif;
@@ -27,6 +30,14 @@ body {
    padding: 0;
    overflow-x: hidden;
    overflow-y: auto;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+    box-sizing: border-box; /* ADD THIS LINE */
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -92,13 +103,6 @@ img {
    max-width: 100%;
    height: auto;
    display: block;
-}
-
-.container {
-   width: 90%;
-   max-width: 1200px;
-   margin: 0 auto;
-   padding: 0 15px;
 }
 
 .section {
@@ -246,18 +250,7 @@ header.scrolled {
    height: 60px;
    transition: var(--transition);
 }
-body {
-   font-family: 'Lato', sans-serif;
-   line-height: 1.7;
-   color: var(--dark);
-   background-color: var(--light);
-   font-size: 16px;
-   font-weight: 400;
-   margin: 0;
-   padding-top: 80px;
-   overflow-x: hidden;
-   overflow-y: auto;
-}
+
 /* ============================================================================
    COMPLETE NAVIGATION STYLES - CENTRALIZED
    ============================================================================ */
@@ -689,6 +682,10 @@ html {
     .hero:before,
     .hero:after {
         display: none;
+    }
+    .container {
+        width: 95%;
+        padding: 0 20px; /* Increase mobile padding for better spacing */
     }
     
 }
