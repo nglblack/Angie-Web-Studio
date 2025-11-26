@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Apps Portfolio | Angie Web Studio</title>
+    <link rel="canonical" href="https://angiewebstudio.com/webapps.html">
+    <link rel="stylesheet" href="./css/default.css">
+    <link rel="stylesheet" href="portfolio.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Playfair+Display:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="./img/logo.png" alt="Angie Web Studio">
+                </a>
+            </div>
+            <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+                <i class="fas fa-bars"></i>
+            </button>                    
+            <nav>
+                <button class="nav-close" aria-label="Close navigation">
+                    <i class="fas fa-times"></i>
+                </button>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="websites.html">Websites</a></li>
+                    <li><a href="webapps.html" class="active">Web Apps</a></li>
+                    <li><a href="index.html#contact">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="overlay"></div>
+        </div>
+    </header>
+
+    <!-- Main Content Area -->
+    <main>
+        <!-- Page Header -->
+        <section class="page-header">
+            <div class="container">
+                <h1>Web App Projects</h1>
+                <p>Interactive browser-based tools built with vanilla JavaScript</p>
+                <div class="header-nav">
+                    <a href="websites.html" class="header-nav-link">Websites</a>
+                    <a href="webapps.html" class="header-nav-link active">Web Apps</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Portfolio Grid Section -->
+        <section class="section portfolio-grid-section">
+            <div class="container">
+                <div class="portfolio-simple-grid">
+                    
+                    <!-- Portfolio Item 1 -->
+                    <div class="portfolio-card">
+                        <div class="portfolio-card-image">
+                            <img src="./img/scalesofjustice.png" alt="Decision Scale Tool">
+                            <div class="portfolio-card-overlay">
+                                <a href="https://nglblack.github.io/scales_of_justice/" target="_blank" class="view-btn">
+                                    View Live <i class="fas fa-external-link-alt"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="portfolio-card-content">
+                            <span class="card-tag webapp">Decision Tool</span>
+                            <h3>Scales of Justice</h3>
+                            <p>Interactive decision-making tool that visualizes pros and cons. Add red flags and green flags to watch the scale tip in real-time.</p>
+                            <div class="card-tech">
+                                <span>Vanilla JS</span>
+                                <span>Custom CSS</span>
+                                <span>Responsive</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Portfolio Item 2 -->
+                    <div class="portfolio-card">
+                        <div class="portfolio-card-image">
+                            <img src="./img/castlebattlescheduler.png" alt="Castle Scheduler">
+                            <div class="portfolio-card-overlay">
+                                <a href="https://nglblack.github.io/Kingshot-castle-scheduler/" target="_blank" class="view-btn">
+                                    View Live <i class="fas fa-external-link-alt"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="portfolio-card-content">
+                            <span class="card-tag webapp">Scheduling Tool</span>
+                            <h3>Castle Battle Scheduler</h3>
+                            <p>Gaming alliance coordination tool with time grid, multiple structures, and screenshot export functionality.</p>
+                            <div class="card-tech">
+                                <span>Vanilla JS</span>
+                                <span>Time Grid</span>
+                                <span>Export Feature</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Portfolio Item 3 -->
+                    <div class="portfolio-card">
+                        <div class="portfolio-card-image">
+                            <img src="./img/thinktrack.png" alt="Think Track">
+                            <div class="portfolio-card-overlay">
+                                <a href="https://nglblack.github.io/Think-Track/" target="_blank" class="view-btn">
+                                    View Live <i class="fas fa-external-link-alt"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="portfolio-card-content">
+                            <span class="card-tag webapp">Flowchart Builder</span>
+                            <h3>Think Track</h3>
+                            <p>Interactive flowchart builder for mapping processes and workflows. Drag-and-drop nodes with import/export capabilities.</p>
+                            <div class="card-tech">
+                                <span>Vanilla JS</span>
+                                <span>Node System</span>
+                                <span>Import/Export</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Portfolio Item 4 -->
+                    <div class="portfolio-card">
+                        <div class="portfolio-card-image">
+                            <img src="./img/30dayrolling.png" alt="30 Day Rolling Calculator">
+                            <div class="portfolio-card-overlay">
+                                <a href="https://nglblack.github.io/30-day-rolling-calc/" target="_blank" class="view-btn">
+                                    View Live <i class="fas fa-external-link-alt"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="portfolio-card-content">
+                            <span class="card-tag webapp">Calculator</span>
+                            <h3>30-Day Rolling Calculator</h3>
+                            <p>Track and calculate rolling 30-day averages for metrics, performance, or data analysis with interactive visualization.</p>
+                            <div class="card-tech">
+                                <span>Vanilla JS</span>
+                                <span>Data Tracking</span>
+                                <span>Responsive</span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="section cta-simple-section">
+            <div class="container">
+                <div class="cta-simple">
+                    <h2>Need a Custom Web App?</h2>
+                    <p>Let's build an interactive tool tailored to your business needs</p>
+                    <a href="index.html#contact" class="btn btn-lg">Start Your Project</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer Section -->
+    <footer>
+        <div class="container footer-container">
+            <div class="footer-logo">
+                <img src="./img/logo.png" alt="Angie Web Studio">
+                <p>Fast, professional websites and web apps for small businesses. Hand-coded, no fuss.</p>
+                <div class="social-links">
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+            <div class="footer-nav">
+                <h4>Portfolio</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="websites.html">Website Projects</a></li>
+                    <li><a href="webapps.html">Web App Projects</a></li>
+                </ul>
+            </div>
+            <div class="footer-nav">
+                <h4>Contact</h4>
+                <ul>
+                    <li>Email: <a href="mailto:hello@angiewebstudio.com">hello@angiewebstudio.com</a></li>
+                    <li>Response time: Within 24 hours</li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; <span id="year"></span> Angie Web Studio. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="./js/portfolio.js"></script>
+</body>
+</html>

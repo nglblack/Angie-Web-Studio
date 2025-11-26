@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Angie Web Studio</title>
-    <link rel="canonical" href="https://angiewebstudio.com/index.html">
+    <title>Angie Web Studio - Fast Websites & Web Apps</title>
+    <link rel="canonical" href="https://angiewebstudio.com/">
+    <link rel="stylesheet" href="./css/default.css">
     <link rel="stylesheet" href="./css/index.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -28,10 +29,10 @@
                     <i class="fas fa-times"></i>
                 </button>
                 <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="pricing.html">Pricing</a></li>
-                    <li><a href="portfolio.html">Portfolio</a></li>
-                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="index.html" class="active">Home</a></li>
+                    <li><a href="websites.html">Websites</a></li>
+                    <li><a href="webapps.html">Web Apps</a></li>
+                    <li><a href="#contact">Contact</a></li>
                 </ul>
             </nav>
             <div class="overlay"></div>
@@ -42,316 +43,297 @@
     <main>
         <!-- Hero Section -->
         <div class="container">
-            <section class="hero">
+            <section id="home" class="hero">
                 <div class="hero-content">
-                  <h1 class="hero-title">Fast, Professional Websites Without the Fuss</h1>
-                  <p class="hero-subtitle">I build clean, custom-coded sites for local businesses and event hosts who need a trustworthy online presence, live in days, not weeks.</p>
+                  <h1 class="hero-title">Fast Websites & Web Apps for Small Businesses</h1>
+                  <p class="hero-subtitle">Hand-coded, professional, and delivered in days—not weeks. No builders, no bloat, just clean code that works.</p>
                   <div class="hero-buttons">
-                    <a href="howitworks.html" class="btn btn-lg">Start Your Project</a>
-                    <a href="templates.html" class="btn btn-outline btn-lg">Browse Templates</a>
+                    <a href="#contact" class="btn btn-lg">Start Your Project</a>
+                    <a href="#portfolio" class="btn btn-outline btn-lg">View Examples</a>
                   </div>
                 </div>
             </section>
         </div>
-        <!-- What's Included Section (now second, with light background) -->
-<section class="section whats-included-section bg-light">
-    <div class="container">
-        <div class="text-center mb-5">
-            <h2>Everything You Need to Get Online</h2>
-            <p class="mb-4">No hidden fees, no monthly subscriptions. Just a complete website that works.</p>
-        </div>
-        
-        <div class="grid grid-2">
-            <div>
-                <img src="./img/everythingyouneed.png" alt="Professional website development and coding" style="width: 100%; height: auto; display: block;">
-            </div>
-            
-            <div class="included-list">
-                <div class="included-item">
-                    <i class="fas fa-check-circle"></i>
-                    <div class="included-content">
-                        <strong>Hand-coded website</strong> that loads fast and works on all devices
-                    </div>
-                </div>
-                <div class="included-item">
-                    <i class="fas fa-check-circle"></i>
-                    <div class="included-content">
-                        <strong>Contact forms</strong> for inquiries, RSVPs, or bookings
-                    </div>
-                </div>
-                <div class="included-item">
-                    <i class="fas fa-check-circle"></i>
-                    <div class="included-content">
-                        <strong>Mobile-responsive design</strong> that looks great everywhere
-                    </div>
-                </div>
-                <div class="included-item">
-                    <i class="fas fa-check-circle"></i>
-                    <div class="included-content">
-                        <strong>Fast 3-5 day delivery</strong> to get you online quickly
-                    </div>
-                </div>
-                <div class="included-item">
-                    <i class="fas fa-check-circle"></i>
-                    <div class="included-content">
-                        <strong>Domain setup help</strong> if you need a web address
-                    </div>
-                </div>
-                <div class="included-item">
-                    <i class="fas fa-check-circle"></i>
-                    <div class="included-content">
-                        <strong>Personal support</strong> for questions and updates
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-        <!-- Still Don't Have a Website Section (now first, with white background) -->
-<section class="section website-importance-section website-importance-circles">
-    <div class="container" style="position: relative; z-index: 2;">
-        <div class="text-center mb-5">
-            <h2>Still Don't Have a Website? That's Hurting Your Business</h2>
-                <p class="mb-4">These days, when someone hears about your business, their first move is to look you up online. If you don't have a website—or if it looks unfinished—they might never reach out.</p>
-            <!-- Mobile-only image -->
-            <div class="mobile-inline-image">
-            <img src="./img/nowebstiewhite.png" alt="Business owner looking frustrated while using computer">
-            </div>    
-        </div>
-        
-        <div class="grid grid-2">
-            
-            <div>
-                <p class="mb-4">Even great businesses lose leads every day because people:</p>
-                <div class="included-list">
-                    <div class="included-item">
-                        <i class="fas fa-times-circle" style="color: var(--primary);"></i>
-                        <div class="included-content">
-                            Can't find accurate info online
-                        </div>
-                    </div>
-                    <div class="included-item">
-                        <i class="fas fa-times-circle" style="color: var(--primary);"></i>
-                        <div class="included-content">
-                            Don't trust a Facebook page or outdated link
-                        </div>
-                    </div>
-                    <div class="included-item">
-                        <i class="fas fa-times-circle" style="color: var(--primary);"></i>
-                        <div class="included-content">
-                            Get frustrated with DIY designs that don't load well
-                        </div>
-                    </div>
-                </div>
-                
-                <p class="mb-4 mt-4"><strong>Your website is more than a digital flyer. It's your first impression, your reputation, and your best shot at being taken seriously.</strong></p>
-                
-                <div class="angie-solution-highlight">
-                    At Angie Web Studio, I build fast, hand-coded websites that make you look polished, professional, and ready for business—without the agency price tag.
-                </div>
-            </div>
-            
-            <div>
-                <img src="./img/nowebstiewhite.png" alt="Business owner looking frustrated while using computer" class="hero-img repositionable-image">
-            </div>
-        </div>
-    </div>
-</section>
 
-
-        <!-- Who I Work With Section -->
-        <section class="section">
-            <div class="container text-center">
-              <h2>Who I Work With</h2>
-              <p class="mb-4">You don't need a full agency. You need one clean, fast website—and someone you can trust to build it.</p>
-              <div class="grid grid-3">
-                <div class="feature-item">
-                  <div class="feature-image">
-                    <img src="./img/eventorganizer.png" alt="Event organizer setting up outdoor festival with people celebrating in background">
-                  </div>
-                  <div class="feature-content">
-                    <div class="feature-icon"><i class="fas fa-calendar-alt"></i></div>
-                    <h3 class="feature-title">Event Organizers</h3>
-                    <p>Need a landing page for your festival or RSVP site for your wedding? I've got you.</p>
-                  </div>
-                </div>
-                <div class="feature-item">
-                  <div class="feature-image">
-                    <img src="./img/localservice.png" alt="Local service provider working with tools, satisfied customer in background">
-                  </div>
-                  <div class="feature-content">
-                    <div class="feature-icon"><i class="fas fa-tools"></i></div>
-                    <h3 class="feature-title">Local Service Providers</h3>
-                    <p>If you're a mechanic, contractor, or small business owner, I'll help your clients find you online.</p>
-                  </div>
-                </div>
-                <div class="feature-item">
-                  <div class="feature-image">
-                    <img src="./img/creatives.png" alt="Creative freelancer working on laptop with coffee, artistic workspace">
-                  </div>
-                  <div class="feature-content">
-                    <div class="feature-icon"><i class="fas fa-microphone-alt"></i></div>
-                    <h3 class="feature-title">Freelancers & Creatives</h3>
-                    <p>Whether you're a performer or a personal trainer, your site should look as good as your work.</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-        </section>
-
-         <!-- Testimonials Section 
-        <section class="section testimonials-section">
-            <div class="container text-center">
-                <h2>What My Clients Say</h2>
-                <p class="mb-4">Real feedback from real business owners who got their websites done right.</p>
-                <div class="testimonials-grid grid grid-3">
-                    <div class="testimonial-card">
-                        <div class="testimonial-content">
-                            <p>"Angie made the whole process so easy. I had my landscaping website up and running in 4 days, and I'm already getting calls from new customers."</p>
-                        </div>
-                        <div class="testimonial-author">
-                            <strong>Brent T.</strong><br>
-                            <span>Home Services</span>
-                        </div>
-                    </div>
-                    <div class="testimonial-card">
-                        <div class="testimonial-content">
-                            <p>"I needed an RSVP site for my wedding and was stressed about the tech stuff. Angie handled everything and made it look beautiful. Our guests loved how easy it was to use."</p>
-                        </div>
-                        <div class="testimonial-author">
-                            <strong>Riley M.</strong><br>
-                            <span>Event Host</span>
-                        </div>
-                    </div>
-                    <div class="testimonial-card">
-                        <div class="testimonial-content">
-                            <p>"As a musician, I needed something that showcased my work but didn't break the bank. Angie delivered exactly what I needed, and the site loads super fast."</p>
-                        </div>
-                        <div class="testimonial-author">
-                            <strong>Jordan K.</strong><br>
-                            <span>Performer</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section> -->
-
-        <!-- Brand Discovery Section -->
-        <section class="section brand-discovery-section">
-          <div class="container">
-            <div class="brand-discovery-card">
-              <div class="card-accent"></div>
-              <div class="card-grid">
-                <!-- Content and Visual in a Row -->
-                <div class="content-row">
-                  <div class="card-content">
-                    <h2>Not Sure Where to Start?</h2>
-                    <p>Let our brand discovery assistant help! Answer a few quick questions and get your personalized brand guide in minutes.</p>
-                    
-                    <div class="card-benefits">
-                      <div class="benefit-item">
-                        <i class="fas fa-check-circle"></i>
-                        <span>Custom color palette just for you</span>
-                      </div>
-                      <div class="benefit-item">
-                        <i class="fas fa-check-circle"></i>
-                        <span>Perfect typography recommendations</span>
-                      </div>
-                      <div class="benefit-item">
-                        <i class="fas fa-check-circle"></i>
-                        <span>Complete website roadmap</span>
-                      </div>
-                      <div class="benefit-item">
-                        <i class="fas fa-check-circle"></i>
-                        <span>Photography style guide</span>
-                      </div>
-                    </div>
-
-                    <div class="brand-time-indicator">
-                      <i class="fas fa-clock"></i>
-                      <span>5 minutes • 100% free</span>
-                    </div>
-                  </div>
-
-                  <div class="card-visual">
-                    <div class="mockup-browser">
-                      <div class="browser-header">
-                        <div class="browser-dot dot-red"></div>
-                        <div class="browser-dot dot-yellow"></div>
-                        <div class="browser-dot dot-green"></div>
-                      </div>
-                      <div class="browser-content">
-                        <div class="mock-title">🎨 Brand Discovery Assistant</div>
-                        <div class="mock-progress">
-                          <div class="mock-progress-fill"></div>
-                        </div>
-                        <div class="mock-options">
-                          <div class="mock-option">🧑‍⚖️ Formal</div>
-                          <div class="mock-option">☕ Casual</div>
-                          <div class="mock-option">🤍 Neutral</div>
-                          <div class="mock-option">🧡 Warm</div>
-                        </div>
-                        <p class="mock-status">Module 1 of 5 complete...</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                
-                <!-- Centered Button Row -->
-                <div class="button-row">
-                  <a href="brand-assistant.html" class="btn btn-cta brand-cta-btn">Start Brand Discovery</a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <!-- FAQ Section -->
-        <section class="section faq-section">
+        <!-- What I Build Section -->
+        <section id="services" class="section services-section">
             <div class="container">
                 <div class="text-center mb-5">
-                    <h2>Frequently Asked Questions</h2>
-                    <p>Got questions? I've got answers. Here's what most people want to know.</p>
+                    <h2>What I Build</h2>
+                    <p>From business websites to interactive tools—everything custom-coded, mobile-friendly, and built to last.</p>
                 </div>
-                <div class="faq-accordion">
-                    <div class="faq-accordion-item">
-                        <div class="faq-question" tabindex="0" role="button" aria-expanded="false">
-                            <h3>Do I need to buy a domain first?</h3>
-                            <i class="fas fa-chevron-down faq-icon"></i>
+                
+                <div class="grid grid-2 services-grid">
+                    <!-- Websites Card -->
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-laptop-code"></i>
                         </div>
-                        <div class="faq-answer">
-                            <p>Nope! You can get started without a domain. I'll help you choose and set up the perfect domain name as part of the process, or you can bring your own if you already have one.</p>
-                        </div>
-                    </div>
-                    
-                    <div class="faq-accordion-item">
-                        <div class="faq-question" tabindex="0" role="button" aria-expanded="false">
-                            <h3>How long does it actually take?</h3>
-                            <i class="fas fa-chevron-down faq-icon"></i>
-                        </div>
-                        <div class="faq-answer">
-                            <p>Most websites go live within 3-5 business days. Simple sites can be done in 2-3 days, while more complex projects might take up to a week. I'll give you an exact timeline after we chat about your needs.</p>
-                        </div>
-                    </div>
-                    
-                    <div class="faq-accordion-item">
-                        <div class="faq-question" tabindex="0" role="button" aria-expanded="false">
-                            <h3>What if I don't know what to write?</h3>
-                            <i class="fas fa-chevron-down faq-icon"></i>
-                        </div>
-                        <div class="faq-answer">
-                            <p>No worries! I'll guide you through what content you need and can help you write it. Many clients start with just basic info about their business, and we build from there. You don't need to be a copywriter.</p>
+                        <h3>Custom Websites</h3>
+                        <p class="service-description">Professional, fast-loading sites that make your business look legitimate and trustworthy.</p>
+                        <ul class="service-list">
+                            <li><i class="fas fa-check"></i> Business landing pages</li>
+                            <li><i class="fas fa-check"></i> Event & RSVP sites</li>
+                            <li><i class="fas fa-check"></i> Portfolio & showcase sites</li>
+                            <li><i class="fas fa-check"></i> Local service pages</li>
+                        </ul>
+                        <div class="service-highlight">
+                            Starting at $400
                         </div>
                     </div>
+
+                    <!-- Web Apps Card -->
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-rocket"></i>
+                        </div>
+                        <h3>Interactive Web Apps</h3>
+                        <p class="service-description">Lightweight, browser-based tools that solve specific problems—no servers, no complexity.</p>
+                        <ul class="service-list">
+                            <li><i class="fas fa-check"></i> Calculators & quote generators</li>
+                            <li><i class="fas fa-check"></i> Scheduling & booking tools</li>
+                            <li><i class="fas fa-check"></i> Data converters & utilities</li>
+                            <li><i class="fas fa-check"></i> Interactive dashboards</li>
+                        </ul>
+                        <div class="service-highlight">
+                            Custom pricing
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Portfolio Section -->
+        <section id="portfolio" class="section portfolio-section bg-light">
+            <div class="container">
+                <div class="text-center mb-5">
+                    <h2>Recent Work</h2>
+                    <p>Live examples of websites and web apps I've built—see them in action.</p>
+                </div>
+
+                <!-- Portfolio Featured -->
+                <div class="portfolio-featured">
+                    <!-- Featured Project 1 - Web App -->
+                    <div class="portfolio-featured-item">
+                        <div class="featured-image">
+                            <img src="./img/scalesofjustice.png" alt="Scales of Justice Decision Tool">
+                            <div class="featured-badge">
+                                <i class="fas fa-star"></i> Featured
+                            </div>
+                        </div>
+                        <div class="featured-content">
+                            <div class="featured-header">
+                                <span class="portfolio-tag">Web App</span>
+                                <a href="https://nglblack.github.io/scales_of_justice/" target="_blank" class="featured-link">
+                                    View Live <i class="fas fa-arrow-right"></i>
+                                </a>
+                            </div>
+                            <h3>Decision Scale Tool</h3>
+                            <p class="featured-description">A sleek, interactive decision-making tool that helps you weigh pros and cons visually. Users can add red flags and green flags to each side of the scale, watching it tip in real-time as they evaluate important choices. Perfect for anyone struggling to make tough decisions—from choosing job offers to evaluating relationships.</p>
+                            <div class="featured-tech">
+                                <span class="tech-tag"><i class="fas fa-code"></i> Vanilla JS</span>
+                                <span class="tech-tag"><i class="fas fa-paint-brush"></i> Custom CSS</span>
+                                <span class="tech-tag"><i class="fas fa-mobile-alt"></i> Responsive</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Featured Project 2 - Web App -->
+                    <div class="portfolio-featured-item reverse">
+                        <div class="featured-image">
+                            <img src="./img/castlebattlescheduler.png" alt="Castle Scheduler">
+                            <div class="featured-badge">
+                                <i class="fas fa-star"></i> Featured
+                            </div>
+                        </div>
+                        <div class="featured-content">
+                            <div class="featured-header">
+                                <span class="portfolio-tag">Web App</span>
+                                <a href="https://nglblack.github.io/Kingshot-castle-scheduler/" target="_blank" class="featured-link">
+                                    View Live <i class="fas fa-arrow-right"></i>
+                                </a>
+                            </div>
+                            <h3>Castle Battle Scheduler</h3>
+                            <p class="featured-description">A custom scheduling tool built for gaming alliances to coordinate castle battle times across multiple structures. Features an intuitive grid interface where users can assign time slots, choose intervals (15/30/60 minutes), and visualize their entire battle strategy. Includes screenshot functionality to easily share schedules with team members.</p>
+                            <div class="featured-tech">
+                                <span class="tech-tag"><i class="fas fa-code"></i> Vanilla JS</span>
+                                <span class="tech-tag"><i class="fas fa-calendar-alt"></i> Time Grid</span>
+                                <span class="tech-tag"><i class="fas fa-download"></i> Export Feature</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Featured Project 3 - Web App -->
+                    <div class="portfolio-featured-item">
+                        <div class="featured-image">
+                            <img src="./img/thinktrack.png" alt="Think Track Flowchart Tool">
+                            <div class="featured-badge">
+                                <i class="fas fa-star"></i> Featured
+                            </div>
+                        </div>
+                        <div class="featured-content">
+                            <div class="featured-header">
+                                <span class="portfolio-tag">Web App</span>
+                                <a href="https://nglblack.github.io/Think-Track/" target="_blank" class="featured-link">
+                                    View Live <i class="fas fa-arrow-right"></i>
+                                </a>
+                            </div>
+                            <h3>Think Track Flowchart</h3>
+                            <p class="featured-description">An interactive flowchart builder for mapping out complex processes, workflows, and decision trees. Users can create, connect, and organize nodes to visualize their thinking process. Features drag-and-drop functionality, import/export capabilities, and a clean interface that makes process mapping simple and intuitive.</p>
+                            <div class="featured-tech">
+                                <span class="tech-tag"><i class="fas fa-code"></i> Vanilla JS</span>
+                                <span class="tech-tag"><i class="fas fa-project-diagram"></i> Node System</span>
+                                <span class="tech-tag"><i class="fas fa-file-export"></i> Import/Export</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- View More Web Apps Button -->
+                    <div class="view-more-container centered">
+                        <a href="webapps.html" class="btn btn-primary btn-lg">View All Web Apps</a>
+                    </div>
+
+                    <!-- Website Examples - Compact Grid -->
+                    <div class="portfolio-compact-grid">
+                        <h3 class="compact-grid-title">Website Projects</h3>
+                        <div class="compact-grid">
+                            <div class="compact-item">
+                                <div class="compact-image">
+                                    <img src="./img/performer-portfolio.png" alt="Performer Portfolio">
+                                    <div class="compact-overlay">
+                                        <a href="https://nglblack.github.io/performer-portfolio/" target="_blank">
+                                            <i class="fas fa-external-link-alt"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="compact-content">
+                                    <span class="portfolio-tag website">Website</span>
+                                    <h4>Performer Portfolio</h4>
+                                    <p>Sleek showcase site for entertainers with media galleries and booking options.</p>
+                                </div>
+                            </div>
+
+                            <div class="compact-item">
+                                <div class="compact-image">
+                                    <img src="./img/bookedkit.png" alt="Booked & Busy">
+                                    <div class="compact-overlay">
+                                        <a href="https://nglblack.github.io/booked-busy/" target="_blank">
+                                            <i class="fas fa-external-link-alt"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="compact-content">
+                                    <span class="portfolio-tag website">Website</span>
+                                    <h4>Booked & Busy</h4>
+                                    <p>Professional booking site for freelancers with testimonials and service listings.</p>
+                                </div>
+                            </div>
+
+                            <div class="compact-item">
+                                <div class="compact-image">
+                                    <img src="./img/wellness.png" alt="Health & Wellness">
+                                    <div class="compact-overlay">
+                                        <a href="https://nglblack.github.io/wellness-website-template/" target="_blank">
+                                            <i class="fas fa-external-link-alt"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="compact-content">
+                                    <span class="portfolio-tag website">Website</span>
+                                    <h4>Health & Wellness</h4>
+                                    <p>Calming, professional site for health practitioners and wellness coaches.</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- View More Button -->
+                        <div class="view-more-container">
+                            <a href="websites.html" class="btn btn-outline btn-lg">View All Websites</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Simple CTA Section -->
+        <section id="contact" class="section cta-section">
+            <div class="container">
+                <div class="cta-card">
+                    <h2>Ready to Get Started?</h2>
+                    <p>Fill out the form below and I'll get back to you within 24 hours with a quote and timeline.</p>
                     
-                    <div class="faq-accordion-item">
-                        <div class="faq-question" tabindex="0" role="button" aria-expanded="false">
-                            <h3>Can I make changes after the site is done?</h3>
-                            <i class="fas fa-chevron-down faq-icon"></i>
+                    <form class="contact-form" action="#" method="POST">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="name">Your Name</label>
+                                <input type="text" id="name" name="name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email Address</label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
                         </div>
-                        <div class="faq-answer">
-                            <p>Absolutely. I include basic content updates for the first month, and I'm always available for ongoing changes. I'll also show you how to make simple text updates yourself if you want to.</p>
+                        
+                        <div class="form-group">
+                            <label for="project-type">What do you need?</label>
+                            <select id="project-type" name="project-type" required>
+                                <option value="">Choose an option...</option>
+                                <option value="website">Custom Website</option>
+                                <option value="webapp">Interactive Web App</option>
+                                <option value="both">Both Website & Web App</option>
+                                <option value="other">Not sure / Other</option>
+                            </select>
                         </div>
+                        
+                        <div class="form-group">
+                            <label for="message">Tell me about your project</label>
+                            <textarea id="message" name="message" rows="5" placeholder="What are you looking to build? Any specific features or timeline in mind?"></textarea>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-lg">Send Project Request</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <!-- Mini FAQ Section -->
+        <section class="section faq-mini-section bg-light">
+            <div class="container">
+                <div class="text-center mb-4">
+                    <h2>Quick Answers</h2>
+                </div>
+                
+                <div class="faq-mini-grid">
+                    <div class="faq-mini-item">
+                        <div class="faq-mini-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <h3>How long does it take?</h3>
+                        <p>Most projects are completed in 3-5 business days. Simple sites can be done in 2-3 days.</p>
+                    </div>
+                    
+                    <div class="faq-mini-item">
+                        <div class="faq-mini-icon">
+                            <i class="fas fa-dollar-sign"></i>
+                        </div>
+                        <h3>What's the cost?</h3>
+                        <p>Websites start at $400. Web apps are custom-priced based on complexity. No hidden fees or monthly charges.</p>
+                    </div>
+                    
+                    <div class="faq-mini-item">
+                        <div class="faq-mini-icon">
+                            <i class="fas fa-edit"></i>
+                        </div>
+                        <h3>What if I need changes?</h3>
+                        <p>I include revisions and basic updates for the first month. You'll also own your code completely.</p>
+                    </div>
+                    
+                    <div class="faq-mini-item">
+                        <div class="faq-mini-icon">
+                            <i class="fas fa-mobile-alt"></i>
+                        </div>
+                        <h3>Will it work on phones?</h3>
+                        <p>Absolutely. Every site and app is built mobile-first and tested on all devices.</p>
                     </div>
                 </div>
             </div>
@@ -363,49 +345,34 @@
         <div class="container footer-container">
             <div class="footer-logo">
                 <img src="./img/logo.png" alt="Angie Web Studio">
-                <p>Creating beautiful, functional websites that help your business shine online.</p>
+                <p>Fast, professional websites and web apps for small businesses. Hand-coded, no fuss.</p>
                 <div class="social-links">
                     <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
                     <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
-                    <a href="#" aria-label="Pinterest"><i class="fab fa-pinterest"></i></a>
                     <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
-                    
-
                 </div>
             </div>
             <div class="footer-nav">
-                <h4>Navigation</h4>
+                <h4>Portfolio</h4>
                 <ul>
                     <li><a href="index.html">Home</a></li>
-                    <li><a href="pricing.html">Pricing</a></li>
-                    <li><a href="portfolio.html">Portfolio</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                    <li><a href="ai_copy_helper/ai_copy_helper.html">Try the AI Copy Helper</a></li>
-                </ul>
-            </div>
-            <div class="footer-nav">
-                <h4>Get Started</h4>
-                <ul>
-                    <li><a href="contact.html">Book a Discovery Call</a></li>
-                    <li><a href="templates.html">Choose a Template</a></li>
-                    <li><a href="pricing.html">View Pricing</a></li>
-                    
+                    <li><a href="websites.html">Website Projects</a></li>
+                    <li><a href="webapps.html">Web App Projects</a></li>
                 </ul>
             </div>
             <div class="footer-nav">
                 <h4>Contact</h4>
                 <ul>
-                    <li>Email: hello@angiewebstudio.com</li>
-                    <li>Phone: (555) 123-4567</li>
-                    <li>Hours: Mon-Fri, 9am-5pm PST</li>
+                    <li>Email: <a href="mailto:hello@angiewebstudio.com">hello@angiewebstudio.com</a></li>
+                    <li>Response time: Within 24 hours</li>
                 </ul>
             </div>
         </div>
         <div class="copyright">
-            <p>&copy; <script>document.write(new Date().getFullYear())</script> Angie Web Studio. All rights reserved.</p>
+            <p>&copy; <span id="year"></span> Angie Web Studio. All rights reserved.</p>
         </div>
     </footer>
-    <!-- Scripts -->
-    <script src="universal_main.js"></script>
+
+    <script src="./js/index.js"></script>
 </body>
 </html>
