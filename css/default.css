@@ -687,5 +687,182 @@ html {
         width: 95%;
         padding: 0 20px; /* Increase mobile padding for better spacing */
     }
+    /* ============================================================================
+   MOBILE MENU FIX - ADD THIS TO YOUR CSS OR REPLACE NAVIGATION SECTION
+   ============================================================================ */
+
+/* Ensure nav toggle button is visible on mobile */
+@media (max-width: 768px) {
+    .nav-toggle {
+        display: block !important;
+        z-index: 1002;
+        position: relative;
+        padding: 0.5rem;
+        border-radius: 4px;
+        background: none;
+        border: none;
+        font-size: 1.5rem;
+        cursor: pointer;
+        color: var(--dark);
+        transition: all 0.3s ease;
+    }
+
+    .nav-toggle:hover {
+        background: rgba(109, 0, 26, 0.1);
+        color: var(--primary);
+    }
+
+    /* Hide toggle when menu is open */
+    .nav-toggle.hidden {
+        display: none !important;
+        opacity: 0 !important;
+        visibility: hidden !important;
+    }
+
+    /* Mobile navigation panel */
+    nav {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 85%;
+        max-width: 320px;
+        height: 100vh;
+        background-color: white;
+        box-shadow: -2px 0 10px rgba(0, 0, 0, 0.1);
+        transition: right 0.3s ease;
+        z-index: 1001;
+        padding-top: 4rem;
+        overflow-y: auto;
+    }
+
+    /* Show nav when active */
+    nav.active {
+        right: 0;
+    }
+
+    /* Close button */
+    nav .nav-close {
+        display: flex !important;
+        background-color: rgba(255, 255, 255, 0.95);
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+        border: 1px solid rgba(109, 0, 26, 0.2);
+        position: absolute;
+        top: 1rem;
+        right: 1rem;
+        width: 44px;
+        height: 44px;
+        align-items: center;
+        justify-content: center;
+        border-radius: 6px;
+        font-size: 1.5rem;
+        color: var(--dark);
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
+
+    nav .nav-close:hover {
+        background: rgba(109, 0, 26, 0.1);
+        color: var(--primary);
+        transform: scale(1.1);
+    }
+
+    /* Mobile nav list */
+    nav ul {
+        flex-direction: column;
+        padding: 0 2rem;
+        gap: 1.5rem;
+    }
+    
+    nav ul li a {
+        display: block;
+        padding: 0.8rem 0;
+        font-size: 1.1rem;
+        border-bottom: 1px solid rgba(109, 0, 26, 0.1);
+    }
+
+    /* Overlay */
+    .overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        z-index: 1000;
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.3s ease;
+    }
+
+    .overlay.active {
+        opacity: 1;
+        visibility: visible;
+    }
+}
+
+/* Desktop - keep nav visible and hide mobile elements */
+@media (min-width: 769px) {
+    .nav-toggle,
+    .nav-close {
+        display: none !important;
+    }
+
+    .overlay {
+        display: none !important;
+    }
+
+    nav {
+        position: static;
+        width: auto;
+        height: auto;
+        background: transparent;
+        box-shadow: none;
+        padding: 0;
+    }
+
+    nav ul {
+        display: flex;
+        list-style: none;
+        gap: 2.5rem;
+        padding: 0;
+        margin: 0;
+    }
+}
+/* ============================================================================
+   COPY THIS ENTIRE BLOCK AND PASTE AT THE BOTTOM OF default.css
+   ============================================================================ */
+
+/* Mobile UX Fixes - Angie Web Studio */
+@media (max-width: 768px) {
+    /* Fix 1: Add bottom padding to header */
+    header {
+        padding-bottom: 0.5rem;
+    }
+    
+    .header-container {
+        padding: 1rem 0 1rem 0;
+    }
+    
+    /* Fix 2: Remove gap on portfolio pages */
+    .page-header {
+        padding-top: 5rem;
+        margin-top: 0 !important;
+    }
+    
+    .page-header .container {
+        padding-top: 0;
+        margin-top: 0;
+    }
+    
+    /* Fix 3: Ensure hero section starts cleanly */
+    .hero {
+        padding: 4rem 0;
+        margin-top: 0 !important;
+    }
+    
+    main > *:first-child {
+        margin-top: 0 !important;
+    }
+}
     
 }

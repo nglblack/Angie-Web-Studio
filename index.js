@@ -1,5 +1,5 @@
 // ============================================================================
-// NAVIGATION TOGGLE
+// NAVIGATION TOGGLE - FIXED VERSION
 // ============================================================================
 
 const navToggle = document.querySelector('.nav-toggle');
@@ -8,31 +8,48 @@ const navClose = document.querySelector('.nav-close');
 const overlay = document.querySelector('.overlay');
 const body = document.body;
 
-// Open navigation
-navToggle.addEventListener('click', () => {
-    nav.classList.add('active');
-    overlay.classList.add('active');
-    navToggle.classList.add('hidden');
-    body.style.overflow = 'hidden';
-});
-
-// Close navigation
-navClose.addEventListener('click', closeNav);
-overlay.addEventListener('click', closeNav);
-
-function closeNav() {
-    nav.classList.remove('active');
-    overlay.classList.remove('active');
-    navToggle.classList.remove('hidden');
-    body.style.overflow = '';
-}
-
-// Close nav when clicking on a link
-document.querySelectorAll('nav a').forEach(link => {
-    link.addEventListener('click', () => {
-        closeNav();
+// Only initialize if elements exist (prevents errors)
+if (navToggle && nav && overlay) {
+    // Open navigation
+    navToggle.addEventListener('click', () => {
+        nav.classList.add('active');
+        overlay.classList.add('active');
+        navToggle.classList.add('hidden');
+        navToggle.setAttribute('aria-expanded', 'true');
+        body.style.overflow = 'hidden';
     });
-});
+
+    // Close navigation function
+    function closeNav() {
+        nav.classList.remove('active');
+        overlay.classList.remove('active');
+        navToggle.classList.remove('hidden');
+        navToggle.setAttribute('aria-expanded', 'false');
+        body.style.overflow = '';
+    }
+
+    // Close button click
+    if (navClose) {
+        navClose.addEventListener('click', closeNav);
+    }
+
+    // Overlay click
+    overlay.addEventListener('click', closeNav);
+
+    // Close nav when clicking on a link
+    document.querySelectorAll('nav a').forEach(link => {
+        link.addEventListener('click', () => {
+            closeNav();
+        });
+    });
+
+    // Close nav with Escape key
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && nav.classList.contains('active')) {
+            closeNav();
+        }
+    });
+}
 
 // ============================================================================
 // SMOOTH SCROLLING FOR ANCHOR LINKS
