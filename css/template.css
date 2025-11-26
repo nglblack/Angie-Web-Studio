@@ -1,0 +1,483 @@
+/* ============================================================================
+   TEMPLATES PAGE - SIMPLIFIED STYLES
+   Import base styles and add clean, focused template-specific components
+   ============================================================================ */
+
+/* FIXED: Import statement with proper quotes */
+@import url('./default.css');
+
+/* ============================================================================
+   HERO SECTION
+   ============================================================================ */
+
+.hero {
+    padding: 6rem 0;
+    background-color: var(--white);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-content {
+    max-width: 850px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+    padding: 0 1rem;
+}
+
+.hero:before {
+    content: '';
+    position: absolute;
+    top: -50px;
+    right: -25px;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background-color: rgba(109, 0, 26, 0.05);
+    z-index: 1;
+}
+
+.hero:after {
+    content: '';
+    position: absolute;
+    bottom: -70px;
+    left: -35px;
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    background-color: rgba(112, 128, 144, 0.05);
+    z-index: 1;
+}
+
+.hero-title {
+    font-size: 3.5rem;
+    margin-bottom: 1.8rem;
+    color: var(--primary);
+    line-height: 1.15;
+    letter-spacing: -0.5px;
+}
+
+.hero-subtitle {
+    font-size: 1.6rem;
+    margin-bottom: 2.5rem;
+    color: var(--secondary);
+    font-weight: 300;
+    line-height: 1.5;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 1.25rem;
+    justify-content: center;
+    margin-top: 2.5rem;
+}
+
+/* ============================================================================
+   TEMPLATE CATEGORIES SECTION
+   ============================================================================ */
+
+.template-categories {
+    padding: 5rem 0;
+    background-color: var(--white);
+}
+
+.section-intro {
+    font-size: 1.2rem;
+    color: var(--secondary-dark);
+    max-width: 700px;
+    margin: 0 auto 3rem;
+}
+
+/* ============================================================================
+   CATEGORY GRID
+   ============================================================================ */
+
+.category-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 3rem;
+    margin-top: 3rem;
+}
+
+/* ============================================================================
+   CATEGORY CARDS
+   ============================================================================ */
+
+.category-card {
+    background: white;
+    border: 2px solid rgba(109, 0, 26, 0.1);
+    border-radius: 20px;
+    padding: 2.5rem;
+    text-align: center;
+    transition: var(--transition);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+    position: relative;
+    overflow: hidden;
+}
+
+.category-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 40px rgba(109, 0, 26, 0.15);
+    border-color: var(--primary);
+}
+
+.category-card.featured {
+    border-color: var(--primary);
+    box-shadow: 0 12px 35px rgba(109, 0, 26, 0.2);
+}
+
+.featured-badge {
+    position: absolute;
+    top: 1.5rem;
+    right: 1.5rem;
+    background: var(--gradient-primary);
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    box-shadow: 0 4px 12px rgba(109, 0, 26, 0.3);
+}
+
+.category-icon {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 1.5rem;
+    background: var(--gradient-primary);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 8px 20px rgba(109, 0, 26, 0.25);
+}
+
+.category-icon i {
+    font-size: 2.5rem;
+    color: white;
+}
+
+.category-card h3 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    color: var(--primary);
+    font-family: 'Playfair Display', serif;
+}
+
+.category-description {
+    font-size: 1.05rem;
+    color: var(--secondary-dark);
+    line-height: 1.6;
+    margin-bottom: 2rem;
+}
+
+/* ============================================================================
+   TEMPLATE PREVIEW IMAGE
+   ============================================================================ */
+
+.template-preview {
+    margin: 2rem 0;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+    border: 2px solid rgba(109, 0, 26, 0.1);
+}
+
+.template-preview img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: var(--transition);
+}
+
+.category-card:hover .template-preview img {
+    transform: scale(1.05);
+}
+
+/* ============================================================================
+   TEMPLATE EXAMPLES LIST
+   ============================================================================ */
+
+.template-examples {
+    text-align: left;
+    background: rgba(109, 0, 26, 0.03);
+    padding: 1.5rem;
+    border-radius: 10px;
+    margin: 2rem 0;
+}
+
+.examples-label {
+    font-weight: 700;
+    color: var(--primary);
+    margin-bottom: 0.8rem;
+    font-size: 0.95rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.template-examples ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.template-examples ul li {
+    padding: 0.5rem 0;
+    color: var(--dark);
+    font-size: 1rem;
+    position: relative;
+    padding-left: 1.5rem;
+}
+
+.template-examples ul li:before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: var(--primary);
+    font-weight: 700;
+}
+
+/* ============================================================================
+   CATEGORY ACTIONS
+   ============================================================================ */
+
+.category-actions {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    margin-top: 2rem;
+}
+
+.category-actions .btn {
+    flex: 1;
+    min-width: 120px;
+}
+
+/* ============================================================================
+   HOW IT WORKS MINI-SECTION
+   ============================================================================ */
+
+.how-it-works-mini {
+    padding: 5rem 0;
+}
+
+.steps-simple {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+    max-width: 1000px;
+    margin: 3rem auto;
+}
+
+.step-simple {
+    text-align: center;
+    flex: 1;
+    min-width: 200px;
+}
+
+.step-number-simple {
+    width: 70px;
+    height: 70px;
+    margin: 0 auto 1rem;
+    background: var(--gradient-primary);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    font-weight: 700;
+    box-shadow: 0 8px 20px rgba(109, 0, 26, 0.3);
+    font-family: 'Playfair Display', serif;
+}
+
+.step-simple h4 {
+    font-size: 1.3rem;
+    margin-bottom: 0.5rem;
+    color: var(--primary);
+}
+
+.step-simple p {
+    font-size: 1rem;
+    color: var(--secondary-dark);
+}
+
+.step-arrow {
+    color: var(--primary);
+    font-size: 2rem;
+}
+
+/* ============================================================================
+   FINAL CTA SECTION
+   ============================================================================ */
+
+.final-cta {
+    padding: 5rem 0;
+    background: var(--gradient-light);
+    text-align: center;
+}
+
+.cta-subtitle {
+    font-size: 1.3rem;
+    color: var(--secondary-dark);
+    margin-bottom: 2rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* ============================================================================
+   MOBILE RESPONSIVE
+   ============================================================================ */
+
+@media (max-width: 992px) {
+    .category-grid {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+    }
+    
+    .hero-title {
+        font-size: 2.8rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1.4rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero {
+        padding: 4rem 0;
+    }
+    
+    .hero-title {
+        font-size: 2.4rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1.2rem;
+    }
+    
+    .hero-buttons {
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+    }
+    
+    .hero-buttons .btn {
+        width: 100%;
+        max-width: 300px;
+    }
+    
+    .category-card {
+        padding: 2rem;
+    }
+    
+    .category-icon {
+        width: 70px;
+        height: 70px;
+    }
+    
+    .category-icon i {
+        font-size: 2rem;
+    }
+    
+    .category-card h3 {
+        font-size: 1.6rem;
+    }
+    
+    .category-actions {
+        flex-direction: column;
+    }
+    
+    .category-actions .btn {
+        width: 100%;
+    }
+    
+    .steps-simple {
+        flex-direction: column;
+        gap: 2rem;
+    }
+    
+    .step-arrow {
+        transform: rotate(90deg);
+    }
+    
+    .section-intro {
+        font-size: 1.1rem;
+    }
+    
+    /* Hide decorative circles on mobile */
+    .hero:before,
+    .hero:after {
+        display: none;
+    }
+}
+
+@media (max-width: 576px) {
+    .hero-title {
+        font-size: 2rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1.1rem;
+    }
+    
+    .category-card {
+        padding: 1.5rem;
+    }
+    
+    .category-description {
+        font-size: 1rem;
+    }
+    
+    .template-examples {
+        padding: 1rem;
+    }
+    
+    .step-simple h4 {
+        font-size: 1.1rem;
+    }
+    
+    .step-simple p {
+        font-size: 0.95rem;
+    }
+}
+
+/* ============================================================================
+   ACCESSIBILITY & PRINT STYLES
+   ============================================================================ */
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+    .category-card {
+        border-width: 3px;
+    }
+    
+    .featured-badge {
+        border: 2px solid white;
+    }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+    .category-card,
+    .template-preview img,
+    * {
+        transition: none;
+        animation: none;
+    }
+}
+
+/* Print styles */
+@media print {
+    .hero-buttons,
+    .category-actions,
+    .social-links {
+        display: none;
+    }
+}

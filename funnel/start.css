@@ -1,0 +1,520 @@
+/* ============================================================================
+   START.CSS - Complete styles for funnel/start.html
+   Clean, brand-matching styles that integrate with Angie Web Studio design
+   ============================================================================ */
+
+/* Import funnel base styles */
+@import url('../funnel/funnel.css');
+
+/* ============================================================================
+   FUNNEL INTRO SECTION - UNIFIED BACKGROUND
+   ============================================================================ */
+
+.funnel-intro {
+    background: var(--white);
+    padding: 4rem 0;
+    margin: 0;
+}
+
+.funnel-intro .container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.intro-content {
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+/* ============================================================================
+   SECTION HEADER WITH EMOTIONAL HOOK
+   ============================================================================ */
+
+.section-title {
+    font-family: 'Playfair Display', serif;
+    color: var(--dark);
+    font-size: 1.75rem;
+    margin-bottom: 1rem;
+    font-weight: 700;
+    text-align: center;
+}
+
+.section-subhead {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: var(--dark);
+    text-align: center;
+    margin-bottom: 2.5rem;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* ============================================================================
+   CHECKLIST STYLING - CENTERED
+   ============================================================================ */
+
+.checklist {
+    margin-bottom: 2rem;
+}
+
+.checklist-title {
+    font-family: 'Playfair Display', serif;
+    color: var(--dark);
+    font-size: 1.25rem;
+    margin-bottom: 1.5rem;
+    font-weight: 600;
+    text-align: center;
+}
+
+.process-steps {
+    list-style: none;
+    padding: 0;
+    margin: 0 auto;
+    text-align: left;
+    max-width: 400px;
+}
+
+.process-steps li {
+    position: relative;
+    padding-left: 2rem;
+    margin-bottom: 1rem;
+    color: var(--dark);
+    line-height: 1.6;
+    font-size: 1.05rem;
+}
+
+.process-steps li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: var(--primary);
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+.checklist-closing {
+    font-style: italic;
+    text-align: center;
+    color: var(--secondary);
+    margin-top: 1rem;
+    margin-bottom: 0;
+    font-size: 0.95rem;
+}
+
+/* ============================================================================
+   SIMPLIFIED TESTIMONIAL - NO AVATAR/STARS
+   ============================================================================ */
+
+.testimonial-wrapper {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-bottom: 1.5rem;
+}
+
+.testimonial-card {
+    background: var(--white);
+    padding: 1.75rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.12);
+    max-width: 450px;
+    width: 100%;
+    border: 1px solid rgba(109, 0, 26, 0.08);
+    margin: 0;
+}
+
+.testimonial-card p {
+    font-style: italic;
+    font-size: 1rem;
+    line-height: 1.6;
+    color: var(--dark);
+    margin-bottom: 1rem;
+    text-align: left;
+}
+
+.testimonial-author {
+    text-align: right;
+    font-style: normal;
+    font-weight: 600;
+    color: var(--primary);
+    font-size: 0.9rem;
+    margin: 0;
+}
+
+/* ============================================================================
+   FORM CONTAINER STYLING - LIGHT AND CLEAN
+   ============================================================================ */
+
+.form-container {
+    max-width: 500px;
+    margin: 0 auto;
+    background: var(--white);
+    padding: 2.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.08);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+/* ============================================================================
+   FORM STYLING - BRAND MATCHING
+   ============================================================================ */
+
+.start-form .form-group {
+    margin-bottom: 1.5rem;
+}
+
+.start-form label {
+    display: block;
+    font-weight: 500;
+    color: var(--dark);
+    margin-bottom: 0.5rem;
+    font-size: 0.95rem;
+}
+
+.start-form .optional {
+    color: var(--secondary);
+    font-weight: 400;
+}
+
+.start-form input {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1rem;
+    font-family: 'Lato', sans-serif;
+    transition: border-color 0.2s ease;
+    background: var(--white);
+    color: var(--dark);
+    box-sizing: border-box;
+}
+
+.start-form input:focus {
+    outline: none;
+    border-color: var(--primary);
+    box-shadow: 0 0 0 2px rgba(109, 0, 26, 0.1);
+}
+
+.start-form input::placeholder {
+    color: var(--secondary);
+}
+
+/* ============================================================================
+   SUBMIT BUTTON - BRAND MATCHING
+   ============================================================================ */
+
+.start-form .btn.btn-primary.btn-lg {
+    width: 100%;
+    padding: 0.875rem 2rem;
+    font-size: 1rem;
+    font-weight: 600;
+    margin-top: 1rem;
+    background: var(--primary);
+    border: none;
+    border-radius: 4px;
+    color: var(--white);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    text-decoration: none;
+}
+
+.start-form .btn.btn-primary.btn-lg:hover {
+    background: var(--primary-dark);
+}
+
+.start-form .btn.btn-primary.btn-lg:focus {
+    outline: 2px solid var(--primary);
+    outline-offset: 2px;
+}
+
+.start-form .btn i {
+    font-size: 0.9rem;
+}
+
+/* ============================================================================
+   TRUST INDICATORS - SUBTLE AND CLEAN
+   ============================================================================ */
+
+.trust-indicators {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    margin-top: 2rem;
+    padding: 1rem;
+    flex-wrap: wrap;
+}
+
+.trust-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--secondary);
+    font-size: 0.875rem;
+    font-weight: 400;
+}
+
+.trust-item i {
+    color: var(--secondary);
+    font-size: 1rem;
+    width: 16px;
+    text-align: center;
+}
+
+/* ============================================================================
+   FORM VALIDATION STATES
+   ============================================================================ */
+
+.start-form input.error {
+    border-color: #e74c3c;
+}
+
+.start-form input.success {
+    border-color: var(--secondary);
+}
+
+.error-message {
+    display: block;
+    color: #e74c3c;
+    font-size: 0.85rem;
+    margin-top: 0.25rem;
+}
+
+.success-message {
+    display: block;
+    color: var(--secondary);
+    font-size: 0.85rem;
+    margin-top: 0.25rem;
+}
+
+/* ============================================================================
+   LOADING STATE
+   ============================================================================ */
+
+.start-form.loading .btn {
+    opacity: 0.7;
+    cursor: not-allowed;
+    pointer-events: none;
+}
+
+.start-form.loading .btn i {
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+/* ============================================================================
+   RESPONSIVE DESIGN
+   ============================================================================ */
+
+@media (max-width: 768px) {
+    .funnel-intro {
+        padding: 3rem 0;
+    }
+    
+    .funnel-intro .container {
+        padding: 0 1.5rem;
+    }
+    
+    .section-title {
+        font-size: 1.5rem;
+    }
+    
+    .section-subhead {
+        font-size: 1rem;
+        margin-bottom: 2rem;
+    }
+    
+    .checklist {
+        margin-bottom: 1.5rem;
+    }
+    
+    .testimonial-card {
+        padding: 1.5rem;
+        max-width: 100%;
+    }
+    
+    .form-container {
+        margin: 0 1rem;
+        padding: 2rem 1.5rem;
+    }
+    
+    .trust-indicators {
+        gap: 1.5rem;
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .trust-item {
+        justify-content: center;
+    }
+    
+    .checklist-title {
+        font-size: 1.15rem;
+    }
+    
+    .process-steps li {
+        font-size: 1rem;
+        padding-left: 1.8rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .funnel-intro {
+        padding: 2.5rem 0;
+    }
+    
+    .funnel-intro .container {
+        padding: 0 1rem;
+    }
+    
+    .checklist {
+        margin-bottom: 2rem;
+    }
+    
+    .testimonial-card {
+        padding: 1.25rem;
+    }
+    
+    .testimonial-header {
+        gap: 0.5rem;
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .testimonial-avatar {
+        width: 40px;
+        height: 40px;
+        align-self: center;
+    }
+    
+    .testimonial-info {
+        text-align: center;
+    }
+    
+    .testimonial-stars {
+        justify-content: center;
+    }
+    
+    .checklist h2 {
+        font-size: 1.2rem;
+        margin-bottom: 1.25rem;
+    }
+    
+    .process-steps li {
+        font-size: 0.95rem;
+        padding-left: 1.75rem;
+        margin-bottom: 0.875rem;
+    }
+    
+    .form-container {
+        margin: 0 0.75rem;
+        padding: 1.75rem 1.25rem;
+    }
+    
+    .start-form input {
+        padding: 0.75rem 0.875rem;
+        font-size: 0.95rem;
+    }
+    
+    .start-form .btn.btn-primary.btn-lg {
+        padding: 0.875rem 1.5rem;
+        font-size: 1rem;
+    }
+    
+    .trust-indicators {
+        padding: 1rem;
+        margin-top: 1.5rem;
+        gap: 1rem;
+    }
+    
+    .trust-item {
+        font-size: 0.8rem;
+    }
+    
+    .testimonial-quote {
+        font-size: 0.9rem;
+        line-height: 1.5;
+    }
+    
+    .testimonial-author {
+        font-size: 0.85rem;
+    }
+}
+
+/* ============================================================================
+   ACCESSIBILITY ENHANCEMENTS
+   ============================================================================ */
+
+.start-form input:focus-visible {
+    outline: 2px solid var(--primary);
+    outline-offset: 2px;
+}
+
+.start-form .btn:focus-visible {
+    outline: 2px solid var(--primary);
+    outline-offset: 2px;
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+    .start-form input {
+        border-width: 2px;
+    }
+    
+    .form-container {
+        border-width: 2px;
+    }
+    
+    .testimonial-card {
+        border-width: 2px;
+    }
+}
+
+/* Reduce motion for users who prefer it */
+@media (prefers-reduced-motion: reduce) {
+    .start-form input,
+    .start-form .btn {
+        transition: none;
+    }
+    
+    @keyframes spin {
+        to { transform: none; }
+    }
+}
+
+/* ============================================================================
+   PRINT STYLES
+   ============================================================================ */
+
+@media print {
+    .trust-indicators,
+    .start-form .btn {
+        display: none;
+    }
+    
+    .form-container {
+        box-shadow: none;
+        border: 1px solid #000;
+    }
+    
+    .testimonial-card {
+        background: transparent;
+        border: 1px solid #000;
+        box-shadow: none;
+    }
+    
+    .funnel-intro {
+        background: transparent;
+    }
+}
