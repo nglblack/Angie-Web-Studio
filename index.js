@@ -187,29 +187,10 @@ window.addEventListener('scroll', () => {
 });
 
 // ============================================================================
-// FORM SUBMISSION HANDLER
+// FORM SUBMISSION - Now handled by emailjs-config.js
 // ============================================================================
+// Form submission has been moved to emailjs-config.js
 
-const contactForm = document.querySelector('.contact-form');
-
-if (contactForm) {
-    contactForm.addEventListener('submit', (e) => {
-        e.preventDefault();
-        
-        // Get form data
-        const formData = new FormData(contactForm);
-        const data = Object.fromEntries(formData);
-        
-        // Here you would normally send to your backend
-        console.log('Form submitted:', data);
-        
-        // Show success message (you can customize this)
-        alert('Thank you! I\'ll get back to you within 24 hours.');
-        
-        // Reset form
-        contactForm.reset();
-    });
-}
 
 // ============================================================================
 // SCROLL REVEAL ANIMATION
