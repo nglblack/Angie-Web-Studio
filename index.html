@@ -381,7 +381,9 @@
     <!-- EmailJS Configuration & Form Handler -->
     <script src="emailjs-config.js"></script>
     
-    <!-- Main JavaScript -->
-    <script src="index.js"></script>
+    <!-- Dynamic Year in Footer -->
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
 </body>
 </html>
