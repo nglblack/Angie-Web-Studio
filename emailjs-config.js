@@ -25,10 +25,17 @@ function initContactForm() {
     const contactForm = document.querySelector('.contact-form');
     const submitButton = contactForm?.querySelector('button[type="submit"]');
     
-    if (!contactForm) return;
+    if (!contactForm) {
+        console.error('Contact form not found!');
+        return;
+    }
+    
+    console.log('Contact form initialized successfully');
 
     contactForm.addEventListener('submit', async (e) => {
         e.preventDefault();
+        
+        console.log('Form submit event triggered');
         
         // Disable submit button and show loading state
         if (submitButton) {
@@ -37,12 +44,24 @@ function initContactForm() {
             submitButton.style.opacity = '0.7';
         }
         
-        // Get form data
+        // Get form data with better error checking
+        const nameField = document.getElementById('name');
+        const emailField = document.getElementById('email');
+        const projectTypeField = document.getElementById('project-type');
+        const messageField = document.getElementById('message');
+        
+        console.log('Field check:', {
+            name: nameField ? nameField.value : 'NOT FOUND',
+            email: emailField ? emailField.value : 'NOT FOUND',
+            projectType: projectTypeField ? projectTypeField.value : 'NOT FOUND',
+            message: messageField ? messageField.value : 'NOT FOUND'
+        });
+        
         const formData = {
-            from_name: contactForm.querySelector('#name').value,
-            from_email: contactForm.querySelector('#email').value,
-            project_type: contactForm.querySelector('#project-type').value,
-            message: contactForm.querySelector('#message').value,
+            from_name: nameField ? nameField.value : '',
+            from_email: emailField ? emailField.value : '',
+            project_type: projectTypeField ? projectTypeField.value : '',
+            message: messageField ? messageField.value : '',
             timestamp: new Date().toLocaleString('en-US', {
                 weekday: 'long',
                 year: 'numeric',
@@ -100,8 +119,14 @@ function initContactForm() {
 // INITIALIZE WHEN DOM IS READY
 // ============================================================================
 
-if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', initContactForm);
-} else {
+// Make absolutely sure DOM is fully loaded
+window.addEventListener('DOMContentLoaded', function() {
+    console.log('DOM fully loaded, initializing contact form...');
+    initContactForm();
+});
+
+// Backup initialization if DOMContentLoaded already fired
+if (document.readyState === 'interactive' || document.readyState === 'complete') {
+    console.log('DOM already loaded, initializing contact form immediately...');
     initContactForm();
 }
