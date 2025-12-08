@@ -2,13 +2,13 @@
 // EMAILJS CONFIGURATION
 // ============================================================================
 
-// YOUR EMAILJS CREDENTIALS - Replace with your actual values
+// YOUR EMAILJS CREDENTIALS
 const EMAILJS_CONFIG = {
-    publicKey: 'WuG1XAqTvWPbw5zq_',      // From Account > API Keys
-    serviceID: 'service_m5trkpu',      // From Email Services (e.g., service_abc123)
-    templateID: 'template_tkz8hj3'     // From Email Templates (e.g., template_xyz789)
-
+    publicKey: 'WuG1XAqTvWPbw5zq_',
+    serviceID: 'service_m5trkpu',
+    templateID: 'template_tkz8hj3'
 };
+
 // ============================================================================
 // INITIALIZE EMAILJS
 // ============================================================================
@@ -56,11 +56,12 @@ function initContactForm() {
         
         try {
             // DEBUG: Log what we're sending
-            console.log('📧 Attempting to send email with:');
+            console.log('==== EMAIL SEND ATTEMPT ====');
             console.log('Service ID:', EMAILJS_CONFIG.serviceID);
             console.log('Template ID:', EMAILJS_CONFIG.templateID);
             console.log('Public Key:', EMAILJS_CONFIG.publicKey);
             console.log('Form Data:', formData);
+            console.log('============================');
             
             // Send email via EmailJS
             const response = await emailjs.send(
@@ -69,27 +70,20 @@ function initContactForm() {
                 formData
             );
             
-            console.log('✅ Email sent successfully:', response);
+            console.log('SUCCESS - Email sent:', response);
             
             // Show success message
-            alert('Thank you! Your message has been sent successfully. I\'ll get back to you within 24 hours.');
+            alert('Thank you! Your message has been sent successfully. I will get back to you within 24 hours.');
             
             // Reset form
             contactForm.reset();
             
         } catch (error) {
-            // Ignore Grammarly and similar extension errors
-            if (error.message && (error.message.includes('Grammarly') || error.message.includes('iterable'))) {
-                console.warn('⚠️ Browser extension interference detected, but form may have still sent:', error.message);
-                // Still show success since the form likely sent despite the error
-                alert('Thank you! Your message has been sent successfully. I\'ll get back to you within 24 hours.');
-                contactForm.reset();
-            } else {
-                console.error('❌ Email send failed:', error);
-                
-                // Show error message
-                alert('Oops! Something went wrong sending your message. Please try again or email me directly at contact@angiewebstudio.com');
-            }
+            console.error('ERROR - Email send failed:', error);
+            console.error('Error details:', error.text || error.message);
+            
+            // Show error message
+            alert('Oops! Something went wrong sending your message. Please try again or email me directly at contact@angiewebstudio.com');
             
         } finally {
             // Re-enable submit button
