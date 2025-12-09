@@ -6,7 +6,7 @@ const EMAILJS_CONFIG = {
     publicKey: 'WuG1XAqTvWPbw5zq_',
     serviceID: 'service_m5trkpu',
     templateID: 'template_tkz8hj3',           // Your main template (email to YOU)
-    autoReplyTemplateID: 'template_gdxm1qp'   // Auto-reply template (email to CLIENT)
+    autoReplyTemplateID: 'template_zv69ipm'   // Auto-reply template (email to CLIENT)
 };
 
 // ============================================================================
@@ -65,7 +65,7 @@ window.addEventListener('load', function() {
                 templateParams
             );
             
-            console.log('✅ Notification sent to you:', response1);
+            console.log('SUCCESS - Notification sent to you:', response1);
             
             // Send auto-reply to CLIENT
             const response2 = await emailjs.send(
@@ -74,13 +74,14 @@ window.addEventListener('load', function() {
                 templateParams
             );
             
-            console.log('✅ Auto-reply sent to client:', response2);
+            console.log('SUCCESS - Auto-reply sent to client:', response2);
             
             alert('Thank you! Your message has been sent successfully. Check your email for next steps. I will get back to you within 24 hours.');
             form.reset();
             
         } catch (error) {
             console.error('ERROR:', error);
+            console.error('Error details:', error.text || error.message);
             alert('Oops! Something went wrong. Please try again or email me directly at contact@angiewebstudio.com');
         }
         
