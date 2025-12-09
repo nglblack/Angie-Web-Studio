@@ -5,7 +5,8 @@
 const EMAILJS_CONFIG = {
     publicKey: 'WuG1XAqTvWPbw5zq_',
     serviceID: 'service_m5trkpu',
-    templateID: 'template_tkz8hj3'
+    templateID: 'template_tkz8hj3',           // Your main template (email to YOU)
+    autoReplyTemplateID: 'template_gdxm1qp'   // Auto-reply template (email to CLIENT)
 };
 
 // ============================================================================
@@ -57,14 +58,25 @@ window.addEventListener('load', function() {
         console.log('Sending:', templateParams);
         
         try {
-            const response = await emailjs.send(
+            // Send email to YOU (main notification)
+            const response1 = await emailjs.send(
                 EMAILJS_CONFIG.serviceID,
                 EMAILJS_CONFIG.templateID,
                 templateParams
             );
             
-            console.log('SUCCESS:', response);
-            alert('Thank you! Your message has been sent successfully. I will get back to you within 24 hours.');
+            console.log('✅ Notification sent to you:', response1);
+            
+            // Send auto-reply to CLIENT
+            const response2 = await emailjs.send(
+                EMAILJS_CONFIG.serviceID,
+                EMAILJS_CONFIG.autoReplyTemplateID,
+                templateParams
+            );
+            
+            console.log('✅ Auto-reply sent to client:', response2);
+            
+            alert('Thank you! Your message has been sent successfully. Check your email for next steps. I will get back to you within 24 hours.');
             form.reset();
             
         } catch (error) {
