@@ -1,5 +1,5 @@
 // ============================================================================
-// NAVIGATION TOGGLE
+// NAVIGATION TOGGLE - PORTFOLIO PAGES
 // ============================================================================
 
 const navToggle = document.querySelector('.nav-toggle');
@@ -8,38 +8,48 @@ const navClose = document.querySelector('.nav-close');
 const overlay = document.querySelector('.overlay');
 const body = document.body;
 
-// Open navigation
-if (navToggle) {
+// Only initialize if elements exist (prevents errors)
+if (navToggle && nav && overlay) {
+    // Open navigation
     navToggle.addEventListener('click', () => {
         nav.classList.add('active');
         overlay.classList.add('active');
         navToggle.classList.add('hidden');
+        navToggle.setAttribute('aria-expanded', 'true');
         body.style.overflow = 'hidden';
     });
-}
 
-// Close navigation
-if (navClose) {
-    navClose.addEventListener('click', closeNav);
-}
+    // Close navigation function
+    function closeNav() {
+        nav.classList.remove('active');
+        overlay.classList.remove('active');
+        navToggle.classList.remove('hidden');
+        navToggle.setAttribute('aria-expanded', 'false');
+        body.style.overflow = '';
+    }
 
-if (overlay) {
+    // Close button click
+    if (navClose) {
+        navClose.addEventListener('click', closeNav);
+    }
+
+    // Overlay click
     overlay.addEventListener('click', closeNav);
-}
 
-function closeNav() {
-    nav.classList.remove('active');
-    overlay.classList.remove('active');
-    navToggle.classList.remove('hidden');
-    body.style.overflow = '';
-}
-
-// Close nav when clicking on a link
-document.querySelectorAll('nav a').forEach(link => {
-    link.addEventListener('click', () => {
-        closeNav();
+    // Close nav when clicking on a link
+    document.querySelectorAll('nav a').forEach(link => {
+        link.addEventListener('click', () => {
+            closeNav();
+        });
     });
-});
+
+    // Close nav with Escape key
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && nav.classList.contains('active')) {
+            closeNav();
+        }
+    });
+}
 
 // ============================================================================
 // HEADER SCROLL EFFECT
@@ -59,37 +69,6 @@ window.addEventListener('scroll', () => {
     
     lastScroll = currentScroll;
 });
-
-// ============================================================================
-// SCROLL REVEAL ANIMATION - DISABLED FOR NOW
-// ============================================================================
-
-// Commenting out scroll reveal as it may be hiding content
-// Uncomment once CSS is fully working
-
-/*
-const observerOptions = {
-    threshold: 0.1,
-    rootMargin: '0px 0px -50px 0px'
-};
-
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.style.opacity = '1';
-            entry.target.style.transform = 'translateY(0)';
-        }
-    });
-}, observerOptions);
-
-// Observe portfolio cards
-document.querySelectorAll('.portfolio-card').forEach(card => {
-    card.style.opacity = '0';
-    card.style.transform = 'translateY(30px)';
-    card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-    observer.observe(card);
-});
-*/
 
 // ============================================================================
 // DYNAMIC YEAR IN FOOTER

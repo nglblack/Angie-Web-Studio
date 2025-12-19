@@ -11,6 +11,7 @@ const overlay = document.querySelector('.overlay');
 if (navToggle && nav && overlay) {
     navToggle.addEventListener('click', () => {
         nav.classList.add('active');
+        navToggle.classList.add('hidden');
         overlay.classList.add('active');
         navToggle.setAttribute('aria-expanded', 'true');
         document.body.style.overflow = 'hidden';
@@ -19,6 +20,7 @@ if (navToggle && nav && overlay) {
     const closeNav = () => {
         nav.classList.remove('active');
         overlay.classList.remove('active');
+        navToggle.classList.remove('hidden');
         navToggle.setAttribute('aria-expanded', 'false');
         document.body.style.overflow = '';
     };
