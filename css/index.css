@@ -777,4 +777,34 @@
 
 html {
     scroll-behavior: smooth;
+/* ============================================================================
+   reCAPTCHA STYLING - ADD TO index.css
+   ============================================================================ */
+
+/* Center the reCAPTCHA widget */
+.g-recaptcha {
+    display: flex;
+    justify-content: center;
+    margin: 1.5rem 0;
+}
+
+/* Add some spacing around the reCAPTCHA */
+.form-group .g-recaptcha {
+    padding: 1rem 0;
+}
+
+/* Mobile responsive reCAPTCHA */
+@media (max-width: 768px) {
+    .g-recaptcha {
+        transform: scale(0.85);
+        transform-origin: center;
+    }
+}
+
+@media (max-width: 576px) {
+    .g-recaptcha {
+        transform: scale(0.77);
+        transform-origin: center;
+    }
+}
 }

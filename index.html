@@ -11,6 +11,9 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Playfair+Display:wght@400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google reCAPTCHA Script -->
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 </head>
 <body>
     <!-- Header Section -->
@@ -46,7 +49,7 @@
             <section id="home" class="hero">
                 <div class="hero-content">
                   <h1 class="hero-title">Fast Websites & Web Apps for Small Businesses</h1>
-                  <p class="hero-subtitle">Hand-coded, professional, and delivered in days, not weeks. No builders, no bloat, just clean code that works.</p>
+                  <p class="hero-subtitle">Hand-coded, professional, and delivered in days—not weeks. No builders, no bloat, just clean code that works.</p>
                   <div class="hero-buttons">
                     <a href="#contact" class="btn btn-lg">Start Your Project</a>
                     <a href="#portfolio" class="btn btn-outline btn-lg">View Examples</a>
@@ -60,7 +63,7 @@
             <div class="container">
                 <div class="text-center mb-5">
                     <h2>What I Build</h2>
-                    <p>From business websites to interactive tools, everything custom-coded, mobile-friendly, and built to last.</p>
+                    <p>From business websites to interactive tools—everything custom-coded, mobile-friendly, and built to last.</p>
                 </div>
                 
                 <div class="grid grid-2 services-grid">
@@ -88,7 +91,7 @@
                             <i class="fas fa-rocket"></i>
                         </div>
                         <h3>Interactive Web Apps</h3>
-                        <p class="service-description">Lightweight, browser-based tools that solve specific problemsâ€”no servers, no complexity.</p>
+                        <p class="service-description">Lightweight, browser-based tools that solve specific problems—no servers, no complexity.</p>
                         <ul class="service-list">
                             <li><i class="fas fa-check"></i> Calculators & quote generators</li>
                             <li><i class="fas fa-check"></i> Scheduling & booking tools</li>
@@ -108,29 +111,28 @@
             <div class="container">
                 <div class="text-center mb-5">
                     <h2>Recent Work</h2>
-                    <p>Live examples of websites and web apps I've built, ee them in action.</p>
+                    <p>Live examples of websites and web apps I've built—see them in action.</p>
                 </div>
 
                 <!-- Portfolio Featured -->
-                <!-- Portfolio Featured -->
                 <div class="portfolio-featured">
-                    <!-- Featured Project 1 - Website -->
+                    <!-- Featured Project 1 - Web App -->
                     <div class="portfolio-featured-item">
                         <div class="featured-image">
-                            <img src="./img/performer-portfolio.png" alt="Performer Portfolio">
+                            <img src="./img/scalesofjustice.png" alt="Scales of Justice Decision Tool">
                             <div class="featured-badge">
                                 <i class="fas fa-star"></i> Featured
                             </div>
                         </div>
                         <div class="featured-content">
                             <div class="featured-header">
-                                <span class="portfolio-tag website">Website</span>
-                                <a href="https://nglblack.github.io/performer-portfolio/" target="_blank" class="featured-link">
+                                <span class="portfolio-tag">Web App</span>
+                                <a href="https://nglblack.github.io/scales_of_justice/" target="_blank" class="featured-link">
                                     View Live <i class="fas fa-arrow-right"></i>
                                 </a>
                             </div>
-                            <h3>Performer Portfolio</h3>
-                            <p class="featured-description">A sleek showcase site built for entertainers and performers. Features stunning media galleries, integrated booking options, and a professional layout that highlights talent and past performances. Perfect for musicians, actors, speakers, and other creative professionals looking to attract clients and showcase their work.</p>
+                            <h3>Decision Scale Tool</h3>
+                            <p class="featured-description">A sleek, interactive decision-making tool that helps you weigh pros and cons visually. Users can add red flags and green flags to each side of the scale, watching it tip in real-time as they evaluate important choices. Perfect for anyone struggling to make tough decisions—from choosing job offers to evaluating relationships.</p>
                             <div class="featured-tech">
                                 <span class="tech-tag"><i class="fas fa-code"></i> Vanilla JS</span>
                                 <span class="tech-tag"><i class="fas fa-paint-brush"></i> Custom CSS</span>
@@ -139,95 +141,123 @@
                         </div>
                     </div>
 
-                    <!-- Featured Project 2 - Website -->
+                    <!-- Featured Project 2 - Web App -->
                     <div class="portfolio-featured-item reverse">
                         <div class="featured-image">
-                            <img src="./img/bookedkit.png" alt="Booked & Busy">
+                            <img src="./img/30dayrolling.png" alt="30-day rolling calculator">
+                            <div class="featured-badge">
+                                <i class="fas fa-star"></i> Featured
+
+
+                            </div>
+                        </div>
+                        <div class="featured-content">
+                            <div class="featured-header">
+                                <span class="portfolio-tag">Web App</span>
+                                <a href="https://nglblack.github.io/30-day-rolling-calc/" target="_blank" class="featured-link">
+                                    View Live <i class="fas fa-arrow-right"></i>
+                                </a>
+                            </div>
+                            <h3>30-Day Rolling Calculator</h3>
+                            <p class="featured-description">Track and analyze rolling 30-day averages for any metric with this powerful data visualization tool. Perfect for monitoring performance trends, sales data, or personal goals. Features intuitive data entry, interactive charts, and the ability to export your data for further analysis. Helps businesses and individuals spot patterns and make data-driven decisions.</p>
+                            <div class="featured-tech">
+                                <span class="tech-tag"><i class="fas fa-code"></i> Vanilla JS</span>
+                                <span class="tech-tag"><i class="fas fa-calendar-alt"></i> Data Visualization</span>
+                                <span class="tech-tag"><i class="fas fa-download"></i> Export Feature</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Featured Project 3 - Web App -->
+                    <div class="portfolio-featured-item">
+                        <div class="featured-image">
+                            <img src="./img/thinktrack.png" alt="Think Track Flowchart Tool">
                             <div class="featured-badge">
                                 <i class="fas fa-star"></i> Featured
                             </div>
                         </div>
                         <div class="featured-content">
                             <div class="featured-header">
-                                <span class="portfolio-tag website">Website</span>
-                                <a href="https://nglblack.github.io/booked-busy/" target="_blank" class="featured-link">
+                                <span class="portfolio-tag">Web App</span>
+                                <a href="https://nglblack.github.io/Think-Track/" target="_blank" class="featured-link">
                                     View Live <i class="fas fa-arrow-right"></i>
                                 </a>
                             </div>
-                            <h3>Booked & Busy</h3>
-                            <p class="featured-description">Professional booking site designed for freelancers and service providers. Features client testimonials, detailed service listings, and an intuitive contact form. The clean design builds trust while making it easy for potential clients to understand your offerings and get in touch.</p>
+                            <h3>Think Track Flowchart</h3>
+                            <p class="featured-description">An interactive flowchart builder for mapping out complex processes, workflows, and decision trees. Users can create, connect, and organize nodes to visualize their thinking process. Features drag-and-drop functionality, import/export capabilities, and a clean interface that makes process mapping simple and intuitive.</p>
                             <div class="featured-tech">
-                                <span class="tech-tag"><i class="fas fa-code"></i> Custom HTML/CSS</span>
-                                <span class="tech-tag"><i class="fas fa-comments"></i> Testimonials</span>
-                                <span class="tech-tag"><i class="fas fa-calendar-check"></i> Booking Focus</span>
+                                <span class="tech-tag"><i class="fas fa-code"></i> Vanilla JS</span>
+                                <span class="tech-tag"><i class="fas fa-project-diagram"></i> Node System</span>
+                                <span class="tech-tag"><i class="fas fa-file-export"></i> Import/Export</span>
                             </div>
                         </div>
                     </div>
 
-                    <!-- View More Websites Button -->
+                    <!-- View More Web Apps Button -->
                     <div class="view-more-container centered">
-                        <a href="websites.html" class="btn btn-primary btn-lg">View All Websites</a>
+                        <a href="webapps.html" class="btn btn-primary btn-lg">View All Web Apps</a>
                     </div>
 
-                    <!-- Web App Examples - Compact Grid -->
+                    <!-- Website Examples - Compact Grid -->
                     <div class="portfolio-compact-grid">
-                        <h3 class="compact-grid-title">Web App Projects</h3>
+                        <h3 class="compact-grid-title">Website Projects</h3>
                         <div class="compact-grid">
                             <div class="compact-item">
                                 <div class="compact-image">
-                                    <img src="./img/scalesofjustice.png" alt="Scales of Justice">
+                                    <img src="./img/performer-portfolio.png" alt="Performer Portfolio">
                                     <div class="compact-overlay">
-                                        <a href="https://nglblack.github.io/scales_of_justice/" target="_blank">
+                                        <a href="https://nglblack.github.io/performer-portfolio/" target="_blank">
                                             <i class="fas fa-external-link-alt"></i>
                                         </a>
                                     </div>
                                 </div>
                                 <div class="compact-content">
-                                    <span class="portfolio-tag">Web App</span>
-                                    <h4>Decision Scale Tool</h4>
-                                    <p>Interactive tool that visualizes pros and cons with a tipping scale.</p>
+                                    <span class="portfolio-tag website">Website</span>
+                                    <h4>Performer Portfolio</h4>
+                                    <p>Sleek showcase site for entertainers with media galleries and booking options.</p>
                                 </div>
                             </div>
 
                             <div class="compact-item">
                                 <div class="compact-image">
-                                    <img src="./img/30dayrolling.png" alt="30-Day Rolling Calculator">
+                                    <img src="./img/bookedkit.png" alt="Booked & Busy">
                                     <div class="compact-overlay">
-                                        <a href="https://nglblack.github.io/30-day-rolling-calc/" target="_blank">
+                                        <a href="https://nglblack.github.io/booked-busy/" target="_blank">
                                             <i class="fas fa-external-link-alt"></i>
                                         </a>
                                     </div>
                                 </div>
                                 <div class="compact-content">
-                                    <span class="portfolio-tag">Web App</span>
-                                    <h4>30-Day Rolling Calculator</h4>
-                                    <p>Track and analyze rolling 30-day averages with data visualization.</p>
+                                    <span class="portfolio-tag website">Website</span>
+                                    <h4>Booked & Busy</h4>
+                                    <p>Professional booking site for freelancers with testimonials and service listings.</p>
                                 </div>
                             </div>
 
                             <div class="compact-item">
                                 <div class="compact-image">
-                                    <img src="./img/thinktrack.png" alt="Think Track">
+                                    <img src="./img/wellness.png" alt="Health & Wellness">
                                     <div class="compact-overlay">
-                                        <a href="https://nglblack.github.io/Think-Track/" target="_blank">
+                                        <a href="https://nglblack.github.io/wellness-website-template/" target="_blank">
                                             <i class="fas fa-external-link-alt"></i>
                                         </a>
                                     </div>
                                 </div>
                                 <div class="compact-content">
-                                    <span class="portfolio-tag">Web App</span>
-                                    <h4>Think Track Flowchart</h4>
-                                    <p>Drag-and-drop flowchart builder for mapping processes and workflows.</p>
+                                    <span class="portfolio-tag website">Website</span>
+                                    <h4>Health & Wellness</h4>
+                                    <p>Calming, professional site for health practitioners and wellness coaches.</p>
                                 </div>
                             </div>
                         </div>
                         
                         <!-- View More Button -->
                         <div class="view-more-container">
-                            <a href="webapps.html" class="btn btn-outline btn-lg">View All Web Apps</a>
+                            <a href="websites.html" class="btn btn-outline btn-lg">View All Websites</a>
                         </div>
                     </div>
                 </div>
+            </div>
         </section>
 
         <!-- Simple CTA Section -->
@@ -237,7 +267,7 @@
                     <h2>Ready to Get Started?</h2>
                     <p>Fill out the form below and I'll get back to you within 24 hours with a quote and timeline.</p>
                     
-                    <form class="contact-form" action="#" method="POST">
+                    <form class="contact-form" id="contact-form">
                         <div class="form-row">
                             <div class="form-group">
                                 <label for="name">Your Name</label>
@@ -263,6 +293,11 @@
                         <div class="form-group">
                             <label for="message">Tell me about your project</label>
                             <textarea id="message" name="message" rows="5" placeholder="What are you looking to build? Any specific features or timeline in mind?"></textarea>
+                        </div>
+                        
+                        <!-- reCAPTCHA Widget -->
+                        <div class="form-group">
+                            <div class="g-recaptcha" data-sitekey="6LcA0zYsAAAAAAZdsGf9ydGZSr8jJBtZk8Cu0YMO"></div>
                         </div>
                         
                         <button type="submit" class="btn btn-lg">Send Project Request</button>
@@ -348,8 +383,7 @@
         </div>
     </footer>
 
-    <!-- EmailJS SDK -->
-
-    <script src="./main.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script src="index.js"></script>
 </body>
 </html>

@@ -1,4 +1,11 @@
 // ============================================================================
+// EMAILJS CONFIGURATION
+// ============================================================================
+
+// Initialize EmailJS with your public key
+emailjs.init('YOUR_EMAILJS_PUBLIC_KEY'); // Replace with your actual EmailJS public key
+
+// ============================================================================
 // NAVIGATION TOGGLE - FIXED VERSION
 // ============================================================================
 
@@ -187,10 +194,72 @@ window.addEventListener('scroll', () => {
 });
 
 // ============================================================================
-// FORM SUBMISSION - Now handled by emailjs-config.js
+// FORM SUBMISSION HANDLER WITH reCAPTCHA
 // ============================================================================
-// Form submission has been moved to emailjs-config.js
 
+const contactForm = document.getElementById('contact-form');
+
+if (contactForm) {
+    contactForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        // Get reCAPTCHA response
+        const recaptchaResponse = grecaptcha.getResponse();
+        
+        // Check if reCAPTCHA is completed
+        if (!recaptchaResponse) {
+            alert('Please complete the reCAPTCHA verification.');
+            return;
+        }
+        
+        // Disable submit button to prevent double submission
+        const submitBtn = contactForm.querySelector('button[type="submit"]');
+        const originalBtnText = submitBtn.textContent;
+        submitBtn.disabled = true;
+        submitBtn.textContent = 'Sending...';
+        
+        // Prepare template parameters
+        const templateParams = {
+            from_name: document.getElementById('name').value,
+            from_email: document.getElementById('email').value,
+            project_type: document.getElementById('project-type').value,
+            message: document.getElementById('message').value,
+            'g-recaptcha-response': recaptchaResponse
+        };
+        
+        // Send email using EmailJS
+        emailjs.send('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', templateParams)
+            .then(function(response) {
+                console.log('SUCCESS!', response.status, response.text);
+                
+                // Show success message
+                alert('Thank you! Your message has been sent successfully. I\'ll get back to you within 24 hours.');
+                
+                // Reset form
+                contactForm.reset();
+                
+                // Reset reCAPTCHA
+                grecaptcha.reset();
+                
+                // Re-enable submit button
+                submitBtn.disabled = false;
+                submitBtn.textContent = originalBtnText;
+                
+            }, function(error) {
+                console.error('FAILED...', error);
+                
+                // Show error message
+                alert('Oops! Something went wrong. Please try again or email me directly at contact@angiewebstudio.com');
+                
+                // Re-enable submit button
+                submitBtn.disabled = false;
+                submitBtn.textContent = originalBtnText;
+                
+                // Reset reCAPTCHA
+                grecaptcha.reset();
+            });
+    });
+}
 
 // ============================================================================
 // SCROLL REVEAL ANIMATION
