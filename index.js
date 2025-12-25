@@ -239,7 +239,6 @@ window.addEventListener('load', function() {
             from_email: formData.get('email'),
             project_type: formData.get('project-type'),
             message: formData.get('message'),
-            'g-recaptcha-response': typeof grecaptcha !== 'undefined' ? grecaptcha.getResponse() : '',
             timestamp: new Date().toLocaleString('en-US', {
                 weekday: 'long',
                 year: 'numeric',
@@ -251,26 +250,23 @@ window.addEventListener('load', function() {
             })
         };
         
+        // Add reCAPTCHA response if available
+        if (typeof grecaptcha !== 'undefined') {
+            templateParams['g-recaptcha-response'] = grecaptcha.getResponse();
+        }
+        
         console.log('Sending:', templateParams);
         
         try {
-            // Send email to YOU (main notification)
-            const response1 = await emailjs.send(
+            // Send ONLY the main email - the auto-reply is handled automatically by EmailJS
+            // because it's linked in your template settings
+            const response = await emailjs.send(
                 EMAILJS_CONFIG.serviceID,
                 EMAILJS_CONFIG.templateID,
                 templateParams
             );
             
-            console.log('SUCCESS - Notification sent to you:', response1);
-            
-            // Send auto-reply to CLIENT
-            const response2 = await emailjs.send(
-                EMAILJS_CONFIG.serviceID,
-                EMAILJS_CONFIG.autoReplyTemplateID,
-                templateParams
-            );
-            
-            console.log('SUCCESS - Auto-reply sent to client:', response2);
+            console.log('SUCCESS - Email sent (auto-reply will be sent automatically):', response);
             
             alert('Thank you! Your message has been sent successfully. Check your email for next steps. I will get back to you within 24 hours.');
             form.reset();
